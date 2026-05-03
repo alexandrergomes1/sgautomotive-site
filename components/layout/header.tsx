@@ -44,7 +44,7 @@ export function Header() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 md:h-[68px]">
+        <div className="flex items-center justify-between h-[72px] md:h-[96px]">
 
           {/* Logo */}
           <Link

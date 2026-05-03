@@ -9,7 +9,7 @@ interface LogoProps {
 
 // logo1.png: white logo, transparent background — works on any dark surface
 // logo-light.png: dark logo — for light backgrounds (variant="dark")
-const heights = { sm: 56, md: 76, lg: 104 };
+const heights = { sm: 68, md: 88, lg: 120 };
 
 export function Logo({ variant = "light", size = "md", className }: LogoProps) {
   const src = variant === "light" ? "/logo1.png" : "/logo-light.png";

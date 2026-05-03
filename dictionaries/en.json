@@ -1,0 +1,332 @@
+{
+  "nav": {
+    "home": "Home",
+    "vehicles": "Vehicles",
+    "import": "Import",
+    "services": "Services",
+    "about": "About",
+    "contact": "Contact",
+    "cta": "Request consultation"
+  },
+  "hero": {
+    "badge": "Costa del Sol · Fuengirola · Málaga",
+    "title": "Vehicle purchase and import in Europe with professional management.",
+    "subtitle": "Selected vehicles, technical analysis and complete or partial management of the purchase, import and registration process in Spain.",
+    "cta_vehicles": "View available vehicles",
+    "cta_consult": "Request consultation",
+    "trust_1": "100% online operation",
+    "trust_2": "Assistance in Spanish & English",
+    "trust_3": "Based in Costa del Sol"
+  },
+  "catalog": {
+    "title": "Selected vehicles",
+    "subtitle": "Every unit goes through a rigorous technical, financial and legal analysis process before being presented.",
+    "view_all": "View full catalogue",
+    "fuel": {
+      "diesel": "Diesel",
+      "gasoline": "Petrol",
+      "hybrid": "Hybrid",
+      "electric": "Electric",
+      "plugin_hybrid": "Plug-in hybrid"
+    },
+    "transmission": {
+      "automatic": "Automatic",
+      "manual": "Manual"
+    },
+    "tags": {
+      "iva-recuperable": "VAT reclaimable",
+      "garantia": "With warranty",
+      "pronto-entrega": "Ready for delivery"
+    },
+    "contact_vehicle": "Enquire",
+    "km": "km",
+    "year": "Year"
+  },
+  "services": {
+    "title": "What we do",
+    "subtitle": "Services designed for those who buy or import vehicles with standards and no surprises.",
+    "items": [
+      {
+        "icon": "car",
+        "title": "Sale of selected vehicles",
+        "description": "We offer units with verified history, complete technical analysis and proper documentation. Nothing enters our catalogue without passing our filter."
+      },
+      {
+        "icon": "search",
+        "title": "Purchase advisory",
+        "description": "We search, analyse and compare the vehicle you need in the European market. You receive a clear report before making any decision."
+      },
+      {
+        "icon": "ship",
+        "title": "Complete importation",
+        "description": "We manage the entire process: purchase, transport, customs, homologation, ITV and registration in Spain. No stress, no bureaucracy."
+      },
+      {
+        "icon": "file-text",
+        "title": "Document support",
+        "description": "We handle all the necessary documentation: ownership transfer, vehicle registration, ITV, temporary insurance and DGT procedures."
+      },
+      {
+        "icon": "truck",
+        "title": "Transport and logistics",
+        "description": "We coordinate vehicle transport from any point in Europe to your address in Spain, with tracking and insurance included."
+      },
+      {
+        "icon": "shield-check",
+        "title": "Safe consultancy",
+        "description": "Doubts about an offer? We analyse the vehicle, the seller and the process before you take any risk. Avoid scams and problematic vehicles."
+      }
+    ]
+  },
+  "plans": {
+    "title": "Advisory plans",
+    "subtitle": "Choose the level of support you need for your purchase or import process.",
+    "badge": "Most popular",
+    "items": [
+      {
+        "name": "Documentary",
+        "description": "For those who already have the vehicle and need bureaucratic support.",
+        "price": "From €290",
+        "features": [
+          "Registration management in Spain",
+          "ITV and homologation procedures",
+          "Ownership transfer",
+          "DGT registration",
+          "Support via email/WhatsApp"
+        ],
+        "featured": false
+      },
+      {
+        "name": "Partial",
+        "description": "Support at key stages of the process without full management.",
+        "price": "From €490",
+        "features": [
+          "Analysis of selected vehicle",
+          "History verification",
+          "Negotiation and purchase",
+          "Transport coordination",
+          "Basic document management",
+          "Ongoing support"
+        ],
+        "featured": true
+      },
+      {
+        "name": "Complete",
+        "description": "Total management from search to delivery.",
+        "price": "From €890",
+        "features": [
+          "Personalised search across Europe",
+          "Technical and financial analysis",
+          "Negotiation, purchase and payment",
+          "Import with customs clearance",
+          "Door-to-door transport",
+          "Registration, ITV and documentation",
+          "Dedicated priority support"
+        ],
+        "featured": false
+      }
+    ]
+  },
+  "how_it_works": {
+    "title": "How it works",
+    "subtitle": "A clear, transparent process with no surprises. From start to finish.",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Briefing",
+        "description": "You tell us what vehicle you're looking for, your budget and requirements. No initial commitment."
+      },
+      {
+        "number": "02",
+        "title": "Search & analysis",
+        "description": "We identify options in the European market, analyse history, market price and technical condition."
+      },
+      {
+        "number": "03",
+        "title": "Presentation & decision",
+        "description": "You receive a clear report with recommended options. You decide with full information."
+      },
+      {
+        "number": "04",
+        "title": "Purchase, transport & procedures",
+        "description": "We manage the purchase, transport from origin and all import and registration procedures."
+      },
+      {
+        "number": "05",
+        "title": "Delivery & registration",
+        "description": "The vehicle arrives registered, with ITV, documentation in order and ready to drive in Spain."
+      }
+    ]
+  },
+  "differentials": {
+    "title": "Why SG Automotive",
+    "subtitle": "We're not a dealership. We're a specialist operator working for the buyer.",
+    "items": [
+      {
+        "icon": "bar-chart-2",
+        "title": "Technical & financial analysis",
+        "description": "Every vehicle is analysed in detail: history, market price, real cost of ownership and technical risk."
+      },
+      {
+        "icon": "eye",
+        "title": "Full transparency",
+        "description": "No hidden commissions. You know exactly how much each step costs and why we make each decision."
+      },
+      {
+        "icon": "shield",
+        "title": "Risk-focused",
+        "description": "We identify red flags before purchase: fraud, accident history, outstanding debts and technical issues."
+      },
+      {
+        "icon": "globe",
+        "title": "Multilingual service",
+        "description": "We operate in Spanish and English. No language barriers when buying in any European country."
+      },
+      {
+        "icon": "wifi",
+        "title": "100% online operation",
+        "description": "The entire process is managed remotely. No unnecessary travel required."
+      },
+      {
+        "icon": "map-pin",
+        "title": "Based in Costa del Sol",
+        "description": "Local presence in Fuengirola, Málaga. We know the Spanish market and regional procedures."
+      }
+    ]
+  },
+  "about": {
+    "title": "Who we are",
+    "subtitle": "SG Automotive is an online automotive operation — professional and without unnecessary intermediaries.",
+    "body": "We are a company based in Fuengirola, Costa del Sol, specialised in the purchase, sale, import and advisory of vehicles across Europe. We operate fully remotely, allowing us to work efficiently and without the costs of a traditional dealership.",
+    "body_2": "Our approach is technical, transparent and client-focused. We don't sell by volume: we analyse each case in detail, identify risks and accompany the buyer at every stage of the process.",
+    "stats": [
+      { "value": "Costa del Sol", "label": "Operating base" },
+      { "value": "ES · EN", "label": "Service languages" },
+      { "value": "100%", "label": "Online management" },
+      { "value": "EU", "label": "Operating market" }
+    ]
+  },
+  "faq": {
+    "title": "Frequently asked questions",
+    "subtitle": "Everything you need to know before starting.",
+    "items": [
+      {
+        "question": "Do you have a physical store or showroom?",
+        "answer": "No. SG Automotive operates completely online and remotely. All communication, analysis and management is carried out by email, WhatsApp and video call. This allows us to work with greater efficiency and lower cost for the client."
+      },
+      {
+        "question": "Can I import a car from Germany, France or another European country?",
+        "answer": "Yes. We manage the import of vehicles from any European Union country to Spain, including purchase, transport, homologation, customs clearance and registration."
+      },
+      {
+        "question": "What documentation do I need to import a vehicle?",
+        "answer": "In most cases you will need your DNI or NIE, proof of address in Spain and the vehicle documents (title of ownership, technical sheet and certificate of conformity). We guide you through each step."
+      },
+      {
+        "question": "Does the price include all taxes and procedures?",
+        "answer": "The prices of vehicles in our catalogue are the cost price. Import expenses, VAT, registration tax, ITV and transport are detailed separately depending on the type of vehicle and country of origin."
+      },
+      {
+        "question": "What does 'VAT reclaimable' mean on vehicles?",
+        "answer": "Some vehicles come from commercial operations and allow you to reclaim VAT if you are self-employed or a company with the right to deduct. It is a significant tax advantage. We indicate which ones apply in each case."
+      },
+      {
+        "question": "Do the vehicles come with a warranty?",
+        "answer": "It depends on the vehicle and its origin. Those shown with the 'With warranty' tag include a current manufacturer's warranty or contractual warranty. In other cases we can arrange additional warranty insurance."
+      },
+      {
+        "question": "Can I hire you only for the documentary part if I already have the car?",
+        "answer": "Yes. We offer the Documentary Plan, specifically designed to manage registration, ITV, ownership transfer and other procedures if you have already purchased the vehicle yourself."
+      },
+      {
+        "question": "How long does the import process take?",
+        "answer": "The complete process usually takes between 3 and 6 weeks from the purchase of the vehicle to the delivery registered in Spain, depending on the country of origin and the current administrative workload."
+      },
+      {
+        "question": "Do you serve clients from all over Spain?",
+        "answer": "Yes. Although we are based in Fuengirola, Málaga, we operate remotely and can manage import and delivery to any location in Spain."
+      },
+      {
+        "question": "How do I get started?",
+        "answer": "Simply write to us via WhatsApp or email with your needs. We will have a free initial consultation to understand your case and explain the most suitable options."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contact us",
+    "subtitle": "Tell us what you need. The first consultation is free.",
+    "form": {
+      "name": "Full name",
+      "email": "Email address",
+      "phone": "Phone (optional)",
+      "service": "What do you need?",
+      "service_placeholder": "Select a service",
+      "services": [
+        "Vehicle purchase",
+        "Complete importation",
+        "Purchase advisory",
+        "Document support",
+        "Risk consultancy",
+        "Other"
+      ],
+      "message": "Tell us more",
+      "message_placeholder": "Describe what you're looking for: type of vehicle, budget, country of origin...",
+      "submit": "Send enquiry",
+      "submitting": "Sending...",
+      "success": "Message sent! We'll respond within 24 hours.",
+      "error": "Error sending. Please try again or contact us via WhatsApp."
+    },
+    "whatsapp_label": "Chat on WhatsApp",
+    "email_label": "Send us an email",
+    "location": "Fuengirola, Málaga, Spain",
+    "response_time": "Response time: within 24h",
+    "or": "or"
+  },
+  "footer": {
+    "tagline": "Vehicle purchase and import in Europe with professional management.",
+    "links": {
+      "title": "Navigation",
+      "items": [
+        { "label": "Vehicles", "href": "/veiculos" },
+        { "label": "Importation", "href": "/importacao" },
+        { "label": "Services", "href": "/servicos" },
+        { "label": "About", "href": "/sobre" },
+        { "label": "Contact", "href": "/contato" }
+      ]
+    },
+    "legal": {
+      "title": "Legal",
+      "privacy": "Privacy policy",
+      "terms": "Terms of use",
+      "cookies": "Cookie policy"
+    },
+    "copyright": "SG Automotive. All rights reserved.",
+    "location": "Fuengirola, Costa del Sol, Málaga, Spain"
+  },
+  "metadata": {
+    "home": {
+      "title": "SG Automotive — Import and buy vehicles in Europe",
+      "description": "Online company specialised in car import to Spain, purchase advisory in Europe and document management. Costa del Sol, Fuengirola, Málaga."
+    },
+    "vehicles": {
+      "title": "Available vehicles — SG Automotive",
+      "description": "Selected vehicles with technical analysis, verified history and proper documentation. BMW, Mercedes, Audi, Volkswagen and more on the Costa del Sol."
+    },
+    "import": {
+      "title": "Vehicle import to Spain — SG Automotive",
+      "description": "Complete car import from Germany, France, Netherlands and Europe. Management of ITV, registration, transport and procedures. Costa del Sol, Málaga."
+    },
+    "services": {
+      "title": "Services — SG Automotive",
+      "description": "Sale of selected vehicles, purchase advisory, complete importation, document management and risk consultancy in Spain."
+    },
+    "about": {
+      "title": "About us — SG Automotive",
+      "description": "SG Automotive is an online automotive operation based in Fuengirola, Costa del Sol. Specialists in vehicle import and purchase across Europe."
+    },
+    "contact": {
+      "title": "Contact — SG Automotive",
+      "description": "Contact SG Automotive for purchase advisory, vehicle import or document management. Fuengirola, Costa del Sol, Málaga, Spain."
+    }
+  }
+}

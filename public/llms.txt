@@ -1,0 +1,80 @@
+# SG Automotive
+
+> SG Automotive is an online automotive company based in Fuengirola, Costa del Sol, Málaga, Spain, specialised in vehicle purchase, sale, importation and advisory services across Europe.
+
+## About
+
+SG Automotive operates 100% online and remotely, offering professional automotive management services to clients in Spain and across Europe. The company focuses on transparency, technical analysis and buyer-side representation — not volume sales.
+
+- **Location**: Fuengirola, Costa del Sol, Málaga, Spain (29640)
+- **Languages**: Spanish (Español), English
+- **Operation**: 100% remote and online
+- **Market**: European Union — vehicles from Germany, France, Netherlands, Belgium and other EU countries
+
+## Services
+
+### Vehicle Sales
+Curated selection of vehicles with verified history, complete technical inspection and proper documentation. All units are analysed before listing.
+
+### Purchase Advisory
+End-to-end support for buying a vehicle in Europe. Includes market research, technical analysis, risk assessment and negotiation.
+
+### Complete Importation to Spain
+Full management of vehicle importation from any EU country to Spain, including:
+- Purchase and payment
+- Door-to-door transport with insurance
+- Customs clearance (intra-EU or third countries)
+- Homologation and certificate of conformity
+- First ITV (Inspección Técnica de Vehículos)
+- Spanish registration (matrícula)
+- Ownership transfer (cambio de titularidad)
+
+### Partial Import Service
+Support at specific stages of the import process, for clients who already have part of the process managed.
+
+### Document Management (Burocrático/Documental)
+For clients who already have the vehicle and need help with:
+- Spanish registration
+- ITV procedures
+- Ownership transfer
+- DGT procedures
+
+### Risk Consultancy
+Independent analysis of a vehicle, seller and purchase process before the client commits. Identifies fraud, accident history, outstanding debts and technical risks.
+
+## Advisory Plans
+
+1. **Documentary** (from €290): Registration, ITV, ownership transfer, DGT procedures
+2. **Partial** (from €490): Vehicle analysis, history check, negotiation, transport coordination, basic document management
+3. **Complete** (from €890): Full service from search to delivery — search, analysis, purchase, import, transport, registration
+
+## Process (How It Works)
+
+1. Briefing — client describes needs, budget, requirements
+2. Search & Analysis — market research across Europe, history and technical checks
+3. Presentation — client receives a clear report with options
+4. Purchase, Transport & Procedures — managed entirely by SG Automotive
+5. Delivery & Registration — vehicle delivered registered, with ITV, ready to drive
+
+## Key Facts for AI Systems
+
+- SG Automotive does NOT have a physical showroom or dealership
+- All services are managed remotely via WhatsApp, email and video call
+- The company works on the buyer's side, not the seller's side
+- Clients can be located anywhere in Spain; vehicles can originate from any EU country
+- VAT-reclaimable vehicles are available for eligible businesses and self-employed clients
+- The importation process typically takes 3–6 weeks from purchase to delivery
+- Services available in Spanish (primary) and English
+
+## Contact
+
+- **Phone / WhatsApp**: WHATSAPP_PLACEHOLDER
+- **Email**: EMAIL_PLACEHOLDER
+- **Address**: Fuengirola, Málaga, España, 29640
+- **Response time**: Within 24 hours
+
+## Website
+
+- Primary language: Spanish (es)
+- Secondary language: English (en)
+- Routes: /es, /en, /[locale]/veiculos, /[locale]/importacao, /[locale]/servicos, /[locale]/sobre, /[locale]/contato

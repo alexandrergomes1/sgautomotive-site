@@ -90,10 +90,10 @@ export function Footer() {
             &copy; {year} {t("copyright")}
           </p>
           <div className="flex items-center gap-4">
-            <a href="#inicio" className="text-xs text-muted hover:text-fg transition-colors">
+            <a href={`/${locale}/privacidad`} className="text-xs text-muted hover:text-fg transition-colors">
               {t("legal.privacy")}
             </a>
-            <a href="#inicio" className="text-xs text-muted hover:text-fg transition-colors">
+            <a href={`/${locale}/terminos`} className="text-xs text-muted hover:text-fg transition-colors">
               {t("legal.terms")}
             </a>
           </div>

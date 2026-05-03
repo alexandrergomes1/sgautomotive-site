@@ -16,20 +16,25 @@ export interface Car {
   km: number;
   fuel: FuelType;
   transmission: TransmissionType;
-  power: number;
+  power: number;         // cv / hp
   price: number;
   currency: "EUR";
-  origin: string;
-  image: string;
-  tags: CarTag[];
-  featured: boolean;
+  origin: string;        // país de origem (ex: "Alemania")
   color: string;
   doors: number;
+  image: string;         // URL da imagem principal
+  tags: CarTag[];
+  available: boolean;    // false = vendido / ocultar do catálogo
+  description?: string;  // texto breve opcional para o card
 }
+
+// ─── CATÁLOGO ATIVO ──────────────────────────────────────────────────────────
+// Substituir pelos dados reais ao receber os anúncios.
+// Manter available: false para ocultar sem apagar o registo.
 
 export const cars: Car[] = [
   {
-    id: "bmw-320d-2022",
+    id: "carro-1",
     make: "BMW",
     model: "320d",
     version: "Sport Line",
@@ -41,15 +46,14 @@ export const cars: Car[] = [
     price: 38900,
     currency: "EUR",
     origin: "Alemania",
-    image:
-      "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=800&q=80",
-    tags: ["iva-recuperable", "garantia"],
-    featured: true,
     color: "Blanco mineral",
     doors: 4,
+    image: "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=800&q=80",
+    tags: ["iva-recuperable", "garantia"],
+    available: true,
   },
   {
-    id: "mercedes-c200-2021",
+    id: "carro-2",
     make: "Mercedes-Benz",
     model: "C 200",
     version: "Avantgarde",
@@ -61,15 +65,14 @@ export const cars: Car[] = [
     price: 42500,
     currency: "EUR",
     origin: "Alemania",
-    image:
-      "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=800&q=80",
-    tags: ["garantia", "pronto-entrega"],
-    featured: true,
     color: "Gris grafito",
     doors: 4,
+    image: "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=800&q=80",
+    tags: ["garantia", "pronto-entrega"],
+    available: true,
   },
   {
-    id: "audi-a4-2021",
+    id: "carro-3",
     make: "Audi",
     model: "A4",
     version: "2.0 TDI S line",
@@ -81,113 +84,12 @@ export const cars: Car[] = [
     price: 36200,
     currency: "EUR",
     origin: "Alemania",
-    image:
-      "https://images.unsplash.com/photo-1606664515524-ed2f786a705b?w=800&q=80",
-    tags: ["iva-recuperable"],
-    featured: true,
     color: "Negro brillante",
     doors: 4,
-  },
-  {
-    id: "vw-golf-2022",
-    make: "Volkswagen",
-    model: "Golf",
-    version: "1.5 eTSI Style",
-    year: 2022,
-    km: 19000,
-    fuel: "plugin_hybrid",
-    transmission: "automatic",
-    power: 150,
-    price: 29800,
-    currency: "EUR",
-    origin: "Alemania",
-    image:
-      "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?w=800&q=80",
-    tags: ["pronto-entrega", "garantia"],
-    featured: true,
-    color: "Plata reflex",
-    doors: 5,
-  },
-  {
-    id: "bmw-x5-2021",
-    make: "BMW",
-    model: "X5",
-    version: "xDrive30d",
-    year: 2021,
-    km: 52000,
-    fuel: "diesel",
-    transmission: "automatic",
-    power: 286,
-    price: 64900,
-    currency: "EUR",
-    origin: "Alemania",
-    image:
-      "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?w=800&q=80",
-    tags: ["iva-recuperable", "garantia"],
-    featured: false,
-    color: "Azul mediterráneo",
-    doors: 5,
-  },
-  {
-    id: "mercedes-glc-2020",
-    make: "Mercedes-Benz",
-    model: "GLC 300",
-    version: "4MATIC AMG Line",
-    year: 2020,
-    km: 61000,
-    fuel: "gasoline",
-    transmission: "automatic",
-    power: 258,
-    price: 47500,
-    currency: "EUR",
-    origin: "Bélgica",
-    image:
-      "https://images.unsplash.com/photo-1592198084033-aade902d1aae?w=800&q=80",
-    tags: ["garantia"],
-    featured: false,
-    color: "Blanco polar",
-    doors: 5,
-  },
-  {
-    id: "audi-q5-2022",
-    make: "Audi",
-    model: "Q5",
-    version: "40 TDI quattro S line",
-    year: 2022,
-    km: 24000,
-    fuel: "diesel",
-    transmission: "automatic",
-    power: 204,
-    price: 56800,
-    currency: "EUR",
-    origin: "Países Bajos",
-    image:
-      "https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=800&q=80",
-    tags: ["iva-recuperable", "pronto-entrega"],
-    featured: false,
-    color: "Gris daytona",
-    doors: 5,
-  },
-  {
-    id: "tesla-model3-2022",
-    make: "Tesla",
-    model: "Model 3",
-    version: "Long Range AWD",
-    year: 2022,
-    km: 31000,
-    fuel: "electric",
-    transmission: "automatic",
-    power: 351,
-    price: 43900,
-    currency: "EUR",
-    origin: "Países Bajos",
-    image:
-      "https://images.unsplash.com/photo-1560958089-b8a1929cea89?w=800&q=80",
-    tags: ["garantia", "pronto-entrega"],
-    featured: false,
-    color: "Rojo multicoat",
-    doors: 4,
+    image: "https://images.unsplash.com/photo-1606664515524-ed2f786a705b?w=800&q=80",
+    tags: ["iva-recuperable"],
+    available: true,
   },
 ];
 
-export const featuredCars = cars.filter((car) => car.featured);
+export const availableCars = cars.filter((c) => c.available);

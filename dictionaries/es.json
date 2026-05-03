@@ -38,9 +38,10 @@
       "garantia": "Con garantía",
       "pronto-entrega": "Pronta entrega"
     },
-    "contact_vehicle": "Consultar",
+    "contact_vehicle": "Consultar vía WhatsApp",
     "km": "km",
-    "year": "Año"
+    "year": "Año",
+    "empty": "Próximamente nuevos vehículos disponibles. Contáctanos para más información."
   },
   "import_section": {
     "title": "Importación de vehículos a España",

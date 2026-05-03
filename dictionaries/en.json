@@ -38,9 +38,10 @@
       "garantia": "With warranty",
       "pronto-entrega": "Ready for delivery"
     },
-    "contact_vehicle": "Enquire",
+    "contact_vehicle": "Enquire via WhatsApp",
     "km": "km",
-    "year": "Year"
+    "year": "Year",
+    "empty": "New vehicles coming soon. Contact us for more information."
   },
   "import_section": {
     "title": "Vehicle importation to Spain",

@@ -1,7 +1,6 @@
 "use client";
 
-import Link from "next/link";
-import { useLocale, useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { ArrowRight, MapPin, Wifi, Languages } from "lucide-react";
 
@@ -15,7 +14,6 @@ function fadeUp(i: number) {
 
 export function Hero() {
   const t = useTranslations("hero");
-  const locale = useLocale();
 
   const trustItems = [
     { icon: Wifi, label: t("trust_1") },
@@ -24,7 +22,7 @@ export function Hero() {
   ];
 
   return (
-    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-bg pt-16">
+    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-bg pt-16" id="inicio">
       {/* Background gradient */}
       <div
         aria-hidden="true"
@@ -74,19 +72,19 @@ export function Hero() {
             {...fadeUp(3)}
             className="flex flex-col sm:flex-row gap-3 mb-16"
           >
-            <Link
-              href={`/${locale}/veiculos`}
+            <a
+              href="#veiculos"
               className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-accent text-bg font-semibold text-sm hover:bg-accent-light transition-colors"
             >
               {t("cta_vehicles")}
               <ArrowRight size={16} />
-            </Link>
-            <Link
-              href={`/${locale}/contato`}
+            </a>
+            <a
+              href="#contato"
               className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg border border-border-light text-fg text-sm font-medium hover:border-accent/50 hover:text-accent transition-colors"
             >
               {t("cta_consult")}
-            </Link>
+            </a>
           </motion.div>
 
           {/* Trust indicators */}

@@ -6,6 +6,15 @@ import { useLocale, useTranslations } from "next-intl";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { LocaleSwitcher } from "@/components/locale-switcher";
+import { Logo } from "@/components/logo";
+
+const NAV_LINKS = [
+  { anchor: "#veiculos", keyEs: "vehicles" },
+  { anchor: "#importacao", keyEs: "import" },
+  { anchor: "#servicos", keyEs: "services" },
+  { anchor: "#sobre", keyEs: "about" },
+  { anchor: "#contato", keyEs: "contact" },
+] as const;
 
 export function Header() {
   const t = useTranslations("nav");
@@ -14,72 +23,72 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
+    const onScroll = () => setScrolled(window.scrollY > 24);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const links = [
-    { href: `/${locale}/veiculos`, label: t("vehicles") },
-    { href: `/${locale}/importacao`, label: t("import") },
-    { href: `/${locale}/servicos`, label: t("services") },
-    { href: `/${locale}/sobre`, label: t("about") },
-    { href: `/${locale}/contato`, label: t("contact") },
-  ];
+  // Close mobile menu on resize to desktop
+  useEffect(() => {
+    const onResize = () => { if (window.innerWidth >= 768) setMobileOpen(false); };
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
         scrolled
-          ? "bg-bg/90 backdrop-blur-md border-b border-border"
+          ? "bg-bg/92 backdrop-blur-lg border-b border-border/60 shadow-sm shadow-black/20"
           : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-16 md:h-[68px]">
+
           {/* Logo */}
           <Link
-            href={`/${locale}`}
-            className="flex items-center gap-2 group"
-            aria-label="SG Automotive — Home"
+            href={`/${locale}#inicio`}
+            className="flex-shrink-0"
+            aria-label="SG Automotive — Inicio"
           >
-            <span className="text-lg font-bold tracking-tight text-fg">
-              SG{" "}
-              <span className="text-accent">Automotive</span>
-            </span>
+            <Logo variant="light" size="sm" />
           </Link>
 
           {/* Desktop nav */}
-          <nav className="hidden md:flex items-center gap-6" aria-label="Main navigation">
-            {links.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-sm text-muted hover:text-fg transition-colors"
+          <nav
+            className="hidden md:flex items-center gap-7"
+            aria-label="Navegación principal"
+          >
+            {NAV_LINKS.map(({ anchor, keyEs }) => (
+              <a
+                key={anchor}
+                href={anchor}
+                className="text-sm text-muted hover:text-fg transition-colors leading-none py-1"
               >
-                {link.label}
-              </Link>
+                {t(keyEs)}
+              </a>
             ))}
           </nav>
 
           {/* Desktop right */}
-          <div className="hidden md:flex items-center gap-4">
+          <div className="hidden md:flex items-center gap-5">
             <LocaleSwitcher />
-            <Link
-              href={`/${locale}/contato`}
-              className="text-sm font-medium px-4 py-2 rounded-md bg-accent text-bg hover:bg-accent-light transition-colors"
+            <a
+              href="#contato"
+              className="text-sm font-semibold px-4 py-2 rounded-md bg-accent text-bg hover:bg-accent-light transition-colors"
             >
               {t("cta")}
-            </Link>
+            </a>
           </div>
 
-          {/* Mobile toggle */}
+          {/* Mobile: locale + burger */}
           <div className="flex md:hidden items-center gap-3">
             <LocaleSwitcher />
             <button
               onClick={() => setMobileOpen((v) => !v)}
-              className="text-muted hover:text-fg p-1"
-              aria-label="Toggle menu"
+              className="p-1.5 text-muted hover:text-fg transition-colors"
+              aria-label={mobileOpen ? "Cerrar menú" : "Abrir menú"}
               aria-expanded={mobileOpen}
             >
               {mobileOpen ? <X size={22} /> : <Menu size={22} />}
@@ -95,27 +104,30 @@ export function Header() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.2 }}
-            className="md:hidden bg-surface/95 backdrop-blur-md border-b border-border overflow-hidden"
+            transition={{ duration: 0.22, ease: "easeInOut" }}
+            className="md:hidden bg-bg/96 backdrop-blur-lg border-b border-border overflow-hidden"
           >
-            <nav className="px-4 py-4 flex flex-col gap-1" aria-label="Mobile navigation">
-              {links.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
+            <nav
+              className="px-4 py-3 flex flex-col"
+              aria-label="Menú móvil"
+            >
+              {NAV_LINKS.map(({ anchor, keyEs }) => (
+                <a
+                  key={anchor}
+                  href={anchor}
                   onClick={() => setMobileOpen(false)}
-                  className="text-sm py-3 text-muted hover:text-fg border-b border-border/50 last:border-0 transition-colors"
+                  className="text-sm py-3.5 text-muted hover:text-fg border-b border-border/40 last:border-0 transition-colors"
                 >
-                  {link.label}
-                </Link>
+                  {t(keyEs)}
+                </a>
               ))}
-              <Link
-                href={`/${locale}/contato`}
+              <a
+                href="#contato"
                 onClick={() => setMobileOpen(false)}
-                className="mt-3 text-sm font-medium px-4 py-2.5 rounded-md bg-accent text-bg text-center hover:bg-accent-light transition-colors"
+                className="mt-4 mb-1 text-sm font-semibold px-4 py-3 rounded-lg bg-accent text-bg text-center hover:bg-accent-light transition-colors"
               >
                 {t("cta")}
-              </Link>
+              </a>
             </nav>
           </motion.div>
         )}

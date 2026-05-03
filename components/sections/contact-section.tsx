@@ -8,8 +8,8 @@ import { motion } from "framer-motion";
 import { MessageCircle, Mail, MapPin, Clock } from "lucide-react";
 import { toast } from "sonner";
 
-const WHATSAPP_NUMBER = "WHATSAPP_PLACEHOLDER";
-const EMAIL_ADDRESS = "EMAIL_PLACEHOLDER";
+const WHATSAPP_NUMBER = "34662625953";
+const EMAIL_ADDRESS = "sgautomotive.es@gmail.com";
 
 const schema = z.object({
   name: z.string().min(2),

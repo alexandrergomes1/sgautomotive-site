@@ -3,7 +3,7 @@
 import { MessageCircle } from "lucide-react";
 import { motion } from "framer-motion";
 
-const WHATSAPP_NUMBER = "WHATSAPP_PLACEHOLDER";
+const WHATSAPP_NUMBER = "34662625953";
 
 interface WhatsAppButtonProps {
   message?: string;

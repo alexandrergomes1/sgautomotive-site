@@ -42,6 +42,38 @@
     "km": "km",
     "year": "Año"
   },
+  "import_section": {
+    "title": "Importación de vehículos a España",
+    "subtitle": "Gestionamos todo el proceso, desde la selección del vehículo en Europa hasta la entrega con matrícula española.",
+    "badge": "Servicio completo",
+    "cta": "Solicitar gestión de importación",
+    "included_title": "¿Qué incluye?",
+    "included": [
+      "Análisis técnico y verificación de historial",
+      "Negociación y gestión de la compra",
+      "Transporte puerta a puerta con seguro",
+      "Despacho aduanero y homologación",
+      "ITV y matrícula española",
+      "Documentación completa en regla"
+    ],
+    "steps": [
+      {
+        "number": "01",
+        "title": "Origen",
+        "description": "Seleccionamos y verificamos el vehículo en el país de origen: Alemania, Francia, Países Bajos y más."
+      },
+      {
+        "number": "02",
+        "title": "Transporte",
+        "description": "Coordinamos el traslado hasta España con seguro de transporte incluido y seguimiento en tiempo real."
+      },
+      {
+        "number": "03",
+        "title": "Regularización",
+        "description": "Homologación, ITV, matrícula y entrega con toda la documentación en regla y lista para circular."
+      }
+    ]
+  },
   "services": {
     "title": "Lo que hacemos",
     "subtitle": "Servicios diseñados para quienes compran o importan vehículos con criterio y sin sorpresas.",

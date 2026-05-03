@@ -1,7 +1,8 @@
 export const SITE_URL = "https://sgautomotive.com";
 export const SITE_NAME = "SG Automotive";
-export const SITE_PHONE = "WHATSAPP_PLACEHOLDER";
-export const SITE_EMAIL = "EMAIL_PLACEHOLDER";
+export const SITE_PHONE = "+34 662 62 59 53";
+export const SITE_EMAIL = "sgautomotive.es@gmail.com";
+export const WHATSAPP_NUMBER = "34662625953";
 
 export function buildLocalBusinessSchema(locale: string) {
   const isEs = locale === "es";

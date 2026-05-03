@@ -42,6 +42,38 @@
     "km": "km",
     "year": "Year"
   },
+  "import_section": {
+    "title": "Vehicle importation to Spain",
+    "subtitle": "We manage the entire process, from vehicle selection in Europe to delivery with Spanish registration.",
+    "badge": "Full service",
+    "cta": "Request import management",
+    "included_title": "What's included?",
+    "included": [
+      "Technical analysis and history verification",
+      "Negotiation and purchase management",
+      "Door-to-door transport with insurance",
+      "Customs clearance and homologation",
+      "ITV and Spanish registration",
+      "Complete documentation in order"
+    ],
+    "steps": [
+      {
+        "number": "01",
+        "title": "Origin",
+        "description": "We select and verify the vehicle in the country of origin: Germany, France, Netherlands and more."
+      },
+      {
+        "number": "02",
+        "title": "Transport",
+        "description": "We coordinate transport to Spain with transport insurance included and real-time tracking."
+      },
+      {
+        "number": "03",
+        "title": "Regularisation",
+        "description": "Homologation, ITV, registration and delivery with all documentation in order and ready to drive."
+      }
+    ]
+  },
   "services": {
     "title": "What we do",
     "subtitle": "Services designed for those who buy or import vehicles with standards and no surprises.",

@@ -1,9 +1,13 @@
+"use client";
+
 import Link from "next/link";
 import { useTranslations, useLocale } from "next-intl";
 import { MapPin, Mail, Phone } from "lucide-react";
+import { Logo } from "@/components/logo";
 
-const WHATSAPP_PLACEHOLDER = "WHATSAPP_PLACEHOLDER";
-const EMAIL_PLACEHOLDER = "EMAIL_PLACEHOLDER";
+const WHATSAPP_NUMBER = "34662625953";
+const WHATSAPP_DISPLAY = "+34 662 62 59 53";
+const EMAIL_ADDRESS = "sgautomotive.es@gmail.com";
 
 export function Footer() {
   const t = useTranslations("footer");
@@ -11,23 +15,21 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   const navLinks = [
-    { href: `/${locale}/veiculos`, label: locale === "es" ? "Vehículos" : "Vehicles" },
-    { href: `/${locale}/importacao`, label: locale === "es" ? "Importación" : "Importation" },
-    { href: `/${locale}/servicos`, label: locale === "es" ? "Servicios" : "Services" },
-    { href: `/${locale}/sobre`, label: locale === "es" ? "Nosotros" : "About" },
-    { href: `/${locale}/contato`, label: locale === "es" ? "Contacto" : "Contact" },
+    { href: "#veiculos", label: locale === "es" ? "Vehículos" : "Vehicles" },
+    { href: "#importacao", label: locale === "es" ? "Importación" : "Importation" },
+    { href: "#servicos", label: locale === "es" ? "Servicios" : "Services" },
+    { href: "#sobre", label: locale === "es" ? "Nosotros" : "About" },
+    { href: "#contato", label: locale === "es" ? "Contacto" : "Contact" },
   ];
 
   return (
-    <footer className="bg-surface border-t border-border mt-auto">
+    <footer className="bg-surface border-t border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
           {/* Brand */}
           <div>
-            <Link href={`/${locale}`} className="inline-block mb-4">
-              <span className="text-xl font-bold tracking-tight text-fg">
-                SG <span className="text-accent">Automotive</span>
-              </span>
+            <Link href={`/${locale}#inicio`} className="inline-block mb-5" aria-label="SG Automotive">
+              <Logo variant="light" size="md" />
             </Link>
             <p className="text-muted text-sm leading-relaxed max-w-xs">
               {t("tagline")}
@@ -43,15 +45,15 @@ export function Footer() {
             <h3 className="text-xs font-semibold uppercase tracking-widest text-muted-2 mb-4">
               {t("links.title")}
             </h3>
-            <ul className="space-y-2">
+            <ul className="space-y-2.5">
               {navLinks.map((link) => (
                 <li key={link.href}>
-                  <Link
+                  <a
                     href={link.href}
                     className="text-sm text-muted hover:text-fg transition-colors"
                   >
                     {link.label}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
@@ -64,20 +66,20 @@ export function Footer() {
             </h3>
             <div className="space-y-3">
               <a
-                href={`https://wa.me/${WHATSAPP_PLACEHOLDER}`}
+                href={`https://wa.me/${WHATSAPP_NUMBER}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-sm text-muted hover:text-fg transition-colors"
               >
                 <Phone size={13} className="text-accent shrink-0" />
-                <span>{WHATSAPP_PLACEHOLDER}</span>
+                <span>{WHATSAPP_DISPLAY}</span>
               </a>
               <a
-                href={`mailto:${EMAIL_PLACEHOLDER}`}
+                href={`mailto:${EMAIL_ADDRESS}`}
                 className="flex items-center gap-2 text-sm text-muted hover:text-fg transition-colors"
               >
                 <Mail size={13} className="text-accent shrink-0" />
-                <span>{EMAIL_PLACEHOLDER}</span>
+                <span>{EMAIL_ADDRESS}</span>
               </a>
             </div>
           </div>
@@ -88,12 +90,12 @@ export function Footer() {
             &copy; {year} {t("copyright")}
           </p>
           <div className="flex items-center gap-4">
-            <Link href={`/${locale}`} className="text-xs text-muted hover:text-fg transition-colors">
+            <a href="#inicio" className="text-xs text-muted hover:text-fg transition-colors">
               {t("legal.privacy")}
-            </Link>
-            <Link href={`/${locale}`} className="text-xs text-muted hover:text-fg transition-colors">
+            </a>
+            <a href="#inicio" className="text-xs text-muted hover:text-fg transition-colors">
               {t("legal.terms")}
-            </Link>
+            </a>
           </div>
         </div>
       </div>

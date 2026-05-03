@@ -61,6 +61,11 @@ body {
   background: #4b5563;
 }
 
+/* Anchor offset for sticky header */
+[id] {
+  scroll-margin-top: 80px;
+}
+
 /* Focus styles */
 :focus-visible {
   outline: 2px solid #c8a96a;

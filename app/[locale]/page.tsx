@@ -3,6 +3,7 @@ import { getTranslations } from "next-intl/server";
 import { Hero } from "@/components/sections/hero";
 import { CatalogPreview } from "@/components/sections/catalog-preview";
 import { Services } from "@/components/sections/services";
+import { ImportacaoSection } from "@/components/sections/importacao-section";
 import { Plans } from "@/components/sections/plans";
 import { HowItWorks } from "@/components/sections/how-it-works";
 import { Differentials } from "@/components/sections/differentials";
@@ -110,6 +111,7 @@ export default async function HomePage({ params }: HomePageProps) {
       <Hero />
       <CatalogPreview />
       <Services />
+      <ImportacaoSection />
       <Plans />
       <HowItWorks />
       <Differentials />

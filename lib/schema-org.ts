@@ -16,7 +16,7 @@ export function buildLocalBusinessSchema(locale: string) {
       : "Online company specialised in buying, selling, importing and advising on vehicles in Europe. Based in Fuengirola, Costa del Sol, Málaga, Spain.",
     url: `${SITE_URL}/${locale}`,
     logo: `${SITE_URL}/logo-dark.png`,
-    image: `${SITE_URL}/og-image.png`,
+    image: `${SITE_URL}/${locale}/opengraph-image`,
     telephone: SITE_PHONE,
     email: SITE_EMAIL,
     address: {
@@ -56,7 +56,6 @@ export function buildLocalBusinessSchema(locale: string) {
       "Matrícula de vehículos en España",
       "Transporte de vehículos",
     ],
-    sameAs: [],
   };
 }
 

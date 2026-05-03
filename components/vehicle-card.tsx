@@ -1,8 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
-import { useTranslations, useLocale } from "next-intl";
+import { useTranslations } from "next-intl";
 import { Fuel, Gauge, Calendar, Zap } from "lucide-react";
 import { motion } from "framer-motion";
 import { type Car } from "@/data/cars";
@@ -21,7 +20,6 @@ const tagColors: Record<string, string> = {
 
 export function VehicleCard({ car, index = 0 }: VehicleCardProps) {
   const t = useTranslations("catalog");
-  const locale = useLocale();
 
   const fuelLabel = t(`fuel.${car.fuel}`);
   const transmissionLabel = t(`transmission.${car.transmission}`);
@@ -102,12 +100,12 @@ export function VehicleCard({ car, index = 0 }: VehicleCardProps) {
         </div>
 
         {/* CTA */}
-        <Link
-          href={`/${locale}/contato?veiculo=${car.id}`}
+        <a
+          href="#contato"
           className="block w-full text-center text-sm font-medium py-2.5 rounded-lg border border-accent/40 text-accent hover:bg-accent hover:text-bg transition-all duration-200"
         >
           {t("contact_vehicle")}
-        </Link>
+        </a>
       </div>
     </motion.article>
   );

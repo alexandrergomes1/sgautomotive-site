@@ -1,13 +1,11 @@
 "use client";
 
-import Link from "next/link";
-import { useLocale, useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 
 export function Plans() {
   const t = useTranslations("plans");
-  const locale = useLocale();
 
   const items = t.raw("items") as Array<{
     name: string;
@@ -18,7 +16,7 @@ export function Plans() {
   }>;
 
   return (
-    <section className="py-24 md:py-32 bg-surface" id="planos">
+    <section className="py-16 md:py-24 bg-surface" id="planos">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -79,16 +77,16 @@ export function Plans() {
                 ))}
               </ul>
 
-              <Link
-                href={`/${locale}/contato?plano=${plan.name.toLowerCase()}`}
+              <a
+                href="#contato"
                 className={`block text-center text-sm font-semibold py-3 rounded-lg transition-all duration-200 ${
                   plan.featured
                     ? "bg-accent text-bg hover:bg-accent-light"
                     : "border border-accent/40 text-accent hover:bg-accent hover:text-bg"
                 }`}
               >
-                {locale === "es" ? "Solicitar plan" : "Request plan"}
-              </Link>
+                {t("cta")}
+              </a>
             </motion.div>
           ))}
         </div>

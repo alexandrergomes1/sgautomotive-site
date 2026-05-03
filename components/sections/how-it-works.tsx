@@ -13,7 +13,7 @@ export function HowItWorks() {
   }>;
 
   return (
-    <section className="py-24 md:py-32 bg-bg" id="como-funciona">
+    <section className="py-16 md:py-24 bg-bg" id="como-funciona">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div

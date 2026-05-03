@@ -10,7 +10,7 @@ export function CatalogPreview() {
   const t = useTranslations("catalog");
 
   return (
-    <section className="py-24 md:py-32 bg-surface" id="veiculos">
+    <section className="py-16 md:py-24 bg-surface" id="veiculos">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">

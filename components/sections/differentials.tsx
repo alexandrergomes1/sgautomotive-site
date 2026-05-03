@@ -30,7 +30,7 @@ export function Differentials() {
   }>;
 
   return (
-    <section className="py-24 md:py-32 bg-surface" id="diferenciais">
+    <section className="py-16 md:py-24 bg-surface" id="diferenciais">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div

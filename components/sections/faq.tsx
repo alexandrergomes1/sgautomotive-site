@@ -15,7 +15,7 @@ export function FAQ() {
   }>;
 
   return (
-    <section className="py-24 md:py-32 bg-surface" id="faq">
+    <section className="py-16 md:py-24 bg-surface" id="faq">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div

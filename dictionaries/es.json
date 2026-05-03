@@ -114,6 +114,7 @@
     "title": "Planes de asesoría",
     "subtitle": "Elige el nivel de soporte que necesitas para tu proceso de compra o importación.",
     "badge": "Más popular",
+    "cta": "Solicitar plan",
     "items": [
       {
         "name": "Documental",
@@ -231,6 +232,7 @@
     "subtitle": "SG Automotive es una operación automotiva online, profesional y sin intermediarios innecesarios.",
     "body": "Somos una empresa basada en Fuengirola, Costa del Sol, especializada en la compra, venta, importación y asesoría de vehículos en Europa. Trabajamos de forma completamente remota, lo que nos permite operar con eficiencia y sin los costes de una concesionaria tradicional.",
     "body_2": "Nuestro enfoque es técnico, transparente y orientado al cliente. No vendemos por volumen: analizamos cada caso en detalle, identificamos los riesgos y acompañamos al comprador en cada etapa del proceso.",
+    "cta": "Hablar con nosotros",
     "stats": [
       { "value": "Costa del Sol", "label": "Base de operaciones" },
       { "value": "ES · EN", "label": "Idiomas de atención" },

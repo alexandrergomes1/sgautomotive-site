@@ -1,18 +1,15 @@
 "use client";
 
-import Link from "next/link";
-import { useLocale, useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
 
 export function AboutSection() {
   const t = useTranslations("about");
-  const locale = useLocale();
 
   const stats = t.raw("stats") as Array<{ value: string; label: string }>;
 
   return (
-    <section className="py-24 md:py-32 bg-bg" id="sobre">
+    <section className="py-16 md:py-24 bg-bg" id="sobre">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Text */}
@@ -30,13 +27,12 @@ export function AboutSection() {
             </p>
             <p className="text-muted leading-relaxed mb-4">{t("body")}</p>
             <p className="text-muted leading-relaxed mb-8">{t("body_2")}</p>
-            <Link
-              href={`/${locale}/sobre`}
+            <a
+              href="#contato"
               className="inline-flex items-center gap-2 text-sm font-medium text-accent hover:text-accent-light transition-colors"
             >
-              {locale === "es" ? "Conoce más sobre nosotros" : "Learn more about us"}
-              <ArrowRight size={16} />
-            </Link>
+              {t("cta")}
+            </a>
           </motion.div>
 
           {/* Stats */}

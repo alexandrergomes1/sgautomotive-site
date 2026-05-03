@@ -51,7 +51,7 @@ export function ContactSection() {
     "w-full bg-surface-2 border border-border rounded-lg px-4 py-3 text-sm text-fg placeholder:text-muted focus:outline-none focus:ring-1 focus:ring-accent/50 focus:border-accent/50 transition-colors";
 
   return (
-    <section className="py-24 md:py-32 bg-bg" id="contato">
+    <section className="py-16 md:py-24 bg-bg" id="contato">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           {/* Left */}

@@ -1,7 +1,6 @@
 "use client";
 
-import Link from "next/link";
-import { useLocale, useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { VehicleCard } from "@/components/vehicle-card";
@@ -9,7 +8,6 @@ import { featuredCars } from "@/data/cars";
 
 export function CatalogPreview() {
   const t = useTranslations("catalog");
-  const locale = useLocale();
 
   return (
     <section className="py-24 md:py-32 bg-surface" id="veiculos">
@@ -33,13 +31,13 @@ export function CatalogPreview() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <Link
-              href={`/${locale}/veiculos`}
+            <a
+              href="#contato"
               className="inline-flex items-center gap-2 text-sm text-accent hover:text-accent-light font-medium transition-colors whitespace-nowrap"
             >
               {t("view_all")}
               <ArrowRight size={16} />
-            </Link>
+            </a>
           </motion.div>
         </div>
 

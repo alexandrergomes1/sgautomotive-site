@@ -9,6 +9,7 @@ import { MessageCircle, Mail, MapPin, Clock } from "lucide-react";
 import { toast } from "sonner";
 
 const WHATSAPP_NUMBER = "34662625953";
+const WHATSAPP_DISPLAY = "+34 662 62 59 53";
 const EMAIL_ADDRESS = "sgautomotive.es@gmail.com";
 
 const schema = z.object({
@@ -33,11 +34,17 @@ export function ContactSection() {
   } = useForm<FormData>({ resolver: zodResolver(schema) });
 
   async function onSubmit(data: FormData) {
-    // Simulate submission — replace with real API call
-    await new Promise((r) => setTimeout(r, 800));
-    console.info("Contact form data:", data);
-    toast.success(t("form.success"));
-    reset();
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+    if (res.ok) {
+      toast.success(t("form.success"));
+      reset();
+    } else {
+      toast.error(t("form.error"));
+    }
   }
 
   const inputClass =
@@ -73,7 +80,7 @@ export function ContactSection() {
                   <div className="text-sm font-medium text-fg">
                     {t("whatsapp_label")}
                   </div>
-                  <div className="text-xs text-muted">{WHATSAPP_NUMBER}</div>
+                  <div className="text-xs text-muted">{WHATSAPP_DISPLAY}</div>
                 </div>
               </a>
 

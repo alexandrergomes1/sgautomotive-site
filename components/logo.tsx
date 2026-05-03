@@ -7,28 +7,27 @@ interface LogoProps {
   size?: "sm" | "md" | "lg";
 }
 
-// rendered height in px — width is auto (respects PNG aspect ratio)
-const heights = { sm: 40, md: 52, lg: 72 };
+const heights = { sm: 44, md: 60, lg: 80 };
 
 export function Logo({ variant = "light", size = "md", className }: LogoProps) {
-  // logo-transp.png = dark logo on transparent background
-  // variant="light" → dark background (header/footer) → invert to white
-  // variant="dark"  → light background → show dark logo as-is
+  // logo-dark.png  = white logo  → dark backgrounds (header, footer)
+  // logo-light.png = black logo  → light backgrounds
+  const src = variant === "light" ? "/logo-dark.png" : "/logo-light.png";
   const h = heights[size];
 
   return (
     <Image
-      src="/logo-transp.png"
+      src={src}
       alt="SG Automotive"
       height={h}
-      width={h * 6}
+      width={h * 3}
       unoptimized
-      style={{ height: h, width: "auto" }}
-      className={cn(
-        "select-none",
-        variant === "light" && "brightness-0 invert",
-        className
-      )}
+      style={{
+        height: h,
+        width: "auto",
+        ...(variant === "light" ? { mixBlendMode: "screen" } : {}),
+      }}
+      className={cn("select-none", className)}
       priority
     />
   );

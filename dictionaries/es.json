@@ -13,14 +13,14 @@
     "title": "Compra e importación de vehículos en Europa con gestión profesional.",
     "subtitle": "Vehículos seleccionados, análisis técnico y gestión completa o parcial del proceso de compra, importación y regularización en España.",
     "cta_vehicles": "Ver vehículos disponibles",
-    "cta_consult": "Solicitar consultoría",
+    "cta_consult": "Solicitar consulta",
     "trust_1": "Operación 100% online",
     "trust_2": "Atención en español e inglés",
     "trust_3": "Basados en Costa del Sol"
   },
   "catalog": {
-    "title": "Vehículos seleccionados",
-    "subtitle": "Cada unidad pasa por un proceso riguroso de análisis técnico, financiero y legal antes de ser presentada.",
+    "title": "Vehículos disponibles",
+    "subtitle": "Unidades verificadas, con historial comprobado y documentación en regla.",
     "view_all": "Ver catálogo completo",
     "fuel": {
       "diesel": "Diésel",
@@ -38,7 +38,7 @@
       "garantia": "Con garantía",
       "pronto-entrega": "Pronta entrega"
     },
-    "contact_vehicle": "Consultar vía WhatsApp",
+    "contact_vehicle": "Consultar por WhatsApp",
     "km": "km",
     "year": "Año",
     "empty": "Próximamente nuevos vehículos disponibles. Contáctanos para más información."
@@ -48,7 +48,7 @@
     "subtitle": "Gestionamos todo el proceso, desde la selección del vehículo en Europa hasta la entrega con matrícula española.",
     "badge": "Servicio completo",
     "cta": "Solicitar gestión de importación",
-    "included_title": "¿Qué incluye?",
+    "included_title": "Qué incluye el servicio",
     "included": [
       "Análisis técnico y verificación de historial",
       "Negociación y gestión de la compra",
@@ -97,7 +97,7 @@
       {
         "icon": "file-text",
         "title": "Apoyo documental",
-        "description": "Gestionamos toda la documentación necesaria: cambio de titularidad, alta de vehículo, ITV, seguro temporal y trámites ante DGT."
+        "description": "Gestionamos toda la documentación necesaria: cambio de titularidad, alta de vehículo, ITV, seguro temporal y trámites ante la DGT."
       },
       {
         "icon": "truck",
@@ -106,8 +106,8 @@
       },
       {
         "icon": "shield-check",
-        "title": "Consultoría segura",
-        "description": "¿Dudas sobre una oferta? Analizamos el vehículo, el vendedor y el proceso antes de que tomes ningún riesgo. Evita estafas y vehículos problemáticos."
+        "title": "Consultoría de riesgo",
+        "description": "Tienes dudas sobre una oferta? Analizamos el vehículo, el vendedor y el proceso antes de que asumas cualquier riesgo. Evita estafas y vehículos problemáticos."
       }
     ]
   },
@@ -126,7 +126,7 @@
           "Trámites ITV y homologación",
           "Cambio de titularidad",
           "Alta en DGT",
-          "Soporte por correo/WhatsApp"
+          "Soporte por correo y WhatsApp"
         ],
         "featured": false
       },
@@ -246,43 +246,43 @@
     "subtitle": "Todo lo que necesitas saber antes de empezar.",
     "items": [
       {
-        "question": "¿Tienen tienda física o showroom?",
+        "question": "Tienen tienda física o showroom?",
         "answer": "No. SG Automotive opera completamente de forma online y remota. Toda la comunicación, análisis y gestión se realiza por correo electrónico, WhatsApp y videollamada. Esto nos permite trabajar con mayor eficiencia y menor coste para el cliente."
       },
       {
-        "question": "¿Puedo importar un coche desde Alemania, Francia u otro país europeo?",
+        "question": "Puedo importar un coche desde Alemania, Francia u otro país europeo?",
         "answer": "Sí. Gestionamos la importación de vehículos desde cualquier país de la Unión Europea hacia España, incluyendo la compra, transporte, homologación, despacho y matrícula."
       },
       {
-        "question": "¿Qué documentación necesito para importar un vehículo?",
-        "answer": "En la mayoría de los casos necesitarás tu DNI o NIE, comprobante de domicilio en España y los documentos del vehículo (título de propiedad, ficha técnica y certificado de conformidad). Nosotros te guiamos en cada paso."
+        "question": "Qué documentación necesito para importar un vehículo?",
+        "answer": "En la mayoría de los casos necesitarás tu DNI o NIE, comprobante de domicilio en España y los documentos del vehículo (título de propiedad, ficha técnica y certificado de conformidad). Te guiamos en cada paso."
       },
       {
-        "question": "¿El precio que veo incluye todos los impuestos y trámites?",
+        "question": "El precio que veo incluye todos los impuestos y trámites?",
         "answer": "El precio de los vehículos en nuestro catálogo es el precio de coste. Los gastos de importación, IVA, impuesto de matriculación, ITV y transporte se detallan por separado en función del tipo de vehículo y origen."
       },
       {
-        "question": "¿Qué significa 'IVA recuperable' en los vehículos?",
+        "question": "Qué significa IVA recuperable en los vehículos?",
         "answer": "Algunos vehículos provienen de operaciones comerciales y permiten recuperar el IVA si eres autónomo o empresa con derecho a deducción. Es una ventaja fiscal significativa. Te indicamos cuáles aplican en cada caso."
       },
       {
-        "question": "¿Los vehículos tienen garantía?",
+        "question": "Los vehículos tienen garantía?",
         "answer": "Depende del vehículo y su procedencia. Los que aparecen con etiqueta 'Con garantía' incluyen garantía de fabricante vigente o garantía contractual. En otros casos podemos gestionar seguros de garantía adicionales."
       },
       {
-        "question": "¿Puedo contratarles solo para la parte documental si ya tengo el coche?",
+        "question": "Puedo contrataros solo para la parte documental si ya tengo el coche?",
         "answer": "Sí. Ofrecemos el Plan Documental, específicamente diseñado para gestionar la matrícula, ITV, cambio de titularidad y demás trámites si ya has adquirido el vehículo por tu cuenta."
       },
       {
-        "question": "¿Cuánto tiempo tarda el proceso de importación?",
+        "question": "Cuánto tiempo tarda el proceso de importación?",
         "answer": "El proceso completo suele tomar entre 3 y 6 semanas desde la compra del vehículo hasta la entrega matriculada en España, dependiendo del país de origen y la carga administrativa vigente."
       },
       {
-        "question": "¿Atienden a clientes de toda España?",
+        "question": "Atienden a clientes de toda España?",
         "answer": "Sí. Aunque estamos basados en Fuengirola, Málaga, operamos en remoto y podemos gestionar la importación y entrega en cualquier punto de España."
       },
       {
-        "question": "¿Cómo empiezo?",
+        "question": "Cómo empiezo?",
         "answer": "Simplemente escríbenos por WhatsApp o correo electrónico con tus necesidades. Haremos una consulta inicial gratuita para entender tu caso y explicarte las opciones más adecuadas."
       }
     ]
@@ -294,7 +294,7 @@
       "name": "Nombre completo",
       "email": "Correo electrónico",
       "phone": "Teléfono (opcional)",
-      "service": "¿Qué necesitas?",
+      "service": "Qué necesitas",
       "service_placeholder": "Selecciona un servicio",
       "services": [
         "Compra de vehículo",
@@ -308,7 +308,7 @@
       "message_placeholder": "Describe lo que buscas: tipo de vehículo, presupuesto, país de origen...",
       "submit": "Enviar consulta",
       "submitting": "Enviando...",
-      "success": "¡Mensaje enviado! Te respondemos en menos de 24 horas.",
+      "success": "Mensaje enviado. Te respondemos en menos de 24 horas.",
       "error": "Error al enviar. Inténtalo de nuevo o escríbenos por WhatsApp."
     },
     "whatsapp_label": "Escríbenos por WhatsApp",
@@ -322,11 +322,11 @@
     "links": {
       "title": "Navegación",
       "items": [
-        { "label": "Vehículos", "href": "/veiculos" },
-        { "label": "Importación", "href": "/importacao" },
-        { "label": "Servicios", "href": "/servicos" },
-        { "label": "Nosotros", "href": "/sobre" },
-        { "label": "Contacto", "href": "/contato" }
+        { "label": "Vehículos", "href": "#veiculos" },
+        { "label": "Importación", "href": "#importacao" },
+        { "label": "Servicios", "href": "#servicos" },
+        { "label": "Nosotros", "href": "#sobre" },
+        { "label": "Contacto", "href": "#contato" }
       ]
     },
     "legal": {
@@ -345,11 +345,11 @@
     },
     "vehicles": {
       "title": "Vehículos disponibles — SG Automotive",
-      "description": "Vehículos seleccionados con análisis técnico, historial verificado y documentación en regla. BMW, Mercedes, Audi, Volkswagen y más en Costa del Sol."
+      "description": "Vehículos seleccionados con análisis técnico, historial verificado y documentación en regla en Costa del Sol."
     },
     "import": {
       "title": "Importación de vehículos a España — SG Automotive",
-      "description": "Importación completa de coches desde Alemania, Francia, Holanda y Europa. Gestión de trámites, ITV, matrícula y transporte. Costa del Sol, Málaga."
+      "description": "Importación completa de coches desde Alemania, Francia, Países Bajos y Europa. Gestión de trámites, ITV, matrícula y transporte. Costa del Sol, Málaga."
     },
     "services": {
       "title": "Servicios — SG Automotive",

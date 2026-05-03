@@ -19,7 +19,7 @@
     "trust_3": "Based in Costa del Sol"
   },
   "catalog": {
-    "title": "Selected vehicles",
+    "title": "Available vehicles",
     "subtitle": "Every unit goes through a rigorous technical, financial and legal analysis process before being presented.",
     "view_all": "View full catalogue",
     "fuel": {
@@ -322,11 +322,11 @@
     "links": {
       "title": "Navigation",
       "items": [
-        { "label": "Vehicles", "href": "/veiculos" },
-        { "label": "Importation", "href": "/importacao" },
-        { "label": "Services", "href": "/servicos" },
-        { "label": "About", "href": "/sobre" },
-        { "label": "Contact", "href": "/contato" }
+        { "label": "Vehicles", "href": "#veiculos" },
+        { "label": "Importation", "href": "#importacao" },
+        { "label": "Services", "href": "#servicos" },
+        { "label": "About", "href": "#sobre" },
+        { "label": "Contact", "href": "#contato" }
       ]
     },
     "legal": {

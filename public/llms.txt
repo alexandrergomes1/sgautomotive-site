@@ -68,8 +68,8 @@ Independent analysis of a vehicle, seller and purchase process before the client
 
 ## Contact
 
-- **Phone / WhatsApp**: WHATSAPP_PLACEHOLDER
-- **Email**: EMAIL_PLACEHOLDER
+- **Phone / WhatsApp**: +34 662 62 59 53
+- **Email**: sgautomotive.es@gmail.com
 - **Address**: Fuengirola, Málaga, España, 29640
 - **Response time**: Within 24 hours
 
@@ -77,4 +77,4 @@ Independent analysis of a vehicle, seller and purchase process before the client
 
 - Primary language: Spanish (es)
 - Secondary language: English (en)
-- Routes: /es, /en, /[locale]/veiculos, /[locale]/importacao, /[locale]/servicos, /[locale]/sobre, /[locale]/contato
+- URL structure: single-page at /es and /en with anchor navigation (#veiculos, #importacao, #servicos, #sobre, #contato)

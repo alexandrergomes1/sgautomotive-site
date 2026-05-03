@@ -7,12 +7,12 @@ interface LogoProps {
   size?: "sm" | "md" | "lg";
 }
 
-// height in px; width is auto (actual ratio depends on the PNG)
-const heights = { sm: 28, md: 36, lg: 48 };
+// rendered height in px — width is auto (respects PNG aspect ratio)
+const heights = { sm: 40, md: 52, lg: 72 };
 
 export function Logo({ variant = "light", size = "md", className }: LogoProps) {
-  // logo-dark.png = white version (for dark backgrounds)
-  // logo-light.png = black version (for light backgrounds)
+  // logo-dark.png  = white logo  → dark backgrounds (header, footer)
+  // logo-light.png = black logo  → light backgrounds
   const src = variant === "light" ? "/logo-dark.png" : "/logo-light.png";
   const h = heights[size];
 
@@ -21,7 +21,8 @@ export function Logo({ variant = "light", size = "md", className }: LogoProps) {
       src={src}
       alt="SG Automotive"
       height={h}
-      width={h * 5}
+      width={h * 6}
+      unoptimized
       style={{ height: h, width: "auto" }}
       className={cn("select-none", className)}
       priority

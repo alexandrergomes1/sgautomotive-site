@@ -16,79 +16,78 @@ export interface Car {
   km: number;
   fuel: FuelType;
   transmission: TransmissionType;
-  power: number;         // cv / hp
+  power: number;         // cv
   price: number;
   currency: "EUR";
-  origin: string;        // país de origem (ex: "Alemania")
+  origin: string;
   color: string;
   doors: number;
-  image: string;         // URL da imagem principal
+  image: string;
   tags: CarTag[];
-  available: boolean;    // false = vendido / ocultar do catálogo
-  description?: string;  // texto breve opcional para o card
+  available: boolean;    // false = vendido / ocultar
+  description?: string;  // texto breve opcional
 }
-
-// ─── CATÁLOGO ATIVO ──────────────────────────────────────────────────────────
-// Substituir pelos dados reais ao receber os anúncios.
-// Manter available: false para ocultar sem apagar o registo.
 
 export const cars: Car[] = [
   {
-    id: "carro-1",
-    make: "BMW",
-    model: "320d",
-    version: "Sport Line",
-    year: 2022,
-    km: 28000,
-    fuel: "diesel",
-    transmission: "automatic",
-    power: 190,
-    price: 38900,
-    currency: "EUR",
-    origin: "Alemania",
-    color: "Blanco mineral",
-    doors: 4,
-    image: "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=800&q=80",
-    tags: ["iva-recuperable", "garantia"],
-    available: true,
-  },
-  {
-    id: "carro-2",
-    make: "Mercedes-Benz",
-    model: "C 200",
-    version: "Avantgarde",
+    id: "opel-corsa-2021",
+    make: "Opel",
+    model: "Corsa",
+    version: "1.5D DT Edition 5p",
     year: 2021,
-    km: 41000,
-    fuel: "hybrid",
-    transmission: "automatic",
-    power: 204,
-    price: 42500,
-    currency: "EUR",
-    origin: "Alemania",
-    color: "Gris grafito",
-    doors: 4,
-    image: "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=800&q=80",
-    tags: ["garantia", "pronto-entrega"],
-    available: true,
-  },
-  {
-    id: "carro-3",
-    make: "Audi",
-    model: "A4",
-    version: "2.0 TDI S line",
-    year: 2021,
-    km: 35000,
+    km: 88000,
     fuel: "diesel",
-    transmission: "automatic",
-    power: 163,
-    price: 36200,
+    transmission: "manual",
+    power: 102,
+    price: 9980,
     currency: "EUR",
-    origin: "Alemania",
-    color: "Negro brillante",
-    doors: 4,
-    image: "https://images.unsplash.com/photo-1606664515524-ed2f786a705b?w=800&q=80",
+    origin: "España",
+    color: "Blanco",
+    doors: 5,
+    image: "https://a.ccdn.es/cnet/2026/03/06/70134373/2093592353_g.jpg",
     tags: ["iva-recuperable"],
     available: true,
+    description: "ITV hasta 2027 · IVA recuperable · CarPlay/Android Auto",
+  },
+  {
+    id: "citroen-c3-2021",
+    make: "Citroën",
+    model: "C3",
+    version: "PureTech 83 Feel Pack 5p",
+    year: 2021,
+    km: 77000,
+    fuel: "gasoline",
+    transmission: "manual",
+    power: 83,
+    price: 9200,
+    currency: "EUR",
+    origin: "España",
+    color: "Blanco",
+    doors: 5,
+    image: "https://a.ccdn.es/cnet/2026/03/30/70310045/2097758588_g.jpg",
+    tags: ["pronto-entrega"],
+    available: true,
+    description: "Neumáticos Goodyear nuevos · Sensores aparcamiento · Etiqueta medioambiental",
+  },
+  {
+    id: "peugeot-2008-2021",
+    make: "Peugeot",
+    model: "2008",
+    version: "Allure Pack BlueHDI 110 5p",
+    year: 2021,
+    km: 159980,
+    fuel: "diesel",
+    transmission: "manual",
+    power: 110,
+    price: 11480,
+    currency: "EUR",
+    origin: "España",
+    color: "Blanco",
+    doors: 5,
+    image: "https://a.ccdn.es/cnet/2026/03/05/70130734/2093484741_g.jpg",
+    tags: ["iva-recuperable"],
+    available: true,
+    description: "ITV hasta 2027 · IVA recuperable · Control crucero · Llantas aleación",
   },
 ];
 

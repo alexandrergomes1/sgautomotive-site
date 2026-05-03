@@ -15,7 +15,7 @@ export function buildLocalBusinessSchema(locale: string) {
       ? "Empresa online especializada en compra, venta, importación y asesoría de vehículos en Europa. Basada en Fuengirola, Costa del Sol, Málaga, España."
       : "Online company specialised in buying, selling, importing and advising on vehicles in Europe. Based in Fuengirola, Costa del Sol, Málaga, Spain.",
     url: `${SITE_URL}/${locale}`,
-    logo: `${SITE_URL}/logo.png`,
+    logo: `${SITE_URL}/logo-dark.png`,
     image: `${SITE_URL}/og-image.png`,
     telephone: SITE_PHONE,
     email: SITE_EMAIL,
@@ -56,9 +56,7 @@ export function buildLocalBusinessSchema(locale: string) {
       "Matrícula de vehículos en España",
       "Transporte de vehículos",
     ],
-    sameAs: [
-      `https://github.com/alexandrergomes1/sgautomotive-site`,
-    ],
+    sameAs: [],
   };
 }
 
@@ -86,14 +84,6 @@ export function buildWebsiteSchema(locale: string) {
     name: "SG Automotive",
     url: `${SITE_URL}/${locale}`,
     inLanguage: locale === "es" ? "es-ES" : "en-GB",
-    potentialAction: {
-      "@type": "SearchAction",
-      target: {
-        "@type": "EntryPoint",
-        urlTemplate: `${SITE_URL}/${locale}/veiculos?q={search_term_string}`,
-      },
-      "query-input": "required name=search_term_string",
-    },
   };
 }
 

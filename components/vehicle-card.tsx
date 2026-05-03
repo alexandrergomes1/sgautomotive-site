@@ -50,6 +50,7 @@ export function VehicleCard({ car, index = 0 }: VehicleCardProps) {
           fill
           className="object-cover transition-transform duration-500 group-hover:scale-105"
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          priority={index === 0}
         />
         {/* Tags */}
         {car.tags.length > 0 && (

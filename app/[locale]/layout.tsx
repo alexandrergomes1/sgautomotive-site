@@ -39,6 +39,9 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} className={geist.variable} suppressHydrationWarning>
+      <head>
+        <link rel="preconnect" href="https://a.ccdn.es" />
+      </head>
       <body className="min-h-screen bg-bg text-fg antialiased">
         <NextIntlClientProvider messages={messages}>
           <Header />

@@ -74,7 +74,7 @@ export function ImportacaoSection() {
           </motion.div>
 
           {/* Right column — steps */}
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-5">
             {steps.map((step, i) => (
               <motion.div
                 key={step.number}

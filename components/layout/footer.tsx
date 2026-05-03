@@ -45,7 +45,7 @@ export function Footer() {
             <h3 className="text-xs font-semibold uppercase tracking-widest text-muted-2 mb-4">
               {t("links.title")}
             </h3>
-            <ul className="space-y-2.5">
+            <ul className="space-y-3">
               {navLinks.map((link) => (
                 <li key={link.href}>
                   <a
@@ -85,7 +85,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-border pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <div className="border-t border-border pt-8 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-xs text-muted">
             &copy; {year} {t("copyright")}
           </p>

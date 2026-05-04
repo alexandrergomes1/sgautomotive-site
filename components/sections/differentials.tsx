@@ -1,7 +1,7 @@
 import { getTranslations } from "next-intl/server";
 import { BarChart2, Eye, Shield, Globe, Wifi, MapPin } from "lucide-react";
 import type { ElementType } from "react";
-import { FadeUp, StaggerGrid, StaggerItem } from "@/components/ui/animate";
+import { FadeUp, AnimateItem } from "@/components/ui/animate";
 
 const ICONS: Record<string, ElementType> = {
   "bar-chart-2": BarChart2,
@@ -31,12 +31,12 @@ export async function Differentials() {
           <p className="text-muted text-lg">{t("subtitle")}</p>
         </FadeUp>
 
-        <StaggerGrid className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {items.map((item) => {
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {items.map((item, i) => {
             const Icon = ICONS[item.icon] ?? Globe;
             return (
-              <StaggerItem key={item.title} className="flex">
-                <div className="flex gap-4 p-5 rounded-xl bg-bg border border-border hover:border-border-light transition-colors w-full">
+              <AnimateItem key={item.title} delay={i * 0.07}>
+                <div className="flex gap-4 p-5 rounded-xl bg-bg border border-border hover:border-border-light transition-colors h-full">
                   <div className="w-9 h-9 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center shrink-0 mt-0.5">
                     <Icon size={16} className="text-accent" />
                   </div>
@@ -45,10 +45,10 @@ export async function Differentials() {
                     <p className="text-muted text-sm leading-relaxed">{item.description}</p>
                   </div>
                 </div>
-              </StaggerItem>
+              </AnimateItem>
             );
           })}
-        </StaggerGrid>
+        </div>
       </div>
     </section>
   );

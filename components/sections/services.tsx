@@ -1,7 +1,7 @@
 import { getTranslations } from "next-intl/server";
 import { Car, Search, Ship, FileText, Truck, ShieldCheck } from "lucide-react";
 import type { ElementType } from "react";
-import { FadeUp, StaggerGrid, StaggerItem } from "@/components/ui/animate";
+import { FadeUp, AnimateItem } from "@/components/ui/animate";
 
 const ICONS: Record<string, ElementType> = {
   car: Car,
@@ -31,11 +31,11 @@ export async function Services() {
           <p className="text-muted text-lg">{t("subtitle")}</p>
         </FadeUp>
 
-        <StaggerGrid className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {items.map((item) => {
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {items.map((item, i) => {
             const Icon = ICONS[item.icon] ?? Car;
             return (
-              <StaggerItem key={item.title}>
+              <AnimateItem key={item.title} delay={i * 0.07}>
                 <div className="group p-6 bg-surface border border-border rounded-xl hover:border-accent/30 transition-all duration-300 h-full">
                   <div className="w-10 h-10 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center mb-5 group-hover:bg-accent/15 transition-colors">
                     <Icon size={18} className="text-accent" />
@@ -45,10 +45,10 @@ export async function Services() {
                     {item.description}
                   </p>
                 </div>
-              </StaggerItem>
+              </AnimateItem>
             );
           })}
-        </StaggerGrid>
+        </div>
       </div>
     </section>
   );

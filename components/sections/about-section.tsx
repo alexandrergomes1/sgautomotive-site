@@ -1,5 +1,5 @@
 import { getTranslations } from "next-intl/server";
-import { SlideIn } from "@/components/ui/animate";
+import { SlideIn, ScaleIn } from "@/components/ui/animate";
 
 export async function AboutSection() {
   const t = await getTranslations("about");
@@ -24,16 +24,17 @@ export async function AboutSection() {
             </a>
           </SlideIn>
 
-          <SlideIn from="right" delay={0.15} className="grid grid-cols-2 gap-4">
-            {stats.map((stat) => (
-              <div
-                key={stat.label}
-                className="p-6 bg-surface border border-border rounded-xl"
-              >
-                <div className="text-2xl font-bold text-accent mb-1.5">{stat.value}</div>
-                <div className="text-sm text-muted">{stat.label}</div>
-              </div>
-            ))}
+          <SlideIn from="right" delay={0.15}>
+            <div className="grid grid-cols-2 gap-4">
+              {stats.map((stat, i) => (
+                <ScaleIn key={stat.label} delay={0.2 + i * 0.08}>
+                  <div className="p-6 bg-surface border border-border rounded-xl">
+                    <div className="text-2xl font-bold text-accent mb-1.5">{stat.value}</div>
+                    <div className="text-sm text-muted">{stat.label}</div>
+                  </div>
+                </ScaleIn>
+              ))}
+            </div>
           </SlideIn>
         </div>
       </div>

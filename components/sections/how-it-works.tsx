@@ -1,5 +1,5 @@
 import { getTranslations } from "next-intl/server";
-import { FadeUp, StaggerGrid, StaggerItem } from "@/components/ui/animate";
+import { FadeUp, AnimateItem } from "@/components/ui/animate";
 
 export async function HowItWorks() {
   const t = await getTranslations("how_it_works");
@@ -25,17 +25,17 @@ export async function HowItWorks() {
             aria-hidden="true"
             className="hidden lg:block absolute top-8 left-[calc(10%+2rem)] right-[calc(10%+2rem)] h-px bg-gradient-to-r from-transparent via-border to-transparent"
           />
-          <StaggerGrid className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
-            {steps.map((step) => (
-              <StaggerItem key={step.number} className="flex flex-col items-center text-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
+            {steps.map((step, i) => (
+              <AnimateItem key={step.number} delay={i * 0.1} className="flex flex-col items-center text-center">
                 <div className="w-16 h-16 rounded-full bg-surface border border-border flex items-center justify-center text-accent font-bold text-xl mb-5">
                   {step.number}
                 </div>
                 <h3 className="font-semibold text-fg mb-2">{step.title}</h3>
                 <p className="text-muted text-sm leading-relaxed">{step.description}</p>
-              </StaggerItem>
+              </AnimateItem>
             ))}
-          </StaggerGrid>
+          </div>
         </div>
       </div>
     </section>

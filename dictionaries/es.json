@@ -10,12 +10,12 @@
   },
   "hero": {
     "badge": "Costa del Sol · Fuengirola · Málaga",
-    "title": "Compra e importación de vehículos en Europa con gestión profesional.",
+    "title": "Compra y importación de vehículos en Europa con gestión profesional.",
     "subtitle": "Vehículos seleccionados, análisis técnico y gestión completa o parcial del proceso de compra, importación y regularización en España.",
     "cta_vehicles": "Ver vehículos disponibles",
     "cta_consult": "Solicitar consulta",
     "trust_1": "Operación 100% online",
-    "trust_2": "Atención en español e inglés",
+    "trust_2": "Atención en español y en inglés",
     "trust_3": "Basados en Costa del Sol"
   },
   "catalog": {
@@ -318,7 +318,7 @@
     "or": "o"
   },
   "footer": {
-    "tagline": "Compra e importación de vehículos en Europa con gestión profesional.",
+    "tagline": "Compra y importación de vehículos en Europa con gestión profesional.",
     "links": {
       "title": "Navegación",
       "items": [

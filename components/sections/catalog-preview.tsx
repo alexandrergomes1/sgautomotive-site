@@ -1,7 +1,7 @@
 import { getTranslations } from "next-intl/server";
 import { VehicleCard } from "@/components/vehicle-card";
 import { availableCars } from "@/data/cars";
-import { FadeUp, StaggerGrid, StaggerItem } from "@/components/ui/animate";
+import { FadeUp, AnimateItem } from "@/components/ui/animate";
 
 export async function CatalogPreview() {
   const t = await getTranslations("catalog");
@@ -28,13 +28,13 @@ export async function CatalogPreview() {
             <p className="text-muted text-sm">{t("empty")}</p>
           </div>
         ) : (
-          <StaggerGrid className={`grid grid-cols-1 gap-5 ${gridClass}`}>
+          <div className={`grid grid-cols-1 gap-5 ${gridClass}`}>
             {availableCars.map((car, i) => (
-              <StaggerItem key={car.id} className="flex flex-col">
+              <AnimateItem key={car.id} delay={i * 0.08} className="flex flex-col">
                 <VehicleCard car={car} index={i} />
-              </StaggerItem>
+              </AnimateItem>
             ))}
-          </StaggerGrid>
+          </div>
         )}
       </div>
     </section>

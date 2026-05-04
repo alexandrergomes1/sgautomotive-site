@@ -1,6 +1,6 @@
 import { getTranslations } from "next-intl/server";
 import { Check } from "lucide-react";
-import { FadeUp, StaggerGrid, StaggerItem } from "@/components/ui/animate";
+import { FadeUp, AnimateItem } from "@/components/ui/animate";
 
 export async function Plans() {
   const t = await getTranslations("plans");
@@ -23,9 +23,9 @@ export async function Plans() {
           <p className="text-muted text-lg">{t("subtitle")}</p>
         </FadeUp>
 
-        <StaggerGrid className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
-          {items.map((plan) => (
-            <StaggerItem key={plan.name} className="flex flex-col">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
+          {items.map((plan, i) => (
+            <AnimateItem key={plan.name} delay={i * 0.1} className="flex flex-col">
               <div
                 className={`relative flex flex-col flex-1 rounded-xl border p-7 transition-all duration-300 ${
                   plan.featured
@@ -72,9 +72,9 @@ export async function Plans() {
                   {t("cta")}
                 </a>
               </div>
-            </StaggerItem>
+            </AnimateItem>
           ))}
-        </StaggerGrid>
+        </div>
       </div>
     </section>
   );

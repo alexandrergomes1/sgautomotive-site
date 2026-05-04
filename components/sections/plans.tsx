@@ -1,11 +1,8 @@
-"use client";
-
-import { useTranslations } from "next-intl";
-import { motion } from "framer-motion";
+import { getTranslations } from "next-intl/server";
 import { Check } from "lucide-react";
 
-export function Plans() {
-  const t = useTranslations("plans");
+export async function Plans() {
+  const t = await getTranslations("plans");
 
   const items = t.raw("items") as Array<{
     name: string;
@@ -18,29 +15,17 @@ export function Plans() {
   return (
     <section className="py-16 md:py-24 bg-surface" id="planos">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center max-w-2xl mx-auto mb-16"
-        >
+        <div className="text-center max-w-2xl mx-auto mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-fg mb-4">
             {t("title")}
           </h2>
           <p className="text-muted text-lg">{t("subtitle")}</p>
-        </motion.div>
+        </div>
 
-        {/* Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
-          {items.map((plan, i) => (
-            <motion.div
+          {items.map((plan) => (
+            <div
               key={plan.name}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.45, delay: i * 0.1, ease: "easeOut" }}
               className={`relative flex flex-col rounded-xl border p-7 transition-all duration-300 ${
                 plan.featured
                   ? "border-accent bg-surface-2 shadow-xl shadow-accent/10"
@@ -61,9 +46,7 @@ export function Plans() {
               </div>
 
               <div className="mb-6">
-                <span className="text-2xl font-bold text-accent">
-                  {plan.price}
-                </span>
+                <span className="text-2xl font-bold text-accent">{plan.price}</span>
               </div>
 
               <ul className="space-y-3 flex-1 mb-8">
@@ -87,7 +70,7 @@ export function Plans() {
               >
                 {t("cta")}
               </a>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

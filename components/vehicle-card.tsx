@@ -1,9 +1,6 @@
-"use client";
-
 import Image from "next/image";
-import { useTranslations, useLocale } from "next-intl";
+import { getTranslations, getLocale } from "next-intl/server";
 import { Fuel, Gauge, Calendar, Zap } from "lucide-react";
-import { motion } from "framer-motion";
 import { type Car } from "@/data/cars";
 import { formatPrice, formatKm } from "@/lib/utils";
 
@@ -20,9 +17,11 @@ const tagColors: Record<string, string> = {
   "pronto-entrega": "bg-blue-500/15 text-blue-400 border-blue-500/30",
 };
 
-export function VehicleCard({ car, index = 0 }: VehicleCardProps) {
-  const t = useTranslations("catalog");
-  const locale = useLocale();
+export async function VehicleCard({ car, index = 0 }: VehicleCardProps) {
+  const [t, locale] = await Promise.all([
+    getTranslations("catalog"),
+    getLocale(),
+  ]);
 
   const fuelLabel = t(`fuel.${car.fuel}`);
   const transmissionLabel = t(`transmission.${car.transmission}`);
@@ -35,14 +34,7 @@ export function VehicleCard({ car, index = 0 }: VehicleCardProps) {
   const waHref = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(waMessage)}`;
 
   return (
-    <motion.article
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-60px" }}
-      transition={{ duration: 0.45, delay: index * 0.08, ease: "easeOut" }}
-      className="group bg-surface border border-border rounded-xl overflow-hidden hover:border-accent/40 transition-all duration-300 hover:shadow-xl hover:shadow-accent/5 flex flex-col"
-    >
-      {/* Image */}
+    <article className="group bg-surface border border-border rounded-xl overflow-hidden hover:border-accent/40 transition-all duration-300 hover:shadow-xl hover:shadow-accent/5 flex flex-col">
       <div className="relative aspect-[16/9] overflow-hidden bg-surface-2 shrink-0">
         <Image
           src={car.image}
@@ -52,7 +44,6 @@ export function VehicleCard({ car, index = 0 }: VehicleCardProps) {
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           priority={index === 0}
         />
-        {/* Tags */}
         {car.tags.length > 0 && (
           <div className="absolute top-3 left-3 flex flex-wrap gap-1.5">
             {car.tags.map((tag) => (
@@ -65,15 +56,11 @@ export function VehicleCard({ car, index = 0 }: VehicleCardProps) {
             ))}
           </div>
         )}
-        {/* Price */}
         <div className="absolute bottom-3 right-3 bg-bg/90 backdrop-blur-sm border border-border/60 rounded-lg px-3 py-1.5">
-          <span className="text-accent font-bold text-base">
-            {formatPrice(car.price)}
-          </span>
+          <span className="text-accent font-bold text-base">{formatPrice(car.price)}</span>
         </div>
       </div>
 
-      {/* Content */}
       <div className="p-5 flex flex-col flex-1">
         <div className="mb-3">
           <div className="flex items-start justify-between gap-2">
@@ -93,7 +80,6 @@ export function VehicleCard({ car, index = 0 }: VehicleCardProps) {
           <p className="text-muted text-xs leading-relaxed mb-3">{car.description}</p>
         )}
 
-        {/* Specs */}
         <div className="grid grid-cols-2 gap-2 mb-4">
           <div className="flex items-center gap-1.5 text-xs text-muted">
             <Calendar size={12} className="text-accent/70 shrink-0" />
@@ -113,7 +99,6 @@ export function VehicleCard({ car, index = 0 }: VehicleCardProps) {
           </div>
         </div>
 
-        {/* CTA — pushes to bottom */}
         <div className="mt-auto">
           <a
             href={waHref}
@@ -125,6 +110,6 @@ export function VehicleCard({ car, index = 0 }: VehicleCardProps) {
           </a>
         </div>
       </div>
-    </motion.article>
+    </article>
   );
 }

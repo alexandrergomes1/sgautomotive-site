@@ -1,7 +1,5 @@
-"use client";
-
 import Link from "next/link";
-import { useTranslations, useLocale } from "next-intl";
+import { getTranslations, getLocale } from "next-intl/server";
 import { MapPin, Mail, Phone } from "lucide-react";
 import { Logo } from "@/components/logo";
 
@@ -9,9 +7,11 @@ const WHATSAPP_NUMBER = "34662625953";
 const WHATSAPP_DISPLAY = "+34 662 62 59 53";
 const EMAIL_ADDRESS = "sgautomotive.es@gmail.com";
 
-export function Footer() {
-  const t = useTranslations("footer");
-  const locale = useLocale();
+export async function Footer() {
+  const [t, locale] = await Promise.all([
+    getTranslations("footer"),
+    getLocale(),
+  ]);
   const year = new Date().getFullYear();
 
   const navLinks = [
@@ -26,7 +26,6 @@ export function Footer() {
     <footer className="bg-surface border-t border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
-          {/* Brand */}
           <div>
             <Link href={`/${locale}#inicio`} className="inline-block mb-5" aria-label="SG Automotive">
               <Logo variant="light" size="md" />
@@ -40,7 +39,6 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Navigation */}
           <div>
             <h3 className="text-xs font-semibold uppercase tracking-widest text-muted-2 mb-4">
               {t("links.title")}
@@ -59,7 +57,6 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Contact */}
           <div>
             <h3 className="text-xs font-semibold uppercase tracking-widest text-muted-2 mb-4">
               {locale === "es" ? "Contacto" : "Contact"}

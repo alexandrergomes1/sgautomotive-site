@@ -34,7 +34,7 @@ export async function VehicleCard({ car, index = 0 }: VehicleCardProps) {
   const waHref = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(waMessage)}`;
 
   return (
-    <article className="group bg-surface border border-border rounded-xl overflow-hidden hover:border-accent/40 transition-all duration-300 hover:shadow-xl hover:shadow-accent/5 flex flex-col">
+    <article className="group bg-surface border border-border rounded-xl overflow-hidden hover:border-accent/40 transition-all duration-300 hover:shadow-xl hover:shadow-accent/5 flex flex-col flex-1">
       <div className="relative aspect-[16/9] overflow-hidden bg-surface-2 shrink-0">
         <Image
           src={car.image}

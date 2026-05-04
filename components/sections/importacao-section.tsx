@@ -1,5 +1,6 @@
 import { getTranslations } from "next-intl/server";
 import { CheckCircle, ArrowRight } from "lucide-react";
+import { SlideIn } from "@/components/ui/animate";
 
 export async function ImportacaoSection() {
   const t = await getTranslations("import_section");
@@ -19,7 +20,7 @@ export async function ImportacaoSection() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-          <div>
+          <SlideIn from="left">
             <h2 className="text-3xl sm:text-4xl font-bold text-fg mb-4 leading-tight">
               {t("title")}
             </h2>
@@ -44,9 +45,9 @@ export async function ImportacaoSection() {
               {t("cta")}
               <ArrowRight size={16} />
             </a>
-          </div>
+          </SlideIn>
 
-          <div className="flex flex-col gap-5">
+          <SlideIn from="right" delay={0.1} className="flex flex-col gap-5">
             {steps.map((step) => (
               <div
                 key={step.number}
@@ -61,7 +62,7 @@ export async function ImportacaoSection() {
                 </div>
               </div>
             ))}
-          </div>
+          </SlideIn>
         </div>
       </div>
     </section>

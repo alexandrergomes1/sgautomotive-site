@@ -1,4 +1,5 @@
 import { getTranslations } from "next-intl/server";
+import { SlideIn } from "@/components/ui/animate";
 
 export async function AboutSection() {
   const t = await getTranslations("about");
@@ -8,7 +9,7 @@ export async function AboutSection() {
     <section className="py-16 md:py-24 bg-bg" id="sobre">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div>
+          <SlideIn from="left">
             <h2 className="text-3xl sm:text-4xl font-bold text-fg mb-4">
               {t("title")}
             </h2>
@@ -21,9 +22,9 @@ export async function AboutSection() {
             >
               {t("cta")}
             </a>
-          </div>
+          </SlideIn>
 
-          <div className="grid grid-cols-2 gap-4">
+          <SlideIn from="right" delay={0.15} className="grid grid-cols-2 gap-4">
             {stats.map((stat) => (
               <div
                 key={stat.label}
@@ -33,7 +34,7 @@ export async function AboutSection() {
                 <div className="text-sm text-muted">{stat.label}</div>
               </div>
             ))}
-          </div>
+          </SlideIn>
         </div>
       </div>
     </section>

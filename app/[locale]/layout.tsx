@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
+import type { AbstractIntlMessages } from "next-intl";
 import { Geist } from "next/font/google";
 import { Toaster } from "sonner";
 import { Header } from "@/components/layout/header";
@@ -36,7 +37,16 @@ export default async function LocaleLayout({
     notFound();
   }
 
-  const messages = await getMessages();
+  const allMessages = await getMessages();
+  // Only send the 3 namespaces actually used by client components:
+  // Header → "nav" | FAQ → "faq" | ContactSection → "contact"
+  // Saves ~20KB from initial HTML payload vs sending all 34KB of translations.
+  const m = allMessages as Record<string, AbstractIntlMessages>;
+  const clientMessages: AbstractIntlMessages = {
+    nav: m.nav,
+    faq: m.faq,
+    contact: m.contact,
+  };
 
   return (
     <html lang={locale} className={geist.variable} suppressHydrationWarning>
@@ -44,7 +54,7 @@ export default async function LocaleLayout({
         <link rel="preconnect" href="https://a.ccdn.es" />
       </head>
       <body className="min-h-screen bg-bg text-fg antialiased">
-        <NextIntlClientProvider messages={messages}>
+        <NextIntlClientProvider messages={clientMessages}>
           <Header />
           <main>{children}</main>
           <Footer />

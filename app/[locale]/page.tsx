@@ -8,8 +8,8 @@ import { Plans } from "@/components/sections/plans";
 import { HowItWorks } from "@/components/sections/how-it-works";
 import { Differentials } from "@/components/sections/differentials";
 import { AboutSection } from "@/components/sections/about-section";
-import { FAQ } from "@/components/sections/faq";
-import { ContactSection } from "@/components/sections/contact-section";
+import { FAQLazy as FAQ } from "@/components/sections/faq-lazy";
+import { ContactSectionLazy as ContactSection } from "@/components/sections/contact-section-lazy";
 import {
   buildLocalBusinessSchema,
   buildFAQSchema,

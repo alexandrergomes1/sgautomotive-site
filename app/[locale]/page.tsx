@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Hero } from "@/components/sections/hero";
 import { CatalogPreview } from "@/components/sections/catalog-preview";
 import { Services } from "@/components/sections/services";
@@ -25,6 +25,7 @@ export async function generateMetadata({
   params,
 }: HomePageProps): Promise<Metadata> {
   const { locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "metadata.home" });
 
   return {
@@ -73,6 +74,7 @@ export async function generateMetadata({
 
 export default async function HomePage({ params }: HomePageProps) {
   const { locale } = await params;
+  setRequestLocale(locale);
   const tFaq = await getTranslations({ locale, namespace: "faq" });
   const faqItems = tFaq.raw("items") as Array<{
     question: string;

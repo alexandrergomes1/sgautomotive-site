@@ -1,44 +1,43 @@
 import { ImageResponse } from "next/og";
 
-export const size = { width: 64, height: 64 };
+export const size = { width: 180, height: 180 };
 export const contentType = "image/png";
 
-export default function Icon() {
+export default function AppleIcon() {
   return new ImageResponse(
     (
       <div
         style={{
-          width: 64,
-          height: 64,
+          width: 180,
+          height: 180,
           background: "#0b0f14",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          borderRadius: 12,
         }}
       >
         {/* "sg" lowercase bold — matching logo style */}
         <div
           style={{
             color: "#ffffff",
-            fontSize: 32,
+            fontSize: 90,
             fontWeight: 800,
             fontFamily: "sans-serif",
-            letterSpacing: "-1px",
+            letterSpacing: "-3px",
             lineHeight: 1,
-            marginBottom: 5,
+            marginBottom: 14,
           }}
         >
           sg
         </div>
         {/* Double gold underline — logo signature detail */}
-        <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
-          <div style={{ width: 20, height: 2, background: "#c8a96a", borderRadius: 1 }} />
-          <div style={{ width: 20, height: 2, background: "#c8a96a", borderRadius: 1 }} />
+        <div style={{ display: "flex", flexDirection: "column", gap: 5 }}>
+          <div style={{ width: 56, height: 5, background: "#c8a96a", borderRadius: 2 }} />
+          <div style={{ width: 56, height: 5, background: "#c8a96a", borderRadius: 2 }} />
         </div>
       </div>
     ),
-    { width: 64, height: 64 }
+    { width: 180, height: 180 }
   );
 }

@@ -24,7 +24,7 @@ const securityHeaders = [
       "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://va.vercel-scripts.com",
       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
       "font-src 'self' https://fonts.gstatic.com",
-      "img-src 'self' data: blob: https://a.ccdn.es https://images.unsplash.com https://placehold.co",
+      "img-src 'self' data: blob: https://images.unsplash.com https://placehold.co",
       "connect-src 'self' https://vitals.vercel-insights.com https://va.vercel-scripts.com",
       "frame-ancestors 'none'",
     ].join("; "),
@@ -39,7 +39,6 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
       { protocol: "https", hostname: "images.unsplash.com", pathname: "/**" },
-      { protocol: "https", hostname: "a.ccdn.es", pathname: "/**" },
       { protocol: "https", hostname: "placehold.co", pathname: "/**" },
     ],
   },

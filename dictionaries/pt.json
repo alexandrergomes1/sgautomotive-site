@@ -1,0 +1,367 @@
+{
+  "nav": {
+    "home": "Início",
+    "vehicles": "Veículos",
+    "import": "Importação",
+    "services": "Serviços",
+    "about": "Sobre nós",
+    "contact": "Contato",
+    "cta": "Solicitar consulta"
+  },
+  "hero": {
+    "badge": "Costa del Sol · Fuengirola · Málaga",
+    "title": "Compra e importação de veículos na Europa com gestão profissional.",
+    "subtitle": "Veículos selecionados, análise técnica e gestão completa ou parcial do processo de compra, importação e regularização em Espanha.",
+    "cta_vehicles": "Ver veículos disponíveis",
+    "cta_consult": "Solicitar consulta",
+    "trust_1": "Operação 100% online",
+    "trust_2": "Atendimento em espanhol e inglês",
+    "trust_3": "Sediados na Costa del Sol"
+  },
+  "catalog": {
+    "title": "Veículos disponíveis",
+    "subtitle": "Unidades verificadas, com historial comprovado e documentação em ordem.",
+    "view_all": "Ver catálogo completo",
+    "fuel": {
+      "diesel": "Diesel",
+      "gasoline": "Gasolina",
+      "hybrid": "Híbrido",
+      "electric": "Elétrico",
+      "plugin_hybrid": "Híbrido plug-in"
+    },
+    "transmission": {
+      "automatic": "Automático",
+      "manual": "Manual"
+    },
+    "tags": {
+      "iva-recuperable": "IVA recuperável",
+      "garantia": "Com garantia",
+      "pronto-entrega": "Pronta entrega"
+    },
+    "contact_vehicle": "Consultar por WhatsApp",
+    "km": "km",
+    "year": "Ano",
+    "empty": "Em breve novos veículos disponíveis. Contacte-nos para mais informações."
+  },
+  "import_section": {
+    "title": "Importação de veículos para Espanha",
+    "subtitle": "Gerimos todo o processo, desde a seleção do veículo na Europa até à entrega com matrícula espanhola.",
+    "badge": "Serviço completo",
+    "cta": "Solicitar gestão de importação",
+    "included_title": "O que inclui o serviço",
+    "included": [
+      "Análise técnica e verificação do historial",
+      "Negociação e gestão da compra",
+      "Transporte porta a porta com seguro",
+      "Despacho aduaneiro e homologação",
+      "ITV e matrícula espanhola",
+      "Documentação completa em ordem"
+    ],
+    "steps": [
+      {
+        "number": "01",
+        "title": "Origem",
+        "description": "Selecionamos e verificamos o veículo no país de origem: Alemanha, França, Países Baixos e mais."
+      },
+      {
+        "number": "02",
+        "title": "Transporte",
+        "description": "Coordenamos o transporte até Espanha com seguro incluído e acompanhamento em tempo real."
+      },
+      {
+        "number": "03",
+        "title": "Regularização",
+        "description": "Homologação, ITV, matrícula e entrega com toda a documentação em ordem e pronta para circular."
+      }
+    ]
+  },
+  "services": {
+    "title": "O que fazemos",
+    "subtitle": "Serviços pensados para quem compra ou importa veículos com critério e sem surpresas.",
+    "items": [
+      {
+        "icon": "car",
+        "title": "Venda de veículos selecionados",
+        "description": "Oferecemos unidades com historial verificado, análise técnica completa e documentação em ordem. Nada entra no nosso catálogo sem passar pelo nosso filtro."
+      },
+      {
+        "icon": "search",
+        "title": "Assessoria de compra",
+        "description": "Procuramos, analisamos e comparamos o veículo que precisa no mercado europeu. Recebe um relatório claro antes de tomar qualquer decisão."
+      },
+      {
+        "icon": "ship",
+        "title": "Importação completa",
+        "description": "Gerimos todo o processo: compra, transporte, despacho aduaneiro, homologação, ITV e matrícula em Espanha. Sem stress, sem burocracia."
+      },
+      {
+        "icon": "file-text",
+        "title": "Apoio documental",
+        "description": "Gerimos toda a documentação necessária: mudança de titularidade, alta do veículo, ITV, seguro temporário e trâmites junto à DGT."
+      },
+      {
+        "icon": "truck",
+        "title": "Transporte e logística",
+        "description": "Coordenamos o transporte do veículo de qualquer ponto da Europa até à sua morada em Espanha, com acompanhamento e seguro incluídos."
+      },
+      {
+        "icon": "shield-check",
+        "title": "Consultoria de risco",
+        "description": "Se tem dúvidas sobre uma oferta, analisamos o veículo, o vendedor e o processo antes de assumir qualquer risco. Evite fraudes e veículos problemáticos."
+      }
+    ]
+  },
+  "plans": {
+    "title": "Planos de assessoria",
+    "subtitle": "Escolha o nível de suporte que precisa para o seu processo de compra ou importação.",
+    "badge": "Mais popular",
+    "cta": "Solicitar plano",
+    "items": [
+      {
+        "name": "Documental",
+        "description": "Para quem já tem o veículo e precisa de apoio burocrático.",
+        "price": "A partir de €290",
+        "features": [
+          "Gestão de matrícula em Espanha",
+          "Trâmites ITV e homologação",
+          "Mudança de titularidade",
+          "Alta na DGT",
+          "Suporte por e-mail e WhatsApp"
+        ],
+        "featured": false
+      },
+      {
+        "name": "Parcial",
+        "description": "Suporte nas etapas-chave do processo sem gestão total.",
+        "price": "A partir de €490",
+        "features": [
+          "Análise do veículo selecionado",
+          "Verificação do historial",
+          "Negociação e compra",
+          "Coordenação do transporte",
+          "Gestão documental básica",
+          "Suporte contínuo"
+        ],
+        "featured": true
+      },
+      {
+        "name": "Completo",
+        "description": "Gestão total desde a pesquisa até à entrega.",
+        "price": "A partir de €890",
+        "features": [
+          "Pesquisa personalizada na Europa",
+          "Análise técnica e financeira",
+          "Negociação, compra e pagamento",
+          "Importação com despacho aduaneiro",
+          "Transporte porta a porta",
+          "Matrícula, ITV e documentação",
+          "Suporte prioritário dedicado"
+        ],
+        "featured": false
+      }
+    ]
+  },
+  "how_it_works": {
+    "title": "Como funciona",
+    "subtitle": "Um processo claro, transparente e sem surpresas. Do início ao fim.",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Briefing",
+        "description": "Conta-nos que veículo procura, o seu orçamento e requisitos. Sem compromisso inicial."
+      },
+      {
+        "number": "02",
+        "title": "Pesquisa e análise",
+        "description": "Identificamos opções no mercado europeu, analisamos historial, preço de mercado e estado técnico."
+      },
+      {
+        "number": "03",
+        "title": "Apresentação e decisão",
+        "description": "Recebe um relatório claro com opções recomendadas. Decide com informação completa."
+      },
+      {
+        "number": "04",
+        "title": "Compra, transporte e trâmites",
+        "description": "Gerimos a compra, o transporte desde a origem e todos os trâmites de importação e regularização."
+      },
+      {
+        "number": "05",
+        "title": "Entrega e regularização",
+        "description": "O veículo chega matriculado, com ITV, documentação em ordem e pronto para circular em Espanha."
+      }
+    ]
+  },
+  "differentials": {
+    "title": "Porquê a SG Automotive",
+    "subtitle": "Não somos um concessionário. Somos um operador especializado que trabalha para o comprador.",
+    "items": [
+      {
+        "icon": "bar-chart-2",
+        "title": "Análise técnica e financeira",
+        "description": "Cada veículo é analisado em detalhe: historial, preço de mercado, custo real de propriedade e risco técnico."
+      },
+      {
+        "icon": "eye",
+        "title": "Transparência total",
+        "description": "Sem comissões ocultas. Sabe exatamente quanto custa cada etapa e por que tomamos cada decisão."
+      },
+      {
+        "icon": "shield",
+        "title": "Foco no risco",
+        "description": "Identificamos sinais de alerta antes da compra: fraudes, veículos acidentados, dívidas pendentes e problemas técnicos."
+      },
+      {
+        "icon": "globe",
+        "title": "Atendimento multilíngue",
+        "description": "Operamos em espanhol e inglês. Sem barreiras linguísticas para comprar em qualquer país da Europa."
+      },
+      {
+        "icon": "wifi",
+        "title": "Operação 100% online",
+        "description": "Todo o processo é gerido de forma remota. Sem necessidade de deslocações desnecessárias."
+      },
+      {
+        "icon": "map-pin",
+        "title": "Sediados na Costa del Sol",
+        "description": "Presença local em Fuengirola, Málaga. Conhecemos o mercado espanhol e os trâmites da região."
+      }
+    ]
+  },
+  "about": {
+    "title": "Quem somos",
+    "subtitle": "A SG Automotive é uma operação automóvel online, profissional e sem intermediários desnecessários.",
+    "body": "Somos uma empresa sediada em Fuengirola, Costa del Sol, especializada em compra, venda, importação e assessoria de veículos na Europa. Trabalhamos de forma completamente remota, o que nos permite operar com eficiência e sem os custos de um concessionário tradicional.",
+    "body_2": "A nossa abordagem é técnica, transparente e orientada para o cliente. Não vendemos por volume: analisamos cada caso em detalhe, identificamos os riscos e acompanhamos o comprador em cada etapa do processo.",
+    "cta": "Falar connosco",
+    "stats": [
+      { "value": "Costa del Sol", "label": "Base de operações" },
+      { "value": "ES · EN", "label": "Idiomas de atendimento" },
+      { "value": "100%", "label": "Gestão online" },
+      { "value": "EU", "label": "Mercado de atuação" }
+    ]
+  },
+  "faq": {
+    "title": "Perguntas frequentes",
+    "subtitle": "Tudo o que precisa de saber antes de começar.",
+    "items": [
+      {
+        "question": "Têm loja física ou showroom?",
+        "answer": "Não. A SG Automotive opera completamente de forma online e remota. Toda a comunicação, análise e gestão é realizada por e-mail, WhatsApp e videochamada. Isso permite-nos trabalhar com maior eficiência e menor custo para o cliente."
+      },
+      {
+        "question": "Posso importar um carro da Alemanha, França ou outro país europeu?",
+        "answer": "Sim. Gerimos a importação de veículos de qualquer país da União Europeia para Espanha, incluindo a compra, transporte, homologação, despacho e matrícula."
+      },
+      {
+        "question": "Que documentação preciso para importar um veículo?",
+        "answer": "Na maioria dos casos precisará do seu DNI ou NIE, comprovativo de domicílio em Espanha e os documentos do veículo (título de propriedade, ficha técnica e certificado de conformidade). Orientamo-lo em cada passo."
+      },
+      {
+        "question": "O preço que vejo inclui todos os impostos e trâmites?",
+        "answer": "O preço dos veículos no nosso catálogo é o preço de custo. As despesas de importação, IVA, imposto de matriculação, ITV e transporte são detalhadas separadamente em função do tipo de veículo e origem."
+      },
+      {
+        "question": "O que significa IVA recuperável nos veículos?",
+        "answer": "Alguns veículos provêm de operações comerciais e permitem recuperar o IVA se for autónomo ou empresa com direito a dedução. É uma vantagem fiscal significativa. Indicamos quais se aplicam em cada caso."
+      },
+      {
+        "question": "Os veículos têm garantia?",
+        "answer": "Depende do veículo e da sua proveniência. Os que aparecem com etiqueta 'Com garantia' incluem garantia de fabricante vigente ou garantia contratual. Noutros casos podemos gerir seguros de garantia adicionais."
+      },
+      {
+        "question": "Posso contratar apenas a parte documental se já tiver o carro?",
+        "answer": "Sim. Oferecemos o Plano Documental, especificamente pensado para gerir a matrícula, ITV, mudança de titularidade e demais trâmites se já adquiriu o veículo por conta própria."
+      },
+      {
+        "question": "Quanto tempo demora o processo de importação?",
+        "answer": "O processo completo costuma demorar entre 3 e 6 semanas desde a compra do veículo até à entrega matriculada em Espanha, dependendo do país de origem e da carga administrativa vigente."
+      },
+      {
+        "question": "Atendem clientes de toda a Espanha?",
+        "answer": "Sim. Embora estejamos sediados em Fuengirola, Málaga, operamos remotamente e podemos gerir a importação e entrega em qualquer ponto de Espanha."
+      },
+      {
+        "question": "Como começo?",
+        "answer": "Basta escrever-nos por WhatsApp ou e-mail com as suas necessidades. Faremos uma consulta inicial gratuita para entender o seu caso e explicar as opções mais adequadas."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contacte-nos",
+    "subtitle": "Conte-nos o que precisa. A primeira consulta é gratuita.",
+    "form": {
+      "name": "Nome completo",
+      "email": "Endereço de e-mail",
+      "phone": "Telefone (opcional)",
+      "service": "O que precisa",
+      "service_placeholder": "Selecione um serviço",
+      "services": [
+        "Compra de veículo",
+        "Importação completa",
+        "Assessoria de compra",
+        "Apoio documental",
+        "Consultoria de risco",
+        "Outro"
+      ],
+      "message": "Conte-nos mais",
+      "message_placeholder": "Descreva o que procura: tipo de veículo, orçamento, país de origem...",
+      "submit": "Enviar consulta",
+      "submitting": "A enviar...",
+      "success": "Mensagem enviada. Respondemos em menos de 24 horas.",
+      "error": "Erro ao enviar. Tente novamente ou escreva-nos por WhatsApp."
+    },
+    "whatsapp_label": "Escreva-nos por WhatsApp",
+    "email_label": "Envie-nos um e-mail",
+    "location": "Fuengirola, Málaga, Espanha",
+    "response_time": "Tempo de resposta: menos de 24h",
+    "or": "ou"
+  },
+  "footer": {
+    "tagline": "Compra e importação de veículos na Europa com gestão profissional.",
+    "links": {
+      "title": "Navegação",
+      "items": [
+        { "label": "Veículos", "href": "#veiculos" },
+        { "label": "Importação", "href": "#importacao" },
+        { "label": "Serviços", "href": "#servicos" },
+        { "label": "Sobre nós", "href": "#sobre" },
+        { "label": "Contato", "href": "#contato" }
+      ]
+    },
+    "legal": {
+      "title": "Legal",
+      "privacy": "Política de privacidade",
+      "terms": "Termos de utilização",
+      "cookies": "Política de cookies"
+    },
+    "copyright": "SG Automotive. Todos os direitos reservados.",
+    "location": "Fuengirola, Costa del Sol, Málaga, Espanha"
+  },
+  "metadata": {
+    "home": {
+      "title": "SG Automotive — Importação e compra de veículos na Europa",
+      "description": "Empresa online especializada em importação de carros para Espanha, assessoria de compra na Europa e gestão documental. Costa del Sol, Fuengirola, Málaga."
+    },
+    "vehicles": {
+      "title": "Veículos disponíveis — SG Automotive",
+      "description": "Veículos selecionados com análise técnica, historial verificado e documentação em ordem na Costa del Sol."
+    },
+    "import": {
+      "title": "Importação de veículos para Espanha — SG Automotive",
+      "description": "Importação completa de carros da Alemanha, França, Países Baixos e Europa. Gestão de trâmites, ITV, matrícula e transporte. Costa del Sol, Málaga."
+    },
+    "services": {
+      "title": "Serviços — SG Automotive",
+      "description": "Venda de veículos selecionados, assessoria de compra, importação completa, gestão documental e consultoria de risco em Espanha."
+    },
+    "about": {
+      "title": "Sobre nós — SG Automotive",
+      "description": "A SG Automotive é uma operação automóvel online sediada em Fuengirola, Costa del Sol. Especialistas em importação e compra de veículos na Europa."
+    },
+    "contact": {
+      "title": "Contato — SG Automotive",
+      "description": "Contacte a SG Automotive para assessoria de compra, importação de veículos ou gestão documental. Fuengirola, Costa del Sol, Málaga, Espanha."
+    }
+  }
+}

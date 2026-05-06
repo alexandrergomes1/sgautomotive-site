@@ -1,8 +1,8 @@
-import Image from "next/image";
 import { getTranslations, getLocale } from "next-intl/server";
 import { Fuel, Gauge, Calendar, Zap } from "lucide-react";
 import { type Car } from "@/data/cars";
 import { formatPrice, formatKm } from "@/lib/utils";
+import { ImageCarousel } from "@/components/ui/image-carousel";
 
 const WHATSAPP_NUMBER = "34662625953";
 
@@ -29,23 +29,20 @@ export async function VehicleCard({ car, index = 0 }: VehicleCardProps) {
   const waMessage =
     locale === "es"
       ? `Hola, me interesa el ${car.make} ${car.model} ${car.version} (${car.year}, ${formatKm(car.km)}) — ref: ${car.id}. ¿Podéis darme más información?`
+      : locale === "pt"
+      ? `Olá, tenho interesse no ${car.make} ${car.model} ${car.version} (${car.year}, ${formatKm(car.km)}) — ref: ${car.id}. Podem dar-me mais informações?`
       : `Hello, I'm interested in the ${car.make} ${car.model} ${car.version} (${car.year}, ${formatKm(car.km)}) — ref: ${car.id}. Could you give me more information?`;
 
   const waHref = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(waMessage)}`;
 
+  const carAlt = `${car.make} ${car.model} ${car.version} ${car.year}`;
+
   return (
     <article className="group bg-surface border border-border rounded-xl overflow-hidden hover:border-accent/40 transition-all duration-300 hover:shadow-xl hover:shadow-accent/5 flex flex-col flex-1">
-      <div className="relative aspect-[16/9] overflow-hidden bg-surface-2 shrink-0">
-        <Image
-          src={car.image}
-          alt={`${car.make} ${car.model} ${car.version} ${car.year}`}
-          fill
-          className="object-cover transition-transform duration-500 group-hover:scale-105"
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          priority={index === 0}
-        />
+      {/* Image carousel */}
+      <div className="relative shrink-0">
         {car.tags.length > 0 && (
-          <div className="absolute top-3 left-3 flex flex-wrap gap-1.5">
+          <div className="absolute top-3 left-3 flex flex-wrap gap-1.5 z-10">
             {car.tags.map((tag) => (
               <span
                 key={tag}
@@ -56,9 +53,14 @@ export async function VehicleCard({ car, index = 0 }: VehicleCardProps) {
             ))}
           </div>
         )}
-        <div className="absolute bottom-3 right-3 bg-bg/90 backdrop-blur-sm border border-border/60 rounded-lg px-3 py-1.5">
+        <div className="absolute bottom-3 right-3 bg-bg/90 backdrop-blur-sm border border-border/60 rounded-lg px-3 py-1.5 z-10">
           <span className="text-accent font-bold text-base">{formatPrice(car.price)}</span>
         </div>
+        <ImageCarousel
+          images={car.images}
+          alt={carAlt}
+          priority={index === 0}
+        />
       </div>
 
       <div className="p-5 flex flex-col flex-1">

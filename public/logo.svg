@@ -2,9 +2,9 @@
   <title>SG Automotive</title>
   <!-- sg bold -->
   <text x="0" y="76" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="82" fill="white" letter-spacing="-2">sg</text>
-  <!-- double gold underline (logo signature) -->
-  <rect x="58" y="82" width="32" height="4" rx="2" fill="#c8a96a"/>
-  <rect x="58" y="89" width="32" height="4" rx="2" fill="#c8a96a"/>
+  <!-- double white underline (logo signature) -->
+  <rect x="58" y="82" width="32" height="4" rx="2" fill="white"/>
+  <rect x="58" y="89" width="32" height="4" rx="2" fill="white"/>
   <!-- automotive light -->
   <text x="104" y="68" font-family="system-ui, -apple-system, sans-serif" font-weight="300" font-size="22" fill="white" letter-spacing="5">automotive</text>
 </svg>

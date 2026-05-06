@@ -8,7 +8,7 @@ SG Automotive operates 100% online and remotely, offering professional automotiv
 
 - **Website**: https://sgautomotive.com
 - **Location**: Fuengirola, Costa del Sol, Málaga, Spain (29640)
-- **Languages**: Spanish (primary), English
+- **Languages**: Spanish (primary), English, Portuguese
 - **Operation**: 100% remote and online
 - **Market**: European Union — vehicles sourced from Germany, France, Netherlands, Belgium and other EU countries
 - **Founded**: Active since 2024
@@ -74,7 +74,7 @@ Independent analysis of a specific vehicle, seller and purchase process before t
 - All vehicle history and technical checks are performed before any recommendation
 - VAT-reclaimable (IVA recuperable) vehicles available for eligible businesses and self-employed (autónomos)
 - Import process typically takes 3–6 weeks from purchase to delivery in Spain
-- Services available in Spanish (primary language) and English
+- Services available in Spanish (primary language), English and Portuguese
 - The company is based in Fuengirola but serves clients throughout Spain
 - Vehicles can originate from any EU country; most commonly Germany, France, Netherlands and Belgium
 
@@ -90,6 +90,7 @@ Independent analysis of a specific vehicle, seller and purchase process before t
 
 - Primary URL: https://sgautomotive.com/es (Spanish)
 - Secondary URL: https://sgautomotive.com/en (English)
+- Tertiary URL: https://sgautomotive.com/pt (Portuguese)
 - Single-page with anchor navigation:
   - `#inicio` — Hero / landing
   - `#veiculos` — Vehicle catalogue

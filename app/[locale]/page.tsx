@@ -38,12 +38,13 @@ export async function generateMetadata({
       languages: {
         "es": `${SITE_URL}/es`,
         "en": `${SITE_URL}/en`,
+        "pt": `${SITE_URL}/pt`,
         "x-default": `${SITE_URL}/es`,
       },
     },
     openGraph: {
       type: "website",
-      locale: locale === "es" ? "es_ES" : "en_GB",
+      locale: locale === "es" ? "es_ES" : locale === "pt" ? "pt_PT" : "en_GB",
       url: `${SITE_URL}/${locale}`,
       siteName: "SG Automotive",
       title: t("title"),
@@ -63,6 +64,15 @@ export async function generateMetadata({
           "compra de coches en Alemania para España",
           "importación coches Fuengirola",
           "gestión automotiva España",
+        ]
+      : locale === "pt"
+      ? [
+          "importação de carros para Espanha",
+          "comprar carro na Europa",
+          "assessoria importação veículos Espanha",
+          "veículos selecionados Costa del Sol",
+          "importação carros Fuengirola",
+          "gestão automóvel Espanha",
         ]
       : [
           "import car to Spain",

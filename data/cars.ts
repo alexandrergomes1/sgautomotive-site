@@ -22,7 +22,7 @@ export interface Car {
   origin: string;
   color: string;
   doors: number;
-  image: string;
+  images: string[];      // first item = primary image
   tags: CarTag[];
   available: boolean;    // false = vendido / ocultar
   description?: string;  // texto breve opcional
@@ -44,7 +44,17 @@ export const cars: Car[] = [
     origin: "España",
     color: "Blanco",
     doors: 5,
-    image: "https://a.ccdn.es/cnet/2026/03/06/70134373/2093592353_g.jpg",
+    images: [
+      "/cars/car-opel-principal.jpg",
+      "/cars/car-opel-tras.jpg",
+      "/cars/car-opel-bancos-frente.jpg",
+      "/cars/car-opel-bancos-tras.jpg",
+      "/cars/car-opel-motor.jpg",
+      "/cars/car-opel-painel1.jpg",
+      "/cars/car-opel-volante.jpg",
+      "/cars/car-opel-teto.jpg",
+      "/cars/car-opel-chaves-manual.jpg",
+    ],
     tags: ["iva-recuperable"],
     available: true,
     description: "ITV hasta 2027 · IVA recuperable · CarPlay/Android Auto",
@@ -64,7 +74,15 @@ export const cars: Car[] = [
     origin: "España",
     color: "Blanco",
     doors: 5,
-    image: "https://a.ccdn.es/cnet/2026/03/30/70310045/2097758588_g.jpg",
+    images: [
+      "/cars/car-c3-principal.jpg",
+      "/cars/car-c3-tras.jpg",
+      "/cars/car-c3-bancos-frente.jpg",
+      "/cars/car-c3-bancos-tras.jpg",
+      "/cars/car-c3-motor.jpg",
+      "/cars/car-c3-volante.jpg",
+      "/cars/car-c3-teto.jpg",
+    ],
     tags: ["pronto-entrega"],
     available: true,
     description: "Neumáticos Goodyear nuevos · Sensores aparcamiento · Etiqueta medioambiental",
@@ -84,7 +102,15 @@ export const cars: Car[] = [
     origin: "España",
     color: "Blanco",
     doors: 5,
-    image: "https://a.ccdn.es/cnet/2026/03/05/70130734/2093484741_g.jpg",
+    images: [
+      "/cars/car-2008-principal.jpg",
+      "/cars/car-2008-tras.jpg",
+      "/cars/car-2008-tras1.jpg",
+      "/cars/car-2008-bancos-frente.jpg",
+      "/cars/car-2008-bancos-tras.jpg",
+      "/cars/car-2008-painel.jpg",
+      "/cars/car-2008-teto.jpg",
+    ],
     tags: ["iva-recuperable"],
     available: true,
     description: "ITV hasta 2027 · IVA recuperable · Control crucero · Llantas aleación",

@@ -129,7 +129,7 @@ export function buildVehicleListSchema(
     km: number;
     fuel: string;
     price: number;
-    image: string;
+    images: string[];
   }>,
   locale: string
 ) {
@@ -160,7 +160,7 @@ export function buildVehicleListSchema(
       availability: "https://schema.org/InStock",
       seller: { "@type": "Organization", name: SITE_NAME },
     },
-    image: car.image,
+    image: car.images[0],
     url: `${SITE_URL}/${locale}#veiculos`,
   }));
 

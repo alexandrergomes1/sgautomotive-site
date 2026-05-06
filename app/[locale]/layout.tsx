@@ -36,7 +36,7 @@ export default async function LocaleLayout({
   const { locale } = await params;
   setRequestLocale(locale);
 
-  if (!routing.locales.includes(locale as "es" | "en")) {
+  if (!routing.locales.includes(locale as "es" | "en" | "pt")) {
     notFound();
   }
 
@@ -54,8 +54,7 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} className={geist.variable} suppressHydrationWarning>
       <head>
-        <link rel="preconnect" href="https://a.ccdn.es" />
-      </head>
+        </head>
       <body className="min-h-screen bg-bg text-fg antialiased">
         <ThemeProvider attribute="class" defaultTheme="dark" forcedTheme="dark">
           <NextIntlClientProvider messages={clientMessages}>

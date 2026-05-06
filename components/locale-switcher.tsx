@@ -61,15 +61,15 @@ export function LocaleSwitcher() {
     <div ref={ref} className="relative">
       <button
         onClick={() => setOpen((v) => !v)}
-        className="flex items-center gap-1.5 text-xs font-medium tracking-widest uppercase text-muted hover:text-fg transition-colors"
+        className="flex items-center gap-2 text-sm font-semibold tracking-widest uppercase text-muted hover:text-fg transition-colors"
         aria-label="Cambiar idioma"
         aria-expanded={open}
         aria-haspopup="listbox"
       >
-        <Globe size={13} aria-hidden="true" />
+        <Globe size={16} aria-hidden="true" />
         <span>{current.label}</span>
         <ChevronDown
-          size={11}
+          size={13}
           className={`transition-transform duration-200 ${open ? "rotate-180" : ""}`}
           aria-hidden="true"
         />
@@ -79,7 +79,7 @@ export function LocaleSwitcher() {
         <div
           role="listbox"
           aria-label="Seleccionar idioma"
-          className="absolute right-0 top-full mt-2 w-36 bg-surface border border-border rounded-lg shadow-xl shadow-black/30 overflow-hidden z-50"
+          className="absolute right-0 top-full mt-2 w-40 bg-surface border border-border rounded-lg shadow-xl shadow-black/30 overflow-hidden z-50"
         >
           {locales.map((l) => (
             <button
@@ -87,7 +87,7 @@ export function LocaleSwitcher() {
               role="option"
               aria-selected={locale === l.code}
               onClick={() => handleChange(l.code)}
-              className={`w-full flex items-center justify-between gap-2 px-3 py-2.5 text-sm transition-colors ${
+              className={`w-full flex items-center justify-between gap-2 px-3.5 py-3 text-sm transition-colors ${
                 locale === l.code
                   ? "text-accent bg-accent/8"
                   : "text-muted hover:text-fg hover:bg-white/5"

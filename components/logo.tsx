@@ -20,7 +20,7 @@ export function Logo({ size = "md", className }: LogoProps) {
       alt="SG Automotive"
       height={h}
       width={w}
-      style={{ height: h, width: "auto" }}
+      style={{ height: `${h}px`, width: "auto" }}
       className={cn("select-none", className)}
       priority
     />

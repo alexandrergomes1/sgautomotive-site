@@ -18,24 +18,24 @@ export default function Icon() {
           borderRadius: 12,
         }}
       >
-        {/* "sg" lowercase bold — matching logo style */}
+        {/* "SG" uppercase bold — brand favicon */}
         <div
           style={{
             color: "#ffffff",
-            fontSize: 32,
-            fontWeight: 800,
+            fontSize: 30,
+            fontWeight: 900,
             fontFamily: "sans-serif",
             letterSpacing: "-1px",
             lineHeight: 1,
             marginBottom: 5,
           }}
         >
-          sg
+          SG
         </div>
-        {/* Double gold underline — logo signature detail */}
+        {/* Double gold underline — logo signature */}
         <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
-          <div style={{ width: 20, height: 2, background: "#c8a96a", borderRadius: 1 }} />
-          <div style={{ width: 20, height: 2, background: "#c8a96a", borderRadius: 1 }} />
+          <div style={{ width: 22, height: 2, background: "#c8a96a", borderRadius: 1 }} />
+          <div style={{ width: 22, height: 2, background: "#c8a96a", borderRadius: 1 }} />
         </div>
       </div>
     ),

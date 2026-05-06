@@ -5,7 +5,7 @@
     "import": "Importação",
     "services": "Serviços",
     "about": "Sobre nós",
-    "contact": "Contato",
+    "contact": "Contacto",
     "cta": "Solicitar consulta"
   },
   "hero": {
@@ -15,7 +15,7 @@
     "cta_vehicles": "Ver veículos disponíveis",
     "cta_consult": "Solicitar consulta",
     "trust_1": "Operação 100% online",
-    "trust_2": "Atendimento em espanhol e inglês",
+    "trust_2": "Atendimento em espanhol, inglês e português",
     "trust_3": "Sediados na Costa del Sol"
   },
   "catalog": {
@@ -214,7 +214,7 @@
       {
         "icon": "globe",
         "title": "Atendimento multilíngue",
-        "description": "Operamos em espanhol e inglês. Sem barreiras linguísticas para comprar em qualquer país da Europa."
+        "description": "Operamos em espanhol, inglês e português. Sem barreiras linguísticas para comprar em qualquer país da Europa."
       },
       {
         "icon": "wifi",
@@ -236,7 +236,7 @@
     "cta": "Falar connosco",
     "stats": [
       { "value": "Costa del Sol", "label": "Base de operações" },
-      { "value": "ES · EN", "label": "Idiomas de atendimento" },
+      { "value": "ES · EN · PT", "label": "Idiomas de atendimento" },
       { "value": "100%", "label": "Gestão online" },
       { "value": "EU", "label": "Mercado de atuação" }
     ]
@@ -288,7 +288,7 @@
     ]
   },
   "contact": {
-    "title": "Contacte-nos",
+    "title": "Contacto",
     "subtitle": "Conte-nos o que precisa. A primeira consulta é gratuita.",
     "form": {
       "name": "Nome completo",
@@ -326,7 +326,7 @@
         { "label": "Importação", "href": "#importacao" },
         { "label": "Serviços", "href": "#servicos" },
         { "label": "Sobre nós", "href": "#sobre" },
-        { "label": "Contato", "href": "#contato" }
+        { "label": "Contacto", "href": "#contato" }
       ]
     },
     "legal": {

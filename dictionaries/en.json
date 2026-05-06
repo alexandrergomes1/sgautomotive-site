@@ -15,7 +15,7 @@
     "cta_vehicles": "View available vehicles",
     "cta_consult": "Request consultation",
     "trust_1": "100% online operation",
-    "trust_2": "Assistance in Spanish and English",
+    "trust_2": "Assistance in Spanish, English and Portuguese",
     "trust_3": "Based in Costa del Sol"
   },
   "catalog": {
@@ -214,7 +214,7 @@
       {
         "icon": "globe",
         "title": "Multilingual service",
-        "description": "We operate in Spanish and English. No language barriers when buying in any European country."
+        "description": "We operate in Spanish, English and Portuguese. No language barriers when buying in any European country."
       },
       {
         "icon": "wifi",
@@ -236,7 +236,7 @@
     "cta": "Talk to us",
     "stats": [
       { "value": "Costa del Sol", "label": "Operating base" },
-      { "value": "ES · EN", "label": "Service languages" },
+      { "value": "ES · EN · PT", "label": "Service languages" },
       { "value": "100%", "label": "Online management" },
       { "value": "EU", "label": "Operating market" }
     ]

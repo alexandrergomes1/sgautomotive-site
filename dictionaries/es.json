@@ -15,7 +15,7 @@
     "cta_vehicles": "Ver vehículos disponibles",
     "cta_consult": "Solicitar consulta",
     "trust_1": "Operación 100% online",
-    "trust_2": "Atención en español y en inglés",
+    "trust_2": "Atención en español, inglés y portugués",
     "trust_3": "Basados en Costa del Sol"
   },
   "catalog": {
@@ -214,7 +214,7 @@
       {
         "icon": "globe",
         "title": "Atención multilingüe",
-        "description": "Operamos en español e inglés. Sin barreras idiomáticas para comprar en cualquier país de Europa."
+        "description": "Operamos en español, inglés y portugués. Sin barreras idiomáticas para comprar en cualquier país de Europa."
       },
       {
         "icon": "wifi",
@@ -236,7 +236,7 @@
     "cta": "Hablar con nosotros",
     "stats": [
       { "value": "Costa del Sol", "label": "Base de operaciones" },
-      { "value": "ES · EN", "label": "Idiomas de atención" },
+      { "value": "ES · EN · PT", "label": "Idiomas de atención" },
       { "value": "100%", "label": "Gestión online" },
       { "value": "EU", "label": "Mercado de actuación" }
     ]

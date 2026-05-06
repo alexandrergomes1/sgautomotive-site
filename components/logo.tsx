@@ -6,16 +6,17 @@ interface LogoProps {
   size?: "sm" | "md" | "lg";
 }
 
-const heights = { sm: 36, md: 44, lg: 60 };
+// logo1.png: 1186×377 px → aspect ratio ≈ 3.145
+const heights = { sm: 44, md: 54, lg: 70 };
+const ASPECT = 1186 / 377; // 3.145
 
-// SVG logo — vector, scalable, no extra network request
 export function Logo({ size = "md", className }: LogoProps) {
   const h = heights[size];
-  const w = Math.round(h * 4.0); // viewBox 360×90 ≈ 4:1
+  const w = Math.round(h * ASPECT);
 
   return (
     <Image
-      src="/logo.svg"
+      src="/logo1.png"
       alt="SG Automotive"
       height={h}
       width={w}

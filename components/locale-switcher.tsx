@@ -5,6 +5,8 @@ import { useRouter, usePathname } from "next/navigation";
 import { useState, useRef, useEffect } from "react";
 import { Globe, Check, ChevronDown } from "lucide-react";
 
+const DEFAULT_LOCALE = "es";
+
 const locales = [
   { code: "es", label: "ES", name: "Español" },
   { code: "en", label: "EN", name: "English" },
@@ -19,9 +21,26 @@ export function LocaleSwitcher() {
   const ref = useRef<HTMLDivElement>(null);
 
   function handleChange(newLocale: string) {
-    const segments = pathname.split("/");
-    segments[1] = newLocale;
-    router.push(segments.join("/") || `/${newLocale}`);
+    if (newLocale === locale) { setOpen(false); return; }
+
+    // With localePrefix:"as-needed", the default locale (es) has no prefix in the URL.
+    // /       → es content
+    // /en     → English content
+    // /pt     → Portuguese content
+    const currentHasPrefix = locale !== DEFAULT_LOCALE;
+
+    // Strip current locale prefix to get the raw path
+    const rawPath = currentHasPrefix
+      ? pathname.replace(new RegExp(`^/${locale}`), "") || "/"
+      : pathname;
+
+    // Build new URL
+    const newPath =
+      newLocale === DEFAULT_LOCALE
+        ? rawPath
+        : `/${newLocale}${rawPath === "/" ? "" : rawPath}`;
+
+    router.push(newPath || "/");
     setOpen(false);
   }
 

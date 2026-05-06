@@ -17,19 +17,19 @@ export default function AppleIcon() {
           justifyContent: "center",
         }}
       >
-        {/* "sg" lowercase bold — matching logo style */}
+        {/* "SG" uppercase bold — brand favicon */}
         <div
           style={{
             color: "#ffffff",
-            fontSize: 90,
-            fontWeight: 800,
+            fontSize: 86,
+            fontWeight: 900,
             fontFamily: "sans-serif",
             letterSpacing: "-3px",
             lineHeight: 1,
             marginBottom: 14,
           }}
         >
-          sg
+          SG
         </div>
         {/* Double gold underline — logo signature detail */}
         <div style={{ display: "flex", flexDirection: "column", gap: 5 }}>

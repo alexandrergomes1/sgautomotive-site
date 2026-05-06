@@ -72,14 +72,44 @@ body {
   outline-offset: 2px;
 }
 
-/* Hero entrance animation — CSS-only, no JS required */
-@keyframes fade-up-hero {
-  from {
-    opacity: 0;
-    transform: translateY(32px);
-  }
-  to {
+/* ─────────────────────────────────────────────────────────
+   Hero secondary elements — CSS-only, no JS dependency.
+   h1 (LCP element) has NO animation and renders immediately.
+   Badge, subtitle, CTAs, trust items use this lightweight fade.
+   ───────────────────────────────────────────────────────── */
+@keyframes hero-secondary-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+.hero-secondary {
+  animation: hero-secondary-in 0.45s ease-out both;
+}
+.hero-d0 { animation-delay: 0ms;   }
+.hero-d1 { animation-delay: 80ms;  }
+.hero-d2 { animation-delay: 160ms; }
+.hero-d3 { animation-delay: 260ms; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-secondary {
+    animation: none;
     opacity: 1;
-    transform: translateY(0);
+    transform: none;
   }
+}
+
+/* ─────────────────────────────────────────────────────────
+   Scroll-reveal — CSS transition triggered by JS class.
+   Elements start VISIBLE (safe for SSR / no-JS).
+   JS sets opacity/transform inline only for below-fold items
+   then transitions to visible on IntersectionObserver entry.
+   ───────────────────────────────────────────────────────── */
+.reveal-ready {
+  will-change: opacity, transform;
+}
+
+/* content-visibility for long off-screen sections */
+.cv-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 600px;
 }

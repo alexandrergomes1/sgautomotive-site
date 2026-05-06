@@ -1,10 +1,9 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
 import { Menu, X } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
 import { LocaleSwitcher } from "@/components/locale-switcher";
 import { Logo } from "@/components/logo";
 
@@ -21,17 +20,30 @@ export function Header() {
   const locale = useLocale();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const rafRef = useRef<number | null>(null);
 
+  // RAF-throttled scroll listener — avoids setState on every pixel
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    const onScroll = () => {
+      if (rafRef.current !== null) return;
+      rafRef.current = requestAnimationFrame(() => {
+        setScrolled(window.scrollY > 24);
+        rafRef.current = null;
+      });
+    };
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (rafRef.current !== null) cancelAnimationFrame(rafRef.current);
+    };
   }, []);
 
   // Close mobile menu on resize to desktop
   useEffect(() => {
-    const onResize = () => { if (window.innerWidth >= 768) setMobileOpen(false); };
-    window.addEventListener("resize", onResize);
+    const onResize = () => {
+      if (window.innerWidth >= 768) setMobileOpen(false);
+    };
+    window.addEventListener("resize", onResize, { passive: true });
     return () => window.removeEventListener("resize", onResize);
   }, []);
 
@@ -97,41 +109,37 @@ export function Header() {
         </div>
       </div>
 
-      {/* Mobile menu */}
-      <AnimatePresence>
-        {mobileOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.22, ease: "easeInOut" }}
-            className="md:hidden bg-bg/96 backdrop-blur-lg border-b border-border overflow-hidden"
+      {/* Mobile menu — CSS grid trick for height: 0 → auto, zero JS animation */}
+      <div
+        className="md:hidden bg-bg/96 backdrop-blur-lg border-b border-border grid transition-[grid-template-rows] duration-[220ms] ease-in-out"
+        style={{ gridTemplateRows: mobileOpen ? "1fr" : "0fr" }}
+        aria-hidden={!mobileOpen}
+      >
+        <div className="overflow-hidden">
+          <nav
+            className="px-4 py-3 flex flex-col"
+            aria-label="Menú móvil"
           >
-            <nav
-              className="px-4 py-3 flex flex-col"
-              aria-label="Menú móvil"
-            >
-              {NAV_LINKS.map(({ anchor, keyEs }) => (
-                <a
-                  key={anchor}
-                  href={anchor}
-                  onClick={() => setMobileOpen(false)}
-                  className="text-sm py-3.5 text-muted hover:text-fg border-b border-border/40 last:border-0 transition-colors"
-                >
-                  {t(keyEs)}
-                </a>
-              ))}
+            {NAV_LINKS.map(({ anchor, keyEs }) => (
               <a
-                href="#contato"
+                key={anchor}
+                href={anchor}
                 onClick={() => setMobileOpen(false)}
-                className="mt-4 mb-1 text-sm font-semibold px-4 py-3 rounded-lg bg-accent text-bg text-center hover:bg-accent-light transition-colors"
+                className="text-sm py-3.5 text-muted hover:text-fg border-b border-border/40 last:border-0 transition-colors"
               >
-                {t("cta")}
+                {t(keyEs)}
               </a>
-            </nav>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            ))}
+            <a
+              href="#contato"
+              onClick={() => setMobileOpen(false)}
+              className="mt-4 mb-1 text-sm font-semibold px-4 py-3 rounded-lg bg-accent text-bg text-center hover:bg-accent-light transition-colors"
+            >
+              {t("cta")}
+            </a>
+          </nav>
+        </div>
+      </div>
     </header>
   );
 }

@@ -2,26 +2,23 @@ import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 interface LogoProps {
-  variant?: "light" | "dark";
   className?: string;
   size?: "sm" | "md" | "lg";
 }
 
-// logo1.png: white logo, transparent background — works on any dark surface
-// logo-light.png: dark logo — for light backgrounds (variant="dark")
-const heights = { sm: 68, md: 88, lg: 120 };
+const heights = { sm: 36, md: 44, lg: 60 };
 
-export function Logo({ variant = "light", size = "md", className }: LogoProps) {
-  const src = variant === "light" ? "/logo1.png" : "/logo-light.png";
+// SVG logo — vector, scalable, no extra network request
+export function Logo({ size = "md", className }: LogoProps) {
   const h = heights[size];
+  const w = Math.round(h * 4.0); // viewBox 360×90 ≈ 4:1
 
   return (
     <Image
-      src={src}
+      src="/logo.svg"
       alt="SG Automotive"
       height={h}
-      width={Math.round(h * 3.15)}
-      unoptimized
+      width={w}
       style={{ height: h, width: "auto" }}
       className={cn("select-none", className)}
       priority

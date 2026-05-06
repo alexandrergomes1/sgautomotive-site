@@ -28,7 +28,7 @@ export async function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
           <div>
             <Link href={`/${locale}#inicio`} className="inline-block mb-5" aria-label="SG Automotive">
-              <Logo variant="light" size="md" />
+              <Logo size="md" />
             </Link>
             <p className="text-muted text-sm leading-relaxed max-w-xs">
               {t("tagline")}

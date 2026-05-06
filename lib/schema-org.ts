@@ -15,7 +15,7 @@ export function buildLocalBusinessSchema(locale: string) {
       ? "Empresa online especializada en compra, venta, importación y asesoría de vehículos en Europa. Basada en Fuengirola, Costa del Sol, Málaga, España."
       : "Online company specialised in buying, selling, importing and advising on vehicles in Europe. Based in Fuengirola, Costa del Sol, Málaga, Spain.",
     url: `${SITE_URL}/${locale}`,
-    logo: `${SITE_URL}/logo-dark.png`,
+    logo: `${SITE_URL}/apple-icon`,
     image: `${SITE_URL}/${locale}/opengraph-image`,
     telephone: SITE_PHONE,
     email: SITE_EMAIL,
@@ -97,6 +97,82 @@ export function buildBreadcrumbSchema(
       position: i + 1,
       name: item.name,
       item: item.url,
+    })),
+  };
+}
+
+export function buildOrganizationSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: SITE_NAME,
+    url: SITE_URL,
+    logo: `${SITE_URL}/apple-icon`,
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: SITE_PHONE,
+      email: SITE_EMAIL,
+      contactType: "customer service",
+      availableLanguage: ["Spanish", "English"],
+    },
+    sameAs: [],
+  };
+}
+
+export function buildVehicleListSchema(
+  cars: Array<{
+    id: string;
+    make: string;
+    model: string;
+    version: string;
+    year: number;
+    km: number;
+    fuel: string;
+    price: number;
+    image: string;
+  }>,
+  locale: string
+) {
+  const fuelMap: Record<string, string> = {
+    diesel: "Diesel",
+    gasoline: "Gasoline",
+    hybrid: "Hybrid",
+    electric: "Electric",
+    plugin_hybrid: "PlugInHybrid",
+  };
+
+  const vehicles = cars.map((car) => ({
+    "@type": "Vehicle",
+    name: `${car.make} ${car.model} ${car.version}`,
+    brand: { "@type": "Brand", name: car.make },
+    model: car.model,
+    modelDate: String(car.year),
+    mileageFromOdometer: {
+      "@type": "QuantitativeValue",
+      value: car.km,
+      unitCode: "KMT",
+    },
+    fuelType: fuelMap[car.fuel] ?? car.fuel,
+    offers: {
+      "@type": "Offer",
+      price: car.price,
+      priceCurrency: "EUR",
+      availability: "https://schema.org/InStock",
+      seller: { "@type": "Organization", name: SITE_NAME },
+    },
+    image: car.image,
+    url: `${SITE_URL}/${locale}#veiculos`,
+  }));
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: locale === "es" ? "Vehículos disponibles — SG Automotive" : "Available Vehicles — SG Automotive",
+    numberOfItems: vehicles.length,
+    itemListElement: vehicles.map((v, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      item: v,
     })),
   };
 }

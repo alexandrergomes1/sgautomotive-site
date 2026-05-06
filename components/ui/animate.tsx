@@ -1,6 +1,17 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
+
+// Shared hook — reads prefers-reduced-motion from OS/browser
+function useMotion(delay: number, duration: number) {
+  const reduce = useReducedMotion();
+  return {
+    transition: reduce
+      ? { duration: 0, delay: 0 }
+      : { duration, delay, ease: "easeOut" as const },
+    shouldReduce: !!reduce,
+  };
+}
 
 export function FadeUp({
   children,
@@ -11,12 +22,13 @@ export function FadeUp({
   delay?: number;
   className?: string;
 }) {
+  const { transition, shouldReduce } = useMotion(delay, 0.5);
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={shouldReduce ? {} : { opacity: 0, y: 20 }}
+      whileInView={shouldReduce ? {} : { opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.5, delay, ease: "easeOut" as const }}
+      transition={transition}
       className={className}
     >
       {children}
@@ -35,12 +47,13 @@ export function SlideIn({
   delay?: number;
   className?: string;
 }) {
+  const { transition, shouldReduce } = useMotion(delay, 0.55);
   return (
     <motion.div
-      initial={{ opacity: 0, x: from === "left" ? -24 : 24 }}
-      whileInView={{ opacity: 1, x: 0 }}
+      initial={shouldReduce ? {} : { opacity: 0, x: from === "left" ? -24 : 24 }}
+      whileInView={shouldReduce ? {} : { opacity: 1, x: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.55, delay, ease: "easeOut" as const }}
+      transition={transition}
       className={className}
     >
       {children}
@@ -58,12 +71,13 @@ export function AnimateItem({
   delay?: number;
   className?: string;
 }) {
+  const { transition, shouldReduce } = useMotion(delay, 0.45);
   return (
     <motion.div
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={shouldReduce ? {} : { opacity: 0, y: 24 }}
+      whileInView={shouldReduce ? {} : { opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-40px" }}
-      transition={{ duration: 0.45, delay, ease: "easeOut" as const }}
+      transition={transition}
       className={className}
     >
       {children}
@@ -81,12 +95,13 @@ export function ScaleIn({
   delay?: number;
   className?: string;
 }) {
+  const { transition, shouldReduce } = useMotion(delay, 0.4);
   return (
     <motion.div
-      initial={{ opacity: 0, scale: 0.95 }}
-      whileInView={{ opacity: 1, scale: 1 }}
+      initial={shouldReduce ? {} : { opacity: 0, scale: 0.95 }}
+      whileInView={shouldReduce ? {} : { opacity: 1, scale: 1 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.4, delay, ease: "easeOut" as const }}
+      transition={transition}
       className={className}
     >
       {children}

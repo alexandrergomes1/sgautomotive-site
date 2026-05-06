@@ -52,7 +52,7 @@ export function Header() {
             className="flex-shrink-0"
             aria-label="SG Automotive — Inicio"
           >
-            <Logo variant="light" size="sm" />
+            <Logo size="sm" />
           </Link>
 
           {/* Desktop nav */}

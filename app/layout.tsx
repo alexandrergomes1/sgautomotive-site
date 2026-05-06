@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { buildOrganizationSchema } from "@/lib/schema-org";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://sgautomotive.com"),
@@ -9,9 +10,6 @@ export const metadata: Metadata = {
   },
   description:
     "Empresa online especializada en importación de coches a España, asesoría de compra en Europa y gestión documental. Costa del Sol, Fuengirola, Málaga.",
-  icons: {
-    icon: "/favicon.ico",
-  },
 };
 
 // Passthrough — html/body/lang live in app/[locale]/layout.tsx (next-intl pattern)
@@ -20,5 +18,14 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return children;
+  const orgSchema = buildOrganizationSchema();
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
+      />
+      {children}
+    </>
+  );
 }

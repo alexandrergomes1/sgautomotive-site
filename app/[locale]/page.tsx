@@ -14,8 +14,10 @@ import {
   buildLocalBusinessSchema,
   buildFAQSchema,
   buildWebsiteSchema,
+  buildVehicleListSchema,
   SITE_URL,
 } from "@/lib/schema-org";
+import { availableCars } from "@/data/cars";
 
 interface HomePageProps {
   params: Promise<{ locale: string }>;
@@ -84,6 +86,7 @@ export default async function HomePage({ params }: HomePageProps) {
   const lbSchema = buildLocalBusinessSchema(locale);
   const faqSchema = buildFAQSchema(faqItems);
   const websiteSchema = buildWebsiteSchema(locale);
+  const vehicleListSchema = buildVehicleListSchema(availableCars, locale);
 
   return (
     <>
@@ -99,6 +102,10 @@ export default async function HomePage({ params }: HomePageProps) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(vehicleListSchema) }}
       />
 
       <Hero />

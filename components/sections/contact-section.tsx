@@ -4,8 +4,8 @@ import { useTranslations } from "next-intl";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { motion } from "framer-motion";
 import { Mail, MapPin, Clock } from "lucide-react";
+import { SlideIn } from "@/components/ui/animate";
 import { toast } from "sonner";
 
 const WHATSAPP_NUMBER = "34662625953";
@@ -55,12 +55,7 @@ export function ContactSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
           {/* Left */}
-          <motion.div
-            initial={{ opacity: 0, x: -24 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.55 }}
-          >
+          <SlideIn from="left">
             <h2 className="text-3xl sm:text-4xl font-bold text-fg mb-4">
               {t("title")}
             </h2>
@@ -116,15 +111,10 @@ export function ContactSection() {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </SlideIn>
 
           {/* Form */}
-          <motion.div
-            initial={{ opacity: 0, x: 24 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.55, delay: 0.1 }}
-          >
+          <SlideIn from="right" delay={0.1}>
             <form
               onSubmit={handleSubmit(onSubmit)}
               className="space-y-4"
@@ -214,7 +204,7 @@ export function ContactSection() {
                 {isSubmitting ? t("form.submitting") : t("form.submit")}
               </button>
             </form>
-          </motion.div>
+          </SlideIn>
         </div>
       </div>
     </section>

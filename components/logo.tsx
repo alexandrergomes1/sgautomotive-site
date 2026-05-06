@@ -7,7 +7,7 @@ interface LogoProps {
 }
 
 // logo1.png: 1186×377 px → aspect ratio ≈ 3.145
-const heights = { sm: 44, md: 54, lg: 70 };
+const heights = { sm: 58, md: 72, lg: 90 };
 const ASPECT = 1186 / 377; // 3.145
 
 export function Logo({ size = "md", className }: LogoProps) {

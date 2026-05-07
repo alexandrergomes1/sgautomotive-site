@@ -1,4 +1,4 @@
-// /es — Static route ○. Pre-rendered at build time.
+// /pt — Static route ○. Pre-rendered at build time.
 // No next-intl, no getTranslations, no dynamic params.
 import type { Metadata } from "next";
 import {
@@ -22,14 +22,14 @@ import { About } from "@/components/site/About";
 import { FAQ } from "@/components/site/FAQ";
 import { ContactCTA } from "@/components/site/ContactCTA";
 
-const c = siteContent.es;
+const c = siteContent.pt;
 
 export const metadata: Metadata = {
   title: c.seo.title,
   description: c.seo.description,
   keywords: c.seo.keywords,
   alternates: {
-    canonical: `${SITE_URL}/es`,
+    canonical: `${SITE_URL}/pt`,
     languages: {
       es: `${SITE_URL}/es`,
       en: `${SITE_URL}/en`,
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: c.seo.ogLocale,
-    url: `${SITE_URL}/es`,
+    url: `${SITE_URL}/pt`,
     siteName: c.brand.name,
     title: c.seo.title,
     description: c.seo.description,
@@ -52,19 +52,19 @@ export const metadata: Metadata = {
   },
 };
 
-export default function EsPage() {
+export default function PtPage() {
   const schemas = [
-    buildLocalBusinessSchema("es"),
+    buildLocalBusinessSchema("pt"),
     buildFAQSchema(c.faq.items),
-    buildWebsiteSchema("es"),
-    buildVehicleListSchema(availableCars, "es"),
+    buildWebsiteSchema("pt"),
+    buildVehicleListSchema(availableCars, "pt"),
   ];
 
   return (
     <>
       <JsonLd data={schemas} />
       <Hero hero={c.hero} whatsappConsult={c.whatsapp.consult} />
-      <Vehicles locale="es" vehicles={c.vehicles} />
+      <Vehicles locale="pt" vehicles={c.vehicles} />
       <Services services={c.services} />
       <ImportSection importSection={c.importSection} waImport={c.whatsapp.import} />
       <Plans plans={c.plans} waConsult={c.whatsapp.consult} />

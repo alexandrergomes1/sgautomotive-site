@@ -72,51 +72,8 @@ body {
   outline-offset: 2px;
 }
 
-/* WhatsApp button — spring pop-in (used on [locale] route).
-   /es route: same keyframe via WhatsAppButton.tsx inline style. */
-@keyframes whatsapp-pop {
-  from { opacity: 0; transform: scale(0); }
-  to   { opacity: 1; transform: scale(1); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  @keyframes whatsapp-pop {
-    from { opacity: 1; transform: scale(1); }
-    to   { opacity: 1; transform: scale(1); }
-  }
-}
-
-/* Hero secondary elements — CSS-only, no JS dependency (used on [locale] route).
-   h1 (LCP) has NO animation. Badge, subtitle, CTAs, trust items use this fade. */
-@keyframes hero-secondary-in {
-  from { opacity: 0; transform: translateY(10px); }
-  to   { opacity: 1; transform: translateY(0);    }
-}
-
-.hero-secondary {
-  animation: hero-secondary-in 0.45s ease-out both;
-}
-.hero-d0 { animation-delay: 0ms;   }
-.hero-d1 { animation-delay: 80ms;  }
-.hero-d2 { animation-delay: 160ms; }
-.hero-d3 { animation-delay: 260ms; }
-
-@media (prefers-reduced-motion: reduce) {
-  .hero-secondary {
-    animation: none;
-    opacity: 1;
-    transform: none;
-  }
-}
-
-/* content-visibility (used on [locale] route) */
-.cv-auto {
-  content-visibility: auto;
-  contain-intrinsic-size: 0 600px;
-}
-
 /* Native <details>/<summary> — strip browser default triangle/marker.
-   Used by /es FAQ.tsx (zero-JS accordion). */
+   Used by FAQ.tsx (zero-JS accordion). */
 details > summary {
   list-style: none;
 }

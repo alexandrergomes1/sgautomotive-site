@@ -5,15 +5,18 @@ export const SITE_EMAIL = "sgautomotive.es@gmail.com";
 export const WHATSAPP_NUMBER = "34662625953";
 
 export function buildLocalBusinessSchema(locale: string) {
-  const isEs = locale === "es";
+  const description =
+    locale === "es"
+      ? "Empresa online especializada en compra, venta, importación y asesoría de vehículos en Europa. Basada en Fuengirola, Costa del Sol, Málaga, España."
+      : locale === "pt"
+      ? "Empresa online especializada em compra, venda, importação e consultoria de veículos na Europa. Sediada em Fuengirola, Costa del Sol, Málaga, Espanha."
+      : "Online company specialised in buying, selling, importing and advising on vehicles in Europe. Based in Fuengirola, Costa del Sol, Málaga, Spain.";
   return {
     "@context": "https://schema.org",
     "@type": ["AutoDealer", "ProfessionalService", "LocalBusiness"],
     name: "SG Automotive",
     alternateName: "SG Automotive Costa del Sol",
-    description: isEs
-      ? "Empresa online especializada en compra, venta, importación y asesoría de vehículos en Europa. Basada en Fuengirola, Costa del Sol, Málaga, España."
-      : "Online company specialised in buying, selling, importing and advising on vehicles in Europe. Based in Fuengirola, Costa del Sol, Málaga, Spain.",
+    description,
     url: `${SITE_URL}/${locale}`,
     logo: `${SITE_URL}/apple-icon`,
     image: `${SITE_URL}/${locale}/opengraph-image`,
@@ -82,7 +85,7 @@ export function buildWebsiteSchema(locale: string) {
     "@type": "WebSite",
     name: "SG Automotive",
     url: `${SITE_URL}/${locale}`,
-    inLanguage: locale === "es" ? "es-ES" : "en-GB",
+    inLanguage: locale === "es" ? "es-ES" : locale === "pt" ? "pt-PT" : "en-GB",
   };
 }
 
@@ -167,7 +170,12 @@ export function buildVehicleListSchema(
   return {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: locale === "es" ? "Vehículos disponibles — SG Automotive" : "Available Vehicles — SG Automotive",
+    name:
+      locale === "es"
+        ? "Vehículos disponibles — SG Automotive"
+        : locale === "pt"
+        ? "Veículos disponíveis — SG Automotive"
+        : "Available Vehicles — SG Automotive",
     numberOfItems: vehicles.length,
     itemListElement: vehicles.map((v, i) => ({
       "@type": "ListItem",

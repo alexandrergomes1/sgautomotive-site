@@ -4,7 +4,6 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import type { AbstractIntlMessages } from "next-intl";
 import { Geist } from "next/font/google";
-import { Toaster } from "sonner";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Header } from "@/components/layout/header";
@@ -39,36 +38,24 @@ export default async function LocaleLayout({
   }
 
   const allMessages = await getMessages();
-  // Only send the 3 namespaces used by client components:
-  // Header → "nav" | FAQ → "faq" | ContactSection → "contact"
   const m = allMessages as Record<string, AbstractIntlMessages>;
-  const clientMessages: AbstractIntlMessages = {
-    nav: m.nav,
-    faq: m.faq,
-    contact: m.contact,
-  };
+
+  // Provider scoped to Header only — nav messages exclusively.
+  // FAQ, ContactSection, WhatsAppButton are now server components (no provider needed).
+  // Footer uses getTranslations server-side (no provider needed).
+  const navMessages: AbstractIntlMessages = { nav: m.nav };
 
   return (
     // Dark mode is fixed via globals.css (color-scheme: dark) — no ThemeProvider needed.
-    // suppressHydrationWarning removed since next-themes is gone.
     <html lang={locale} className={geist.variable}>
       <body className="min-h-screen bg-bg text-fg antialiased">
-        <NextIntlClientProvider messages={clientMessages}>
+        <NextIntlClientProvider messages={navMessages}>
           <Header />
-          <main>{children}</main>
-          <Footer />
-          <WhatsAppButton />
-          <Toaster
-            theme="dark"
-            toastOptions={{
-              style: {
-                background: "#111827",
-                border: "1px solid #1f2937",
-                color: "#f8fafc",
-              },
-            }}
-          />
         </NextIntlClientProvider>
+        <main>{children}</main>
+        <Footer />
+        {/* Server component — locale passed as prop, no provider needed */}
+        <WhatsAppButton locale={locale} />
         <Analytics />
         <SpeedInsights />
       </body>

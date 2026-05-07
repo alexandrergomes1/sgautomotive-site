@@ -1,7 +1,12 @@
 // Server Component — renders all available vehicles server-side.
 // One image per car, loading="lazy". No carousel, no client JS.
 import { availableCars } from "@/data/cars";
-import { buildVehicleWaHref, type SiteContent, type Locale } from "@/data/site-content";
+import {
+  buildVehicleWaHref,
+  buildVehiclePhotosWaHref,
+  type SiteContent,
+  type Locale,
+} from "@/data/site-content";
 import { formatKm } from "@/lib/utils";
 import { VehicleCard } from "@/components/site/VehicleCard";
 
@@ -40,9 +45,13 @@ export function Vehicles({ locale, vehicles }: VehiclesProps) {
                 key={car.id}
                 car={car}
                 waHref={buildVehicleWaHref(car, formatKm(car.km), locale)}
+                waPhotosHref={buildVehiclePhotosWaHref(car, locale)}
                 ctaLabel={vehicles.contactVehicle}
+                photosLabel={vehicles.photosLabel}
                 fuelLabel={vehicles.fuel[car.fuel] ?? car.fuel}
-                transmissionLabel={vehicles.transmission[car.transmission] ?? car.transmission}
+                transmissionLabel={
+                  vehicles.transmission[car.transmission] ?? car.transmission
+                }
                 tagLabels={vehicles.tagLabels}
                 tagColors={vehicles.tagColors}
               />

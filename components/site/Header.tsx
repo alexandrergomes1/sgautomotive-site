@@ -1,9 +1,9 @@
-// Server Component — zero JS. No scroll listener, no useState, no useEffect.
-// No mobile hamburger in this baseline (spec: simplicity over features).
-// Responsive via CSS: nav links hidden on mobile, logo + lang + CTA visible.
-// Current locale is highlighted in the locale switcher via static prop.
+// Server Component — zero JS.
+// Mobile nav is handled by the isolated MobileMenu.client.tsx child.
+// Only the MobileMenu subtree is a Client Component; this file is Server.
 
 import { Logo } from "@/components/logo";
+import { MobileMenu } from "@/components/site/MobileMenu.client";
 import type { SiteContent, Locale } from "@/data/site-content";
 
 const LOCALE_LINKS: { locale: Locale; href: string; label: string }[] = [
@@ -45,8 +45,9 @@ export function Header({ locale, navigation, whatsapp }: HeaderProps) {
             ))}
           </nav>
 
-          {/* Right side: locale switcher + CTA */}
-          <div className="flex items-center gap-3 md:gap-5">
+          {/* Right side: locale switcher + CTA (desktop) + hamburger (mobile) */}
+          <div className="flex items-center gap-2 sm:gap-3 md:gap-5">
+
             {/* Locale switcher */}
             <div
               className="flex items-center gap-1.5 text-xs font-semibold tracking-widest uppercase"
@@ -55,7 +56,10 @@ export function Header({ locale, navigation, whatsapp }: HeaderProps) {
               {LOCALE_LINKS.map(({ locale: l, href, label }, i) => (
                 <span key={l} className="flex items-center gap-1.5">
                   {i > 0 && (
-                    <span className="text-border-light select-none" aria-hidden="true">
+                    <span
+                      className="text-border-light select-none"
+                      aria-hidden="true"
+                    >
                       |
                     </span>
                   )}
@@ -74,37 +78,26 @@ export function Header({ locale, navigation, whatsapp }: HeaderProps) {
               ))}
             </div>
 
-            {/* WhatsApp CTA — hidden on smallest mobile */}
+            {/* WhatsApp CTA — desktop only */}
             <a
               href={whatsapp.consult}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden sm:inline-flex text-sm font-semibold px-4 py-2 rounded-md bg-accent text-bg hover:bg-accent-light transition-colors whitespace-nowrap"
+              className="hidden md:inline-flex text-sm font-semibold px-4 py-2 rounded-md bg-accent text-bg hover:bg-accent-light transition-colors whitespace-nowrap"
             >
               {navigation.cta}
             </a>
+
+            {/* Mobile menu — renders hamburger button + panel (md:hidden internally) */}
+            <MobileMenu
+              locale={locale}
+              navigation={navigation}
+              whatsapp={whatsapp}
+            />
           </div>
 
         </div>
       </div>
-
-      {/* Mobile nav row — shows anchor links compactly below the top bar */}
-      <nav
-        className="md:hidden border-t border-border/40 overflow-x-auto"
-        aria-label="Mobile navigation"
-      >
-        <div className="flex items-center gap-0 px-4 py-0">
-          {navigation.links.map(({ anchor, label }) => (
-            <a
-              key={anchor}
-              href={anchor}
-              className="text-xs text-muted hover:text-fg transition-colors whitespace-nowrap px-3 py-2.5 shrink-0"
-            >
-              {label}
-            </a>
-          ))}
-        </div>
-      </nav>
     </header>
   );
 }

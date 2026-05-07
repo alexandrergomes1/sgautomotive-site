@@ -1,4 +1,4 @@
-// /en — Static locale layout. No next-intl. No client components.
+// /en — Static locale layout. No next-intl. No client components in this file.
 import type { ReactNode } from "react";
 import { Geist } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
@@ -6,6 +6,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { WhatsAppButton } from "@/components/site/WhatsAppButton";
+import { BackToTop } from "@/components/site/BackToTop";
 import { siteContent } from "@/data/site-content";
 
 const geist = Geist({
@@ -27,6 +28,7 @@ export default function EnLayout({ children }: { children: ReactNode }) {
           href={c.whatsapp.general}
           ariaLabel="Contact us on WhatsApp"
         />
+        <BackToTop />
         <Analytics />
         <SpeedInsights />
       </body>

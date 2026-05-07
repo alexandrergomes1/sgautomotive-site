@@ -39,6 +39,7 @@ export interface SiteContent {
     subtitle: string;
     empty: string;
     contactVehicle: string;
+    photosLabel: string;
     fuel: Record<string, string>;
     transmission: Record<string, string>;
     tagLabels: Record<string, string>;
@@ -169,6 +170,7 @@ const es: SiteContent = {
     subtitle: "Unidades verificadas, con historial comprobado y documentación en regla.",
     empty: "Próximamente nuevos vehículos disponibles. Contáctanos para más información.",
     contactVehicle: "Consultar por WhatsApp",
+    photosLabel: "Solicitar más fotos",
     fuel: {
       diesel: "Diésel",
       gasoline: "Gasolina",
@@ -549,6 +551,7 @@ const en: SiteContent = {
     subtitle: "Verified units with confirmed history and documentation in order.",
     empty: "New vehicles coming soon. Contact us for more information.",
     contactVehicle: "Enquire on WhatsApp",
+    photosLabel: "Request more photos",
     fuel: {
       diesel: "Diesel",
       gasoline: "Petrol",
@@ -929,6 +932,7 @@ const pt: SiteContent = {
     empty:
       "Brevemente novos veículos disponíveis. Contacte-nos para mais informações.",
     contactVehicle: "Consultar pelo WhatsApp",
+    photosLabel: "Solicitar mais fotos",
     fuel: {
       diesel: "Diesel",
       gasoline: "Gasolina",
@@ -1280,6 +1284,25 @@ const pt: SiteContent = {
 export const siteContent: Record<Locale, SiteContent> = { es, en, pt };
 
 // Vehicle WhatsApp message — built per locale in the component
+export function buildVehiclePhotosWaHref(
+  car: { make: string; model: string; version: string; year: number; id: string },
+  locale: Locale
+): string {
+  if (locale === "en") {
+    return waUrl(
+      `Hello, I would like to see more photos of the ${car.make} ${car.model} ${car.version} (${car.year}) — ref: ${car.id}.`
+    );
+  }
+  if (locale === "pt") {
+    return waUrl(
+      `Olá, gostaria de ver mais fotos do ${car.make} ${car.model} ${car.version} (${car.year}) — ref: ${car.id}.`
+    );
+  }
+  return waUrl(
+    `Hola, me gustaría ver más fotos del ${car.make} ${car.model} ${car.version} (${car.year}) — ref: ${car.id}.`
+  );
+}
+
 export function buildVehicleWaHref(
   car: { make: string; model: string; version: string; year: number; id: string },
   kmFormatted: string,

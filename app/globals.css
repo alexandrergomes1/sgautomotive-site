@@ -26,6 +26,14 @@
 
 :root {
   color-scheme: dark;
+  /* Header height — matches h-16 (mobile) / h-20 (desktop) in Header.tsx */
+  --header-h: 64px;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --header-h: 80px;
+  }
 }
 
 *,

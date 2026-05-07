@@ -86,13 +86,13 @@ export function Footer({ footer, locale, waGeneral }: FooterProps) {
           <div className="flex gap-5">
             <Link
               href={`/${locale}/privacidad`}
-              className="text-xs text-muted-2 hover:text-muted transition-colors"
+              className="text-xs text-muted-2 hover:text-fg transition-colors duration-200"
             >
               {footer.privacy}
             </Link>
             <Link
               href={`/${locale}/terminos`}
-              className="text-xs text-muted-2 hover:text-muted transition-colors"
+              className="text-xs text-muted-2 hover:text-fg transition-colors duration-200"
             >
               {footer.terms}
             </Link>

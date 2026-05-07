@@ -21,7 +21,7 @@ export function ContactCTA({ contact, waConsult }: ContactCTAProps) {
             href={waConsult}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex flex-col items-center gap-3 p-7 rounded-xl border border-trust/30 bg-trust/5 hover:bg-trust/10 hover:border-trust/50 transition-all duration-200 group"
+            className="flex flex-col items-center gap-3 p-7 rounded-xl border border-trust/30 bg-trust/5 hover:bg-trust/10 hover:border-trust/50 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-trust/10 transition-all duration-300 group"
           >
             <div className="w-12 h-12 rounded-full bg-trust/15 border border-trust/30 flex items-center justify-center group-hover:bg-trust/25 transition-colors">
               {/* Official WhatsApp logo SVG */}
@@ -40,7 +40,7 @@ export function ContactCTA({ contact, waConsult }: ContactCTAProps) {
           {/* Email */}
           <a
             href={`mailto:${EMAIL_ADDRESS}`}
-            className="flex flex-col items-center gap-3 p-7 rounded-xl border border-border bg-surface hover:border-accent/30 hover:bg-surface-2 transition-all duration-200 group"
+            className="flex flex-col items-center gap-3 p-7 rounded-xl border border-border bg-surface hover:border-accent/30 hover:bg-surface-2 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300 group"
           >
             <div className="w-12 h-12 rounded-full bg-accent/10 border border-accent/20 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
               <Mail size={22} className="text-accent" aria-hidden="true" />

@@ -36,7 +36,7 @@ export function About({ about }: AboutProps) {
             {about.stats.map((stat) => (
               <div
                 key={stat.label}
-                className="p-6 rounded-xl bg-surface border border-border hover:border-accent/20 transition-colors flex flex-col gap-1"
+                className="p-6 rounded-xl bg-surface border border-border hover:border-accent/30 hover:-translate-y-0.5 hover:shadow-md hover:shadow-accent/5 transition-all duration-300 flex flex-col gap-1"
               >
                 <span className="text-2xl font-bold text-accent">{stat.value}</span>
                 <span className="text-xs text-muted-2 uppercase tracking-widest">

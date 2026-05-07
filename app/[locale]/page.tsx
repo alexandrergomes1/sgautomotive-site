@@ -123,12 +123,14 @@ export default async function HomePage({ params }: HomePageProps) {
       <CatalogPreview />
       <Services />
       <ImportacaoSection />
-      <Plans />
-      <HowItWorks />
-      <Differentials />
-      <AboutSection />
-      <FAQ />
-      <ContactSection />
+      {/* content-visibility: auto — browser skips layout/paint until near viewport.
+          Only applied to sections well below the first 2–3 screen heights. */}
+      <div className="cv-auto"><Plans /></div>
+      <div className="cv-auto"><HowItWorks /></div>
+      <div className="cv-auto"><Differentials /></div>
+      <div className="cv-auto"><AboutSection /></div>
+      <div className="cv-auto"><FAQ /></div>
+      <div className="cv-auto"><ContactSection /></div>
     </>
   );
 }

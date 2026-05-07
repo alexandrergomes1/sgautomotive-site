@@ -34,7 +34,7 @@ export function Header({ locale, navigation, whatsapp }: HeaderProps) {
               <a
                 key={anchor}
                 href={anchor}
-                className="text-sm text-muted hover:text-fg transition-colors leading-none py-1"
+                className="text-sm text-muted hover:text-accent transition-colors duration-200 leading-none py-1"
               >
                 {label}
               </a>

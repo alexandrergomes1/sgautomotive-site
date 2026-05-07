@@ -41,7 +41,7 @@ export function Footer({ footer, locale, waGeneral }: FooterProps) {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="text-sm text-muted hover:text-fg transition-colors"
+                    className="text-sm text-muted hover:text-accent transition-colors duration-200"
                   >
                     {link.label}
                   </a>
@@ -61,7 +61,7 @@ export function Footer({ footer, locale, waGeneral }: FooterProps) {
                   href={waGeneral}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-muted hover:text-fg transition-colors"
+                  className="text-sm text-muted hover:text-accent transition-colors duration-200"
                 >
                   {WHATSAPP_DISPLAY}
                 </a>
@@ -69,7 +69,7 @@ export function Footer({ footer, locale, waGeneral }: FooterProps) {
               <li>
                 <a
                   href={`mailto:${EMAIL_ADDRESS}`}
-                  className="text-sm text-muted hover:text-fg transition-colors"
+                  className="text-sm text-muted hover:text-accent transition-colors duration-200"
                 >
                   {EMAIL_ADDRESS}
                 </a>

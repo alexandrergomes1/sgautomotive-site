@@ -87,7 +87,7 @@ export function VehicleCard({
             href={waHref}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2 w-full text-center text-sm font-semibold py-2.5 rounded-lg bg-accent text-bg hover:bg-accent-light transition-colors duration-200"
+            className="flex items-center justify-center gap-2 w-full text-center text-sm font-semibold py-2.5 rounded-lg bg-accent text-bg hover:bg-accent-light hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
           >
             {ctaLabel}
           </a>

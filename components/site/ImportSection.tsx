@@ -45,7 +45,7 @@ export function ImportSection({ importSection, waImport }: ImportSectionProps) {
               href={waImport}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg bg-accent text-bg font-semibold text-sm hover:bg-accent-light transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg bg-accent text-bg font-semibold text-sm hover:bg-accent-light hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
             >
               {importSection.cta}
               <ArrowRight size={16} aria-hidden="true" />

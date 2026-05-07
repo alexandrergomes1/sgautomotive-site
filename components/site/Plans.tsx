@@ -58,7 +58,7 @@ export function Plans({ plans, waConsult }: PlansProps) {
                 href={waConsult}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`block text-center text-sm font-semibold py-3 rounded-lg transition-all duration-200 ${
+                className={`block text-center text-sm font-semibold py-3 rounded-lg transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] ${
                   plan.featured
                     ? "bg-accent text-bg hover:bg-accent-light"
                     : "border border-accent/40 text-accent hover:bg-accent hover:text-bg"

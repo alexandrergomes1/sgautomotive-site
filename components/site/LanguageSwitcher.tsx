@@ -19,11 +19,11 @@ export function LanguageSwitcher({ locale }: LanguageSwitcherProps) {
 
   return (
     <details className="relative group" aria-label="Language">
-      <summary className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest cursor-pointer select-none text-accent hover:text-accent-light transition-colors list-none [&::-webkit-details-marker]:hidden">
-        <Globe size={13} aria-hidden="true" />
+      <summary className="flex items-center gap-2 text-sm font-bold uppercase tracking-wider cursor-pointer select-none text-accent hover:text-accent-light transition-colors list-none [&::-webkit-details-marker]:hidden px-1 py-1">
+        <Globe size={16} aria-hidden="true" />
         {current?.label ?? locale.toUpperCase()}
         <ChevronDown
-          size={11}
+          size={13}
           className="transition-transform duration-200 group-open:rotate-180"
           aria-hidden="true"
         />
@@ -35,7 +35,7 @@ export function LanguageSwitcher({ locale }: LanguageSwitcherProps) {
           <a
             key={l}
             href={href}
-            className={`flex items-center justify-between px-4 py-2.5 text-sm transition-colors hover:bg-surface-2 ${
+            className={`flex items-center justify-between px-4 py-2.5 text-sm transition-colors hover:bg-white/5 ${
               locale === l
                 ? "text-accent font-semibold"
                 : "text-muted hover:text-fg"

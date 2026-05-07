@@ -58,43 +58,40 @@ export function MobileMenu({ navigation, whatsapp }: MobileMenuProps) {
         }`}
       />
 
-      {/* Slide-in panel */}
+      {/* Slide-in panel — bg-bg matches page background for solid look */}
       <div
         id="mobile-nav-panel"
         role="dialog"
         aria-modal="true"
         aria-label="Menu de navegação"
         aria-hidden={!open}
-        className={`fixed top-0 left-0 bottom-0 z-50 w-72 max-w-[85vw] bg-surface border-r border-border flex flex-col transition-transform duration-300 ease-out ${
+        className={`fixed top-0 left-0 bottom-0 z-50 w-72 max-w-[85vw] bg-bg border-r border-border/70 flex flex-col transition-transform duration-300 ease-out ${
           open ? "translate-x-0" : "-translate-x-full"
         }`}
       >
         {/* Panel header */}
-        <div className="flex items-center justify-between px-5 h-16 border-b border-border shrink-0">
+        <div className="flex items-center justify-between px-5 h-16 border-b border-border/70 shrink-0">
           <a href="#inicio" onClick={() => setOpen(false)} aria-label="SG Automotive">
             <Logo size="sm" />
           </a>
           <button
             type="button"
             onClick={() => setOpen(false)}
-            className="flex items-center justify-center w-8 h-8 rounded-md text-muted hover:text-fg hover:bg-bg transition-colors"
+            className="flex items-center justify-center w-8 h-8 rounded-md text-muted hover:text-fg hover:bg-surface transition-colors"
             aria-label="Fechar menu"
           >
             <X size={18} aria-hidden="true" />
           </button>
         </div>
 
-        {/* Nav links — from navigation.links, same array as desktop */}
-        <nav
-          className="flex-1 py-4 px-3"
-          aria-label="Menu mobile"
-        >
+        {/* Nav links — full-width with separator borders, no rounded corners */}
+        <nav className="flex-1" aria-label="Menu mobile">
           {navigation.links.map(({ anchor, label }) => (
             <a
               key={anchor}
               href={anchor}
               onClick={() => setOpen(false)}
-              className="flex items-center px-4 py-3.5 rounded-lg text-base font-medium text-fg hover:text-accent hover:bg-bg transition-colors"
+              className="flex items-center w-full px-6 py-4 text-base font-medium text-fg/90 border-b border-border/50 hover:text-accent hover:bg-surface/50 transition-colors"
             >
               {label}
             </a>
@@ -102,13 +99,13 @@ export function MobileMenu({ navigation, whatsapp }: MobileMenuProps) {
         </nav>
 
         {/* Panel footer: WA CTA only — locale switcher is in header */}
-        <div className="px-4 pb-6 pt-4 border-t border-border shrink-0">
+        <div className="px-5 pb-8 pt-5 border-t border-border/70 shrink-0">
           <a
             href={whatsapp.consult}
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setOpen(false)}
-            className="flex items-center justify-center gap-2 w-full py-3.5 rounded-xl bg-accent text-bg font-semibold text-sm hover:bg-accent-light transition-colors"
+            className="flex items-center justify-center gap-2 w-full py-4 rounded-xl bg-accent text-bg font-semibold text-sm hover:bg-accent-light transition-colors"
           >
             {navigation.cta}
           </a>

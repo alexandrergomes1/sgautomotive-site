@@ -57,7 +57,7 @@ export function ImportSection({ importSection, waImport }: ImportSectionProps) {
             {importSection.steps.map((step) => (
               <div
                 key={step.number}
-                className="flex gap-5 p-5 bg-bg border border-border rounded-xl hover:border-accent/30 transition-colors"
+                className="flex gap-5 p-5 bg-bg border border-border rounded-xl hover:border-accent/30 hover:-translate-y-0.5 hover:shadow-md hover:shadow-accent/5 transition-all duration-300"
               >
                 <div className="shrink-0 w-10 h-10 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center">
                   <span className="text-accent font-bold text-xs">{step.number}</span>

@@ -31,23 +31,6 @@ export function Hero({ hero, whatsappConsult }: HeroProps) {
         ].join(", "),
       }}
     >
-      {/* Subtle gold grid overlay — purely decorative, zero JS */}
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          backgroundImage: [
-            "linear-gradient(rgba(200,169,106,0.035) 1px, transparent 1px)",
-            "linear-gradient(90deg, rgba(200,169,106,0.035) 1px, transparent 1px)",
-          ].join(", "),
-          backgroundSize: "72px 72px",
-          maskImage:
-            "radial-gradient(ellipse 90% 70% at 50% 0%, black 0%, transparent 75%)",
-          WebkitMaskImage:
-            "radial-gradient(ellipse 90% 70% at 50% 0%, black 0%, transparent 75%)",
-        }}
-      />
-
       {/* Decorative vertical accent line — desktop only */}
       <div
         aria-hidden="true"

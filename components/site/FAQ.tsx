@@ -24,7 +24,7 @@ export function FAQ({ faq }: FAQProps) {
               key={i}
               // name groups items — browser closes others when one opens (exclusive accordion)
               name="faq-sg"
-              className="group rounded-xl border border-border bg-bg open:border-accent/30 open:bg-bg open:shadow-sm open:shadow-accent/5 transition-colors duration-200"
+              className="group rounded-lg border border-border bg-bg open:border-accent/30 open:bg-surface-2/60 hover:border-accent/25 transition-colors duration-200"
             >
               <summary className="flex items-center justify-between gap-4 px-5 py-4 cursor-pointer list-none select-none leading-snug hover:text-accent transition-colors duration-200">
                 <span className="font-medium text-fg text-sm group-open:text-accent transition-colors duration-200">

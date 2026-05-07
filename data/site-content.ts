@@ -39,7 +39,6 @@ export interface SiteContent {
     subtitle: string;
     empty: string;
     contactVehicle: string;
-    photosLabel: string;
     fuel: Record<string, string>;
     transmission: Record<string, string>;
     tagLabels: Record<string, string>;
@@ -144,6 +143,7 @@ const es: SiteContent = {
   },
   navigation: {
     links: [
+      { anchor: "#inicio", label: "Inicio" },
       { anchor: "#veiculos", label: "Vehículos" },
       { anchor: "#importacao", label: "Importación" },
       { anchor: "#servicos", label: "Servicios" },
@@ -170,7 +170,6 @@ const es: SiteContent = {
     subtitle: "Unidades verificadas, con historial comprobado y documentación en regla.",
     empty: "Próximamente nuevos vehículos disponibles. Contáctanos para más información.",
     contactVehicle: "Consultar por WhatsApp",
-    photosLabel: "Solicitar más fotos",
     fuel: {
       diesel: "Diésel",
       gasoline: "Gasolina",
@@ -340,13 +339,13 @@ const es: SiteContent = {
       },
       {
         number: "04",
-        title: "Compra y gestión",
+        title: "Compra, transporte y trámites",
         description:
           "Gestionamos la compra, el transporte desde origen y todos los trámites de importación y regularización.",
       },
       {
         number: "05",
-        title: "Entrega",
+        title: "Entrega y regularización",
         description:
           "El vehículo llega matriculado, con ITV, documentación en regla y listo para circular en España.",
       },
@@ -407,7 +406,7 @@ const es: SiteContent = {
       { value: "Costa del Sol", label: "Base de operaciones" },
       { value: "ES · EN · PT", label: "Idiomas de atención" },
       { value: "100%", label: "Gestión online" },
-      { value: "EU", label: "Mercado de actuación" },
+      { value: "Europa", label: "Mercado de actuación" },
     ],
   },
   faq: {
@@ -415,52 +414,52 @@ const es: SiteContent = {
     subtitle: "Todo lo que necesitas saber antes de empezar.",
     items: [
       {
-        question: "¿Tienen tienda física o showroom?",
+        question: "Tienen tienda física o showroom?",
         answer:
           "No. SG Automotive opera completamente de forma online y remota. Toda la comunicación, análisis y gestión se realiza por correo electrónico, WhatsApp y videollamada. Esto nos permite trabajar con mayor eficiencia y menor coste para el cliente.",
       },
       {
-        question: "¿Puedo importar un coche desde Alemania, Francia u otro país europeo?",
+        question: "Puedo importar un coche desde Alemania, Francia u otro país europeo?",
         answer:
           "Sí. Gestionamos la importación de vehículos desde cualquier país de la Unión Europea hacia España, incluyendo la compra, transporte, homologación, despacho y matrícula.",
       },
       {
-        question: "¿Qué documentación necesito para importar un vehículo?",
+        question: "Qué documentación necesito para importar un vehículo?",
         answer:
           "En la mayoría de los casos necesitarás tu DNI o NIE, comprobante de domicilio en España y los documentos del vehículo (título de propiedad, ficha técnica y certificado de conformidad). Te guiamos en cada paso.",
       },
       {
-        question: "¿El precio que veo incluye todos los impuestos y trámites?",
+        question: "El precio que veo incluye todos los impuestos y trámites?",
         answer:
           "El precio de los vehículos en nuestro catálogo es el precio de coste. Los gastos de importación, IVA, impuesto de matriculación, ITV y transporte se detallan por separado en función del tipo de vehículo y origen.",
       },
       {
-        question: "¿Qué significa IVA recuperable en los vehículos?",
+        question: "Qué significa IVA recuperable en los vehículos?",
         answer:
           "Algunos vehículos provienen de operaciones comerciales y permiten recuperar el IVA si eres autónomo o empresa con derecho a deducción. Es una ventaja fiscal significativa.",
       },
       {
-        question: "¿Los vehículos tienen garantía?",
+        question: "Los vehículos tienen garantía?",
         answer:
           "Depende del vehículo y su procedencia. Los que aparecen con etiqueta 'Con garantía' incluyen garantía de fabricante vigente o garantía contractual. En otros casos podemos gestionar seguros de garantía adicionales.",
       },
       {
-        question: "¿Puedo contrataros solo para la parte documental?",
+        question: "Puedo contrataros solo para la parte documental?",
         answer:
           "Sí. Ofrecemos el Plan Documental, específicamente diseñado para gestionar la matrícula, ITV, cambio de titularidad y demás trámites si ya has adquirido el vehículo por tu cuenta.",
       },
       {
-        question: "¿Cuánto tiempo tarda el proceso de importación?",
+        question: "Cuánto tiempo tarda el proceso de importación?",
         answer:
           "El proceso completo suele tomar entre 3 y 6 semanas desde la compra del vehículo hasta la entrega matriculada en España, dependiendo del país de origen y la carga administrativa vigente.",
       },
       {
-        question: "¿Atienden a clientes de toda España?",
+        question: "Atienden a clientes de toda España?",
         answer:
           "Sí. Aunque estamos basados en Fuengirola, Málaga, operamos en remoto y podemos gestionar la importación y entrega en cualquier punto de España.",
       },
       {
-        question: "¿Cómo empiezo?",
+        question: "Cómo empiezo?",
         answer:
           "Simplemente escríbenos por WhatsApp o correo electrónico con tus necesidades. Haremos una consulta inicial gratuita para entender tu caso y explicarte las opciones más adecuadas.",
       },
@@ -525,6 +524,7 @@ const en: SiteContent = {
   },
   navigation: {
     links: [
+      { anchor: "#inicio", label: "Home" },
       { anchor: "#veiculos", label: "Vehicles" },
       { anchor: "#importacao", label: "Import" },
       { anchor: "#servicos", label: "Services" },
@@ -551,7 +551,6 @@ const en: SiteContent = {
     subtitle: "Verified units with confirmed history and documentation in order.",
     empty: "New vehicles coming soon. Contact us for more information.",
     contactVehicle: "Enquire on WhatsApp",
-    photosLabel: "Request more photos",
     fuel: {
       diesel: "Diesel",
       gasoline: "Petrol",
@@ -720,13 +719,13 @@ const en: SiteContent = {
       },
       {
         number: "04",
-        title: "Purchase and management",
+        title: "Purchase, transport and paperwork",
         description:
           "We manage the purchase, transport from origin and all import and registration procedures.",
       },
       {
         number: "05",
-        title: "Delivery",
+        title: "Delivery and registration",
         description:
           "The vehicle arrives registered, with ITV, documentation in order and ready to drive in Spain.",
       },
@@ -787,7 +786,7 @@ const en: SiteContent = {
       { value: "Costa del Sol", label: "Base of operations" },
       { value: "ES · EN · PT", label: "Languages" },
       { value: "100%", label: "Online management" },
-      { value: "EU", label: "Operating market" },
+      { value: "Europe", label: "Operating market" },
     ],
   },
   faq: {
@@ -905,6 +904,7 @@ const pt: SiteContent = {
   },
   navigation: {
     links: [
+      { anchor: "#inicio", label: "Início" },
       { anchor: "#veiculos", label: "Veículos" },
       { anchor: "#importacao", label: "Importação" },
       { anchor: "#servicos", label: "Serviços" },
@@ -932,7 +932,6 @@ const pt: SiteContent = {
     empty:
       "Brevemente novos veículos disponíveis. Contacte-nos para mais informações.",
     contactVehicle: "Consultar pelo WhatsApp",
-    photosLabel: "Solicitar mais fotos",
     fuel: {
       diesel: "Diesel",
       gasoline: "Gasolina",
@@ -1103,13 +1102,13 @@ const pt: SiteContent = {
       },
       {
         number: "04",
-        title: "Compra e gestão",
+        title: "Compra, transporte e trâmites",
         description:
           "Gerimos a compra, o transporte desde a origem e todos os trâmites de importação e regularização.",
       },
       {
         number: "05",
-        title: "Entrega",
+        title: "Entrega e regularização",
         description:
           "O veículo chega matriculado, com ITV, documentação em ordem e pronto para circular em Espanha.",
       },
@@ -1170,7 +1169,7 @@ const pt: SiteContent = {
       { value: "Costa del Sol", label: "Base de operações" },
       { value: "ES · EN · PT", label: "Idiomas de atendimento" },
       { value: "100%", label: "Gestão online" },
-      { value: "EU", label: "Mercado de atuação" },
+      { value: "Europa", label: "Mercado de atuação" },
     ],
   },
   faq: {
@@ -1284,25 +1283,6 @@ const pt: SiteContent = {
 export const siteContent: Record<Locale, SiteContent> = { es, en, pt };
 
 // Vehicle WhatsApp message — built per locale in the component
-export function buildVehiclePhotosWaHref(
-  car: { make: string; model: string; version: string; year: number; id: string },
-  locale: Locale
-): string {
-  if (locale === "en") {
-    return waUrl(
-      `Hello, I would like to see more photos of the ${car.make} ${car.model} ${car.version} (${car.year}) — ref: ${car.id}.`
-    );
-  }
-  if (locale === "pt") {
-    return waUrl(
-      `Olá, gostaria de ver mais fotos do ${car.make} ${car.model} ${car.version} (${car.year}) — ref: ${car.id}.`
-    );
-  }
-  return waUrl(
-    `Hola, me gustaría ver más fotos del ${car.make} ${car.model} ${car.version} (${car.year}) — ref: ${car.id}.`
-  );
-}
-
 export function buildVehicleWaHref(
   car: { make: string; model: string; version: string; year: number; id: string },
   kmFormatted: string,

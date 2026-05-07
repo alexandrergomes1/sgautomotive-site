@@ -23,7 +23,7 @@ export function Plans({ plans, waConsult }: PlansProps) {
               className={`relative flex flex-col rounded-xl border p-7 transition-all duration-300 ${
                 plan.featured
                   ? "border-accent bg-surface-2 shadow-xl shadow-accent/10"
-                  : "border-border bg-surface hover:border-accent/30"
+                  : "border-border bg-surface hover:border-accent/30 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-accent/5"
               }`}
             >
               {plan.featured && (

@@ -70,7 +70,7 @@ export default function EnPage() {
       <Plans plans={c.plans} waConsult={c.whatsapp.consult} />
       <HowItWorks howItWorks={c.howItWorks} />
       <Differentials differentials={c.differentials} />
-      <About about={c.about} waGeneral={c.whatsapp.general} />
+      <About about={c.about} />
       <FAQ faq={c.faq} />
       <ContactCTA contact={c.contact} waConsult={c.whatsapp.consult} />
     </>

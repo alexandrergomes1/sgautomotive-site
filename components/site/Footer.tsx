@@ -1,6 +1,7 @@
 // Server Component — no animations, no Framer Motion.
 import Link from "next/link";
-import Image from "next/image";
+import { MapPin } from "lucide-react";
+import { Logo } from "@/components/logo";
 import type { SiteContent } from "@/data/site-content";
 import { EMAIL_ADDRESS, WHATSAPP_DISPLAY } from "@/data/site-content";
 import type { Locale } from "@/data/site-content";
@@ -20,17 +21,14 @@ export function Footer({ footer, locale, waGeneral }: FooterProps) {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-10">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <Link href={`/${locale}`} aria-label="SG Automotive — início">
-              <Image
-                src="/logo-dark.png"
-                alt="SG Automotive"
-                width={120}
-                height={32}
-                className="h-8 w-auto mb-4"
-              />
+            <Link href={`/${locale}`} aria-label="SG Automotive — início" className="inline-block mb-4">
+              <Logo size="sm" />
             </Link>
             <p className="text-muted text-sm leading-relaxed max-w-xs mb-4">{footer.tagline}</p>
-            <p className="text-muted-2 text-xs">{footer.location}</p>
+            <p className="text-muted-2 text-xs flex items-center gap-1.5">
+              <MapPin size={12} className="text-accent/60 shrink-0" aria-hidden="true" />
+              {footer.location}
+            </p>
           </div>
 
           {/* Nav */}

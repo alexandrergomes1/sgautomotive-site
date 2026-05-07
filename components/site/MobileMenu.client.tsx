@@ -1,8 +1,8 @@
 "use client";
-// Isolated client component — only open/close state lives here.
-// Header.tsx stays a pure Server Component.
-// Background: inline style guarantees solid #111827 regardless of CSS var resolution.
-// No locale switcher — lives in Header via LanguageSwitcher.tsx.
+// Isolated client component — open/close state only.
+// Panel: full-screen on mobile (inset-0), partial width on sm+ (w-80).
+// This eliminates any page-content "bleed" through the backdrop on narrow phones.
+// Backdrop: handles sm+ overlay; on mobile, panel covers full screen already.
 
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
@@ -47,20 +47,20 @@ export function MobileMenu({ navigation, whatsapp }: MobileMenuProps) {
         <Menu size={20} aria-hidden="true" />
       </button>
 
-      {/* Backdrop — darkens + blurs page behind panel */}
+      {/* Backdrop — visible on sm+ where panel doesn't cover full width */}
       <div
         onClick={() => setOpen(false)}
         aria-hidden="true"
-        className={`fixed inset-0 z-40 backdrop-blur-sm transition-opacity duration-300 ${
+        className={`fixed inset-0 z-40 transition-opacity duration-300 ${
           open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
-        style={{ backgroundColor: "rgba(11,15,20,0.75)" }}
+        style={{ backgroundColor: "rgba(0,0,0,0.85)", backdropFilter: "blur(4px)" }}
       />
 
       {/* Slide-in panel
-          - backgroundColor via inline style: guarantees solid #111827 regardless of Tailwind CSS var resolution
-          - shadow-2xl gives visual depth and separation from backdrop
-          - border-r defines the right edge clearly
+          Mobile: inset-0 = full screen (no page bleed whatsoever)
+          sm+: w-80, right-auto (partial width, backdrop shows on the right)
+          backgroundColor via inline style — immune to CSS variable resolution issues
       */}
       <div
         id="mobile-nav-panel"
@@ -68,19 +68,18 @@ export function MobileMenu({ navigation, whatsapp }: MobileMenuProps) {
         aria-modal="true"
         aria-label="Menu de navegação"
         aria-hidden={!open}
-        className={`fixed top-0 left-0 bottom-0 z-50 w-72 max-w-[85vw] flex flex-col shadow-2xl transition-transform duration-300 ease-out ${
+        className={`fixed top-0 left-0 bottom-0 right-0 sm:right-auto sm:w-80 z-50 flex flex-col transition-transform duration-300 ease-out ${
           open ? "translate-x-0" : "-translate-x-full"
         }`}
         style={{
           backgroundColor: "#111827",
-          boxShadow: "4px 0 40px rgba(0,0,0,0.7)",
-          borderRight: "1px solid rgba(31,41,55,0.8)",
+          boxShadow: "6px 0 48px rgba(0,0,0,0.8)",
         }}
       >
         {/* Panel header */}
         <div
           className="flex items-center justify-between px-5 h-16 shrink-0"
-          style={{ borderBottom: "1px solid rgba(31,41,55,0.8)" }}
+          style={{ borderBottom: "1px solid rgba(31,41,55,0.9)" }}
         >
           <a href="#inicio" onClick={() => setOpen(false)} aria-label="SG Automotive">
             <Logo size="sm" />
@@ -95,7 +94,7 @@ export function MobileMenu({ navigation, whatsapp }: MobileMenuProps) {
           </button>
         </div>
 
-        {/* Nav links — full-width, border-bottom separator, no rounded corners */}
+        {/* Nav links — full-width with border-bottom separators */}
         <nav className="flex-1" aria-label="Menu mobile">
           {navigation.links.map(({ anchor, label }) => (
             <a
@@ -113,14 +112,14 @@ export function MobileMenu({ navigation, whatsapp }: MobileMenuProps) {
         {/* Footer — WhatsApp CTA only */}
         <div
           className="px-5 pb-8 pt-5 shrink-0"
-          style={{ borderTop: "1px solid rgba(31,41,55,0.8)" }}
+          style={{ borderTop: "1px solid rgba(31,41,55,0.9)" }}
         >
           <a
             href={whatsapp.consult}
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setOpen(false)}
-            className="flex items-center justify-center gap-2 w-full py-4 rounded-xl font-semibold text-sm transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]"
+            className="flex items-center justify-center gap-2 w-full py-4 rounded-xl font-semibold text-sm transition-all duration-200 hover:opacity-90 hover:scale-[1.01] active:scale-[0.99]"
             style={{ backgroundColor: "#c8a96a", color: "#0b0f14" }}
           >
             {navigation.cta}

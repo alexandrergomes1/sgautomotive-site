@@ -6,6 +6,7 @@ import {
   buildFAQSchema,
   buildWebsiteSchema,
   buildVehicleListSchema,
+  buildOrganizationSchema,
 } from "@/lib/schema-org";
 import { availableCars } from "@/data/cars";
 import { siteContent, SITE_URL } from "@/data/site-content";
@@ -55,6 +56,7 @@ export const metadata: Metadata = {
 export default function PtPage() {
   const schemas = [
     buildLocalBusinessSchema("pt"),
+    buildOrganizationSchema(),
     buildFAQSchema(c.faq.items),
     buildWebsiteSchema("pt"),
     buildVehicleListSchema(availableCars, "pt"),

@@ -6,6 +6,7 @@ import {
   buildFAQSchema,
   buildWebsiteSchema,
   buildVehicleListSchema,
+  buildOrganizationSchema,
 } from "@/lib/schema-org";
 import { availableCars } from "@/data/cars";
 import { siteContent, SITE_URL } from "@/data/site-content";
@@ -55,6 +56,7 @@ export const metadata: Metadata = {
 export default function EnPage() {
   const schemas = [
     buildLocalBusinessSchema("en"),
+    buildOrganizationSchema(),
     buildFAQSchema(c.faq.items),
     buildWebsiteSchema("en"),
     buildVehicleListSchema(availableCars, "en"),

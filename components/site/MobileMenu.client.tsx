@@ -2,25 +2,19 @@
 // Isolated client component — only open/close state lives here.
 // Header.tsx stays a pure Server Component.
 // Animation: CSS transform/opacity via Tailwind classes. No Framer. No Radix.
+// Locale switcher removed from this panel — it lives in Header via LanguageSwitcher.
 
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Logo } from "@/components/logo";
-import type { SiteContent, Locale } from "@/data/site-content";
-
-const LOCALE_LINKS: { locale: Locale; href: string; label: string; name: string }[] = [
-  { locale: "es", href: "/es", label: "ES", name: "Español" },
-  { locale: "en", href: "/en", label: "EN", name: "English" },
-  { locale: "pt", href: "/pt", label: "PT", name: "Português" },
-];
+import type { SiteContent } from "@/data/site-content";
 
 interface MobileMenuProps {
-  locale: Locale;
   navigation: SiteContent["navigation"];
   whatsapp: SiteContent["whatsapp"];
 }
 
-export function MobileMenu({ locale, navigation, whatsapp }: MobileMenuProps) {
+export function MobileMenu({ navigation, whatsapp }: MobileMenuProps) {
   const [open, setOpen] = useState(false);
 
   // Close on ESC
@@ -92,7 +86,7 @@ export function MobileMenu({ locale, navigation, whatsapp }: MobileMenuProps) {
 
         {/* Nav links — from navigation.links, same array as desktop */}
         <nav
-          className="flex-1 min-h-0 overflow-y-auto py-4 px-3"
+          className="flex-1 py-4 px-3"
           aria-label="Menu mobile"
         >
           {navigation.links.map(({ anchor, label }) => (
@@ -100,42 +94,24 @@ export function MobileMenu({ locale, navigation, whatsapp }: MobileMenuProps) {
               key={anchor}
               href={anchor}
               onClick={() => setOpen(false)}
-              className="flex items-center px-4 py-3 rounded-lg text-sm font-medium text-fg hover:text-accent hover:bg-bg transition-colors"
+              className="flex items-center px-4 py-3.5 rounded-lg text-base font-medium text-fg hover:text-accent hover:bg-bg transition-colors"
             >
               {label}
             </a>
           ))}
         </nav>
 
-        {/* Panel footer: WA CTA + locale links */}
-        <div className="px-4 pb-6 pt-4 border-t border-border flex flex-col gap-4 shrink-0">
+        {/* Panel footer: WA CTA only — locale switcher is in header */}
+        <div className="px-4 pb-6 pt-4 border-t border-border shrink-0">
           <a
             href={whatsapp.consult}
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setOpen(false)}
-            className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-accent text-bg font-semibold text-sm hover:bg-accent-light transition-colors"
+            className="flex items-center justify-center gap-2 w-full py-3.5 rounded-xl bg-accent text-bg font-semibold text-sm hover:bg-accent-light transition-colors"
           >
             {navigation.cta}
           </a>
-
-          {/* Locale links */}
-          <div className="flex justify-center gap-1">
-            {LOCALE_LINKS.map(({ locale: l, href, label }) => (
-              <a
-                key={l}
-                href={href}
-                aria-current={locale === l ? "page" : undefined}
-                className={`px-3 py-1.5 rounded-lg text-xs font-bold uppercase tracking-widest transition-colors ${
-                  locale === l
-                    ? "bg-accent/15 text-accent border border-accent/30"
-                    : "text-muted hover:text-fg hover:bg-bg"
-                }`}
-              >
-                {label}
-              </a>
-            ))}
-          </div>
         </div>
       </div>
     </>

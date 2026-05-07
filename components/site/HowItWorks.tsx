@@ -17,11 +17,6 @@ export function HowItWorks({ howItWorks }: HowItWorksProps) {
         </div>
 
         <div className="relative">
-          {/* Connector line — desktop only */}
-          <div
-            aria-hidden="true"
-            className="hidden lg:block absolute top-8 left-[calc(10%+2rem)] right-[calc(10%+2rem)] h-px bg-gradient-to-r from-transparent via-border to-transparent"
-          />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
             {howItWorks.steps.map((step) => (
               <div

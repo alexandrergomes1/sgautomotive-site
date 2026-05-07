@@ -17,15 +17,8 @@ export function Hero({ hero, whatsappConsult }: HeroProps) {
   return (
     <section
       id="inicio"
-      className="relative min-h-svh flex flex-col justify-center overflow-hidden"
-      style={{
-        paddingTop: "calc(var(--header-h, 64px) + 1px)",
-        background: [
-          // Subtle top gold glow only — clean, consistent with site palette
-          "radial-gradient(ellipse 80% 50% at 50% -5%, color-mix(in srgb,#c8a96a 10%,transparent), transparent)",
-          "#0b0f14",
-        ].join(", "),
-      }}
+      className="relative min-h-svh flex flex-col justify-center overflow-hidden bg-bg"
+      style={{ paddingTop: "calc(var(--header-h, 64px) + 1px)" }}
     >
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">

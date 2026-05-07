@@ -3,9 +3,10 @@ import { defineRouting } from "next-intl/routing";
 export const routing = defineRouting({
   locales: ["es", "en", "pt"],
   defaultLocale: "es",
-  // "as-needed": default locale (es) has no prefix → served at /
-  // Other locales get explicit prefix → /en, /pt
-  localePrefix: "as-needed",
+  // "always": every locale has explicit prefix → /es, /en, /pt
+  // Eliminates middleware double-redirect when switching from /en → /es.
+  // The static app/es/ route takes precedence over [locale] for /es.
+  localePrefix: "always",
   // Disable automatic Accept-Language / cookie detection.
   // Locale is determined ONLY by the URL prefix (or its absence).
   // Without this, navigating to "/" (ES) would be redirected to /en

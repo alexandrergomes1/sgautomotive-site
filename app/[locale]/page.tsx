@@ -34,19 +34,19 @@ export async function generateMetadata({
     title: t("title"),
     description: t("description"),
     alternates: {
-      // With localePrefix:"as-needed", es is served at root /
-      canonical: locale === "es" ? SITE_URL : `${SITE_URL}/${locale}`,
+      // With localePrefix:"always", every locale has its prefix (/es, /en, /pt)
+      canonical: `${SITE_URL}/${locale}`,
       languages: {
-        "es": SITE_URL,
+        "es": `${SITE_URL}/es`,
         "en": `${SITE_URL}/en`,
         "pt": `${SITE_URL}/pt`,
-        "x-default": SITE_URL,
+        "x-default": `${SITE_URL}/es`,
       },
     },
     openGraph: {
       type: "website",
       locale: locale === "es" ? "es_ES" : locale === "pt" ? "pt_PT" : "en_GB",
-      url: locale === "es" ? SITE_URL : `${SITE_URL}/${locale}`,
+      url: `${SITE_URL}/${locale}`,
       siteName: "SG Automotive",
       title: t("title"),
       description: t("description"),

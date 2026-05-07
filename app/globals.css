@@ -72,25 +72,22 @@ body {
   outline-offset: 2px;
 }
 
-/* WhatsApp button — spring pop-in (1.2s delay, fill-mode both hides it until then) */
+/* WhatsApp button — spring pop-in (used on [locale] route).
+   /es route: same keyframe via WhatsAppButton.tsx inline style. */
 @keyframes whatsapp-pop {
   from { opacity: 0; transform: scale(0); }
   to   { opacity: 1; transform: scale(1); }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  /* Override keyframe so fill-mode:both still applies but nothing moves */
   @keyframes whatsapp-pop {
     from { opacity: 1; transform: scale(1); }
     to   { opacity: 1; transform: scale(1); }
   }
 }
 
-/* ─────────────────────────────────────────────────────────
-   Hero secondary elements — CSS-only, no JS dependency.
-   h1 (LCP element) has NO animation and renders immediately.
-   Badge, subtitle, CTAs, trust items use this lightweight fade.
-   ───────────────────────────────────────────────────────── */
+/* Hero secondary elements — CSS-only, no JS dependency (used on [locale] route).
+   h1 (LCP) has NO animation. Badge, subtitle, CTAs, trust items use this fade. */
 @keyframes hero-secondary-in {
   from { opacity: 0; transform: translateY(10px); }
   to   { opacity: 1; transform: translateY(0);    }
@@ -112,13 +109,22 @@ body {
   }
 }
 
-/* content-visibility for long off-screen sections (FAQ, Contact, About) */
+/* content-visibility (used on [locale] route) */
 .cv-auto {
   content-visibility: auto;
   contain-intrinsic-size: 0 600px;
 }
 
-/* Global reduced-motion: collapse all transitions/animations for users who prefer it */
+/* Native <details>/<summary> — strip browser default triangle/marker.
+   Used by /es FAQ.tsx (zero-JS accordion). */
+details > summary {
+  list-style: none;
+}
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Global reduced-motion: collapse all transitions/animations */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

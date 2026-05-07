@@ -2,19 +2,14 @@ import type { MetadataRoute } from "next";
 import { routing } from "@/i18n/routing";
 
 const SITE_URL = "https://sgautomotive.com";
-const DEFAULT_LOCALE = routing.defaultLocale; // "es"
 
-// Single-page site — all content lives on the root or /{locale}
-// With localePrefix:"as-needed", the default locale (es) is served at /
+// Single-page site — all content lives on /{locale} (localePrefix:"always")
+// Every locale has an explicit prefix: /es, /en, /pt
 const routes = [
   { path: "", priority: 1.0, changeFrequency: "weekly" as const },
 ];
 
 function localeUrl(locale: string, path: string) {
-  if (locale === DEFAULT_LOCALE) {
-    // Default locale has no prefix — canonical is the root URL
-    return `${SITE_URL}${path || "/"}`;
-  }
   return `${SITE_URL}/${locale}${path}`;
 }
 

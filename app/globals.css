@@ -112,18 +112,20 @@ body {
   }
 }
 
-/* ─────────────────────────────────────────────────────────
-   Scroll-reveal — CSS transition triggered by JS class.
-   Elements start VISIBLE (safe for SSR / no-JS).
-   JS sets opacity/transform inline only for below-fold items
-   then transitions to visible on IntersectionObserver entry.
-   ───────────────────────────────────────────────────────── */
-.reveal-ready {
-  will-change: opacity, transform;
-}
-
-/* content-visibility for long off-screen sections */
+/* content-visibility for long off-screen sections (FAQ, Contact, About) */
 .cv-auto {
   content-visibility: auto;
   contain-intrinsic-size: 0 600px;
+}
+
+/* Global reduced-motion: collapse all transitions/animations for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

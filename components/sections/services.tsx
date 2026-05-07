@@ -36,7 +36,7 @@ export async function Services() {
             const Icon = ICONS[item.icon] ?? Car;
             return (
               <AnimateItem key={item.title} delay={i * 0.07}>
-                <div className="group p-6 bg-surface border border-border rounded-xl hover:border-accent/30 transition-all duration-300 h-full">
+                <div className="group p-6 bg-surface border border-border rounded-xl hover:border-accent/30 hover:-translate-y-1 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300 h-full">
                   <div className="w-10 h-10 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center mb-5 group-hover:bg-accent/15 transition-colors">
                     <Icon size={18} className="text-accent" />
                   </div>

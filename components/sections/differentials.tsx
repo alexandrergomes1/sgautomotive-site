@@ -36,7 +36,7 @@ export async function Differentials() {
             const Icon = ICONS[item.icon] ?? Globe;
             return (
               <AnimateItem key={item.title} delay={i * 0.07}>
-                <div className="flex gap-4 p-5 rounded-xl bg-bg border border-border hover:border-border-light transition-colors h-full">
+                <div className="flex gap-4 p-5 rounded-xl bg-bg border border-border hover:border-accent/30 hover:-translate-y-1 hover:shadow-md hover:shadow-accent/5 transition-all duration-300 h-full">
                   <div className="w-9 h-9 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center shrink-0 mt-0.5">
                     <Icon size={16} className="text-accent" />
                   </div>

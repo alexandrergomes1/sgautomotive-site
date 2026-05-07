@@ -1,7 +1,7 @@
 // Server Component — renders immediately, zero animation.
 // h1 is the LCP element: no opacity:0, no transform, no delay.
-// Background: CSS multi-stop gradient + subtle gold grid overlay — zero filter cost.
-// No Framer Motion, no reveal classes, no hero-secondary CSS.
+// Background: single subtle top gold radial-gradient. No lines, no grid.
+// No Framer Motion, no reveal classes, no decorative lines.
 
 import { ArrowRight, MapPin, Wifi, Languages } from "lucide-react";
 import type { SiteContent } from "@/data/site-content";
@@ -17,29 +17,16 @@ export function Hero({ hero, whatsappConsult }: HeroProps) {
   return (
     <section
       id="inicio"
-      className="relative min-h-svh flex flex-col justify-center overflow-hidden bg-bg"
+      className="relative min-h-svh flex flex-col justify-center overflow-hidden"
       style={{
         paddingTop: "calc(var(--header-h, 64px) + 1px)",
         background: [
-          // Top gold glow — stronger
-          "radial-gradient(ellipse 85% 60% at 50% -10%, color-mix(in srgb,#c8a96a 14%,transparent), transparent)",
-          // Bottom-right trust green glow
-          "radial-gradient(ellipse 55% 40% at 100% 100%, color-mix(in srgb,#1f7a5a 8%,transparent), transparent)",
-          // Bottom-left soft gold accent
-          "radial-gradient(ellipse 35% 30% at 0% 80%, color-mix(in srgb,#c8a96a 5%,transparent), transparent)",
+          // Subtle top gold glow only — clean, consistent with site palette
+          "radial-gradient(ellipse 80% 50% at 50% -5%, color-mix(in srgb,#c8a96a 10%,transparent), transparent)",
           "#0b0f14",
         ].join(", "),
       }}
     >
-      {/* Decorative vertical accent line — desktop only */}
-      <div
-        aria-hidden="true"
-        className="hidden lg:block absolute right-20 top-1/4 bottom-1/4 w-px pointer-events-none"
-        style={{
-          background:
-            "linear-gradient(to bottom, transparent, rgba(200,169,106,0.2), transparent)",
-        }}
-      />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
         <div className="max-w-4xl">

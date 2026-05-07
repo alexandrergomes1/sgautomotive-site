@@ -1,16 +1,17 @@
 "use client";
 // Isolated client component — only open/close state lives here.
 // Header.tsx stays a pure Server Component.
-// Animation: CSS transform/opacity only. No Framer. No Radix.
+// Animation: CSS transform/opacity via Tailwind classes. No Framer. No Radix.
 
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import { Logo } from "@/components/logo";
 import type { SiteContent, Locale } from "@/data/site-content";
 
-const LOCALE_LINKS: { locale: Locale; href: string; label: string }[] = [
-  { locale: "es", href: "/es", label: "ES" },
-  { locale: "en", href: "/en", label: "EN" },
-  { locale: "pt", href: "/pt", label: "PT" },
+const LOCALE_LINKS: { locale: Locale; href: string; label: string; name: string }[] = [
+  { locale: "es", href: "/es", label: "ES", name: "Español" },
+  { locale: "en", href: "/en", label: "EN", name: "English" },
+  { locale: "pt", href: "/pt", label: "PT", name: "Português" },
 ];
 
 interface MobileMenuProps {
@@ -32,7 +33,7 @@ export function MobileMenu({ locale, navigation, whatsapp }: MobileMenuProps) {
     return () => document.removeEventListener("keydown", onKey);
   }, [open]);
 
-  // Lock body scroll while menu is open
+  // Lock body scroll while open
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
     return () => {
@@ -41,15 +42,15 @@ export function MobileMenu({ locale, navigation, whatsapp }: MobileMenuProps) {
   }, [open]);
 
   return (
-    <div className="md:hidden flex items-center">
-      {/* Hamburger button */}
+    <>
+      {/* Hamburger trigger — mobile only */}
       <button
         type="button"
         onClick={() => setOpen(true)}
-        className="flex items-center justify-center w-9 h-9 rounded-md text-muted hover:text-fg hover:bg-surface transition-colors"
+        className="md:hidden flex items-center justify-center w-9 h-9 rounded-md text-muted hover:text-fg hover:bg-surface transition-colors"
         aria-label="Abrir menu"
         aria-expanded={open}
-        aria-controls="mobile-menu-panel"
+        aria-controls="mobile-nav-panel"
       >
         <Menu size={20} aria-hidden="true" />
       </button>
@@ -58,28 +59,27 @@ export function MobileMenu({ locale, navigation, whatsapp }: MobileMenuProps) {
       <div
         onClick={() => setOpen(false)}
         aria-hidden="true"
-        className="fixed inset-0 z-40 bg-bg/70 backdrop-blur-sm transition-opacity duration-300"
-        style={{
-          opacity: open ? 1 : 0,
-          pointerEvents: open ? "auto" : "none",
-        }}
+        className={`fixed inset-0 z-40 bg-bg/80 backdrop-blur-sm transition-opacity duration-300 ${
+          open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        }`}
       />
 
       {/* Slide-in panel */}
       <div
-        id="mobile-menu-panel"
+        id="mobile-nav-panel"
         role="dialog"
         aria-modal="true"
         aria-label="Menu de navegação"
         aria-hidden={!open}
-        className="fixed top-0 left-0 bottom-0 z-50 w-72 max-w-[85vw] bg-surface border-r border-border flex flex-col transition-transform duration-300 ease-out"
-        style={{ transform: open ? "translateX(0)" : "translateX(-100%)" }}
+        className={`fixed top-0 left-0 bottom-0 z-50 w-72 max-w-[85vw] bg-surface border-r border-border flex flex-col transition-transform duration-300 ease-out ${
+          open ? "translate-x-0" : "-translate-x-full"
+        }`}
       >
         {/* Panel header */}
         <div className="flex items-center justify-between px-5 h-16 border-b border-border shrink-0">
-          <span className="text-sm font-semibold text-fg tracking-wide">
-            SG Automotive
-          </span>
+          <a href="#inicio" onClick={() => setOpen(false)} aria-label="SG Automotive">
+            <Logo size="sm" />
+          </a>
           <button
             type="button"
             onClick={() => setOpen(false)}
@@ -90,9 +90,9 @@ export function MobileMenu({ locale, navigation, whatsapp }: MobileMenuProps) {
           </button>
         </div>
 
-        {/* Nav links */}
+        {/* Nav links — from navigation.links, same array as desktop */}
         <nav
-          className="flex-1 overflow-y-auto py-3 px-3"
+          className="flex-1 min-h-0 overflow-y-auto py-4 px-3"
           aria-label="Menu mobile"
         >
           {navigation.links.map(({ anchor, label }) => (
@@ -100,35 +100,36 @@ export function MobileMenu({ locale, navigation, whatsapp }: MobileMenuProps) {
               key={anchor}
               href={anchor}
               onClick={() => setOpen(false)}
-              className="flex items-center px-4 py-3.5 rounded-lg text-sm font-medium text-muted hover:text-fg hover:bg-bg transition-colors"
+              className="flex items-center px-4 py-3 rounded-lg text-sm font-medium text-fg hover:text-accent hover:bg-bg transition-colors"
             >
               {label}
             </a>
           ))}
         </nav>
 
-        {/* Panel footer: WA CTA + locale switcher */}
-        <div className="p-4 border-t border-border flex flex-col gap-3 shrink-0">
+        {/* Panel footer: WA CTA + locale links */}
+        <div className="px-4 pb-6 pt-4 border-t border-border flex flex-col gap-4 shrink-0">
           <a
             href={whatsapp.consult}
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setOpen(false)}
-            className="flex items-center justify-center gap-2 w-full py-3 rounded-lg bg-accent text-bg font-semibold text-sm hover:bg-accent-light transition-colors"
+            className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-accent text-bg font-semibold text-sm hover:bg-accent-light transition-colors"
           >
             {navigation.cta}
           </a>
 
-          <div className="flex justify-center gap-5">
+          {/* Locale links */}
+          <div className="flex justify-center gap-1">
             {LOCALE_LINKS.map(({ locale: l, href, label }) => (
               <a
                 key={l}
                 href={href}
                 aria-current={locale === l ? "page" : undefined}
-                className={`text-xs font-bold uppercase tracking-widest transition-colors ${
+                className={`px-3 py-1.5 rounded-lg text-xs font-bold uppercase tracking-widest transition-colors ${
                   locale === l
-                    ? "text-accent"
-                    : "text-muted hover:text-fg"
+                    ? "bg-accent/15 text-accent border border-accent/30"
+                    : "text-muted hover:text-fg hover:bg-bg"
                 }`}
               >
                 {label}
@@ -137,6 +138,6 @@ export function MobileMenu({ locale, navigation, whatsapp }: MobileMenuProps) {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }

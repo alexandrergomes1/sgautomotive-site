@@ -80,6 +80,15 @@ body {
   outline-offset: 2px;
 }
 
+/* Vehicle carousel track — hide scrollbar across all browsers */
+.vc-track {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.vc-track::-webkit-scrollbar {
+  display: none;
+}
+
 /* Native <details>/<summary> — strip browser default triangle/marker.
    Used by FAQ.tsx (zero-JS accordion). */
 details > summary {

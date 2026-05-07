@@ -26,9 +26,9 @@ export function HowItWorks({ howItWorks }: HowItWorksProps) {
             {howItWorks.steps.map((step) => (
               <div
                 key={step.number}
-                className="flex flex-col items-center text-center"
+                className="flex flex-col items-center text-center group"
               >
-                <div className="w-16 h-16 rounded-full bg-surface border border-border flex items-center justify-center text-accent font-bold text-xl mb-5">
+                <div className="w-16 h-16 rounded-full bg-surface border border-border flex items-center justify-center text-accent font-bold text-xl mb-5 group-hover:border-accent/40 group-hover:bg-surface-2 transition-colors duration-200">
                   {step.number}
                 </div>
                 <h3 className="font-semibold text-fg mb-2">{step.title}</h3>

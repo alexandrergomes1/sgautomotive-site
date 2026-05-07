@@ -49,14 +49,14 @@ export function ContactCTA({ contact, waConsult }: ContactCTAProps) {
           </a>
         </div>
 
-        {/* Meta info */}
-        <div className="flex flex-wrap justify-center gap-6 text-sm text-muted">
-          <span className="flex items-center gap-1.5">
-            <MapPin size={14} className="text-accent shrink-0" aria-hidden="true" />
+        {/* Meta info — no dividers, no lines */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-8 text-sm text-muted">
+          <span className="flex items-center gap-2">
+            <MapPin size={14} className="text-accent/70 shrink-0" aria-hidden="true" />
             {contact.location}
           </span>
-          <span className="flex items-center gap-1.5">
-            <Clock size={14} className="text-accent shrink-0" aria-hidden="true" />
+          <span className="flex items-center gap-2">
+            <Clock size={14} className="text-accent/70 shrink-0" aria-hidden="true" />
             {contact.responseTime}
           </span>
         </div>

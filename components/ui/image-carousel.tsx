@@ -7,41 +7,50 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 interface ImageCarouselProps {
   images: string[];
   alt: string;
+  /** Never set to true — catalog is well below the hero LCP element */
   priority?: boolean;
 }
 
-export function ImageCarousel({ images, alt, priority = false }: ImageCarouselProps) {
+export function ImageCarousel({ images, alt }: ImageCarouselProps) {
   const trackRef = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState(0);
 
+  // Start collapsed: only the first image is in the DOM.
+  // All others mount on first interaction to reduce initial DOM size.
+  const [expanded, setExpanded] = useState(false);
+
+  const expand = useCallback(() => {
+    if (!expanded) setExpanded(true);
+  }, [expanded]);
+
   const scrollTo = useCallback((index: number) => {
+    expand();
     const track = trackRef.current;
     if (!track) return;
-    const slide = track.children[index] as HTMLElement;
-    if (slide) {
-      track.scrollTo({ left: slide.offsetLeft, behavior: "smooth" });
-    }
-    setActive(index);
-  }, []);
+    // Give the newly-mounted images one tick to be in the DOM before scrolling
+    requestAnimationFrame(() => {
+      const slide = track.children[index] as HTMLElement;
+      if (slide) track.scrollTo({ left: slide.offsetLeft, behavior: "smooth" });
+      setActive(index);
+    });
+  }, [expand]);
 
-  const prev = useCallback(() => {
-    scrollTo((active - 1 + images.length) % images.length);
-  }, [active, images.length, scrollTo]);
+  const prev = useCallback(() => scrollTo((active - 1 + images.length) % images.length), [active, images.length, scrollTo]);
+  const next = useCallback(() => scrollTo((active + 1) % images.length), [active, images.length, scrollTo]);
 
-  const next = useCallback(() => {
-    scrollTo((active + 1) % images.length);
-  }, [active, images.length, scrollTo]);
-
-  // Sync active dot on native scroll/swipe
+  // Sync active dot on native scroll / swipe
   const handleScroll = useCallback(() => {
+    expand();
     const track = trackRef.current;
     if (!track) return;
-    const width = track.offsetWidth;
-    const index = Math.round(track.scrollLeft / width);
+    const index = Math.round(track.scrollLeft / track.offsetWidth);
     setActive(index);
-  }, []);
+  }, [expand]);
 
   if (images.length === 0) return null;
+
+  // Which images to render: only [0] until the user interacts
+  const rendered = expanded ? images : images.slice(0, 1);
 
   return (
     <div className="relative aspect-[16/9] overflow-hidden bg-surface-2 select-none">
@@ -49,10 +58,10 @@ export function ImageCarousel({ images, alt, priority = false }: ImageCarouselPr
       <div
         ref={trackRef}
         onScroll={handleScroll}
-        className="flex h-full overflow-x-auto snap-x snap-mandatory scroll-smooth [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
-        style={{ scrollBehavior: "smooth" }}
+        onPointerDown={expand}
+        className="flex h-full overflow-x-auto snap-x snap-mandatory [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
       >
-        {images.map((src, i) => (
+        {rendered.map((src, i) => (
           <div key={src} className="relative w-full flex-none snap-start h-full">
             <Image
               src={src}
@@ -60,14 +69,17 @@ export function ImageCarousel({ images, alt, priority = false }: ImageCarouselPr
               fill
               className="object-cover"
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-              priority={priority && i === 0}
-              loading={i === 0 && priority ? "eager" : "lazy"}
+              loading="lazy"
             />
           </div>
         ))}
+        {/* Ghost slides for collapsed state — keep scroll snap geometry stable */}
+        {!expanded && images.length > 1 && images.slice(1).map((src) => (
+          <div key={`ghost-${src}`} className="relative w-full flex-none snap-start h-full bg-surface-2" />
+        ))}
       </div>
 
-      {/* Prev / Next — only when > 1 image */}
+      {/* Prev / Next */}
       {images.length > 1 && (
         <>
           <button
@@ -85,7 +97,7 @@ export function ImageCarousel({ images, alt, priority = false }: ImageCarouselPr
             <ChevronRight size={14} />
           </button>
 
-          {/* Dot indicators */}
+          {/* Dots — always reflect total count even before expand */}
           <div className="absolute bottom-2.5 left-1/2 -translate-x-1/2 flex gap-1 z-10">
             {images.map((_, i) => (
               <button

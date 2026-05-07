@@ -56,11 +56,8 @@ export async function VehicleCard({ car, index = 0 }: VehicleCardProps) {
         <div className="absolute bottom-3 right-3 bg-bg/90 backdrop-blur-sm border border-border/60 rounded-lg px-3 py-1.5 z-10">
           <span className="text-accent font-bold text-base">{formatPrice(car.price)}</span>
         </div>
-        <ImageCarousel
-          images={car.images}
-          alt={carAlt}
-          priority={index === 0}
-        />
+        {/* Catalog is below hero min-h-screen — never priority */}
+        <ImageCarousel images={car.images} alt={carAlt} />
       </div>
 
       <div className="p-5 flex flex-col flex-1">

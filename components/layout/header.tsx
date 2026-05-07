@@ -27,7 +27,9 @@ export function Header() {
     const onScroll = () => {
       if (rafRef.current !== null) return;
       rafRef.current = requestAnimationFrame(() => {
-        setScrolled(window.scrollY > 24);
+        // Functional updater — skips re-render when value is unchanged
+        const next = window.scrollY > 24;
+        setScrolled((prev) => (prev === next ? prev : next));
         rafRef.current = null;
       });
     };

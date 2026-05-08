@@ -79,24 +79,10 @@ export function Footer({ footer, locale, waGeneral }: FooterProps) {
         </div>
 
         {/* Bottom bar */}
-        <div className="border-t border-border pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-muted-2">
+        <div className="border-t border-border pt-8">
+          <p className="text-xs text-muted-2 text-center sm:text-left">
             © {year} {footer.copyright}
           </p>
-          <div className="flex gap-5">
-            <Link
-              href={`/${locale}/privacidad`}
-              className="text-xs text-muted-2 hover:text-fg transition-colors duration-200"
-            >
-              {footer.privacy}
-            </Link>
-            <Link
-              href={`/${locale}/terminos`}
-              className="text-xs text-muted-2 hover:text-fg transition-colors duration-200"
-            >
-              {footer.terms}
-            </Link>
-          </div>
         </div>
       </div>
     </footer>

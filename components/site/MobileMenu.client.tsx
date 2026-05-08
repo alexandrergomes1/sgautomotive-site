@@ -9,13 +9,13 @@
 // document.body — completely outside any stacking context. Fixed positioning
 // then works correctly relative to the viewport on all browsers.
 //
-// The hamburger <button> stays inside the header (correct position).
-// Only the overlay elements are portaled to body.
+// PANEL DESIGN: Anchored to the top of the viewport (top: 64px = header height),
+// content-height only — grows with its content, does NOT fill the full screen.
+// Page content is visible below. Animation: slide down from above (translate-y).
 
 import { useState, useEffect, useSyncExternalStore } from "react";
 import { createPortal } from "react-dom";
 import { Menu, X } from "lucide-react";
-import { Logo } from "@/components/logo";
 import type { SiteContent } from "@/data/site-content";
 
 // useSyncExternalStore — React team's recommended SSR-safe client detection.
@@ -48,31 +48,22 @@ export function MobileMenu({ navigation, whatsapp }: MobileMenuProps) {
     return () => document.removeEventListener("keydown", onKey);
   }, [open]);
 
-  // Lock body scroll while open
-  useEffect(() => {
-    document.body.style.overflow = open ? "hidden" : "";
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [open]);
-
   const overlay = (
     <>
-      {/* Backdrop — full screen dark overlay */}
+      {/* Backdrop — covers page below panel, tap to close */}
       <div
         onClick={() => setOpen(false)}
         aria-hidden="true"
         className={`fixed inset-0 transition-opacity duration-300 ${
           open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
-        style={{ zIndex: 9998, backgroundColor: "rgba(0,0,0,0.82)" }}
+        style={{ zIndex: 9998, backgroundColor: "rgba(0,0,0,0.55)" }}
       />
 
-      {/* Slide-in panel
-          - Full screen on mobile (right-0): eliminates any page-content bleed
-          - sm:w-80 sm:right-auto: partial width on tablet+
-          - z-[9999] > z-[9998] backdrop > everything else (header z-40)
-          - backgroundColor inline: immune to Tailwind CSS var resolution
+      {/* Drop-down panel — full width, content-height, anchored below header.
+          top: 64px = header height (h-16). No bottom constraint → shrinks to content.
+          Animation: slide down from above (-translate-y-full → translate-y-0).
+          backgroundColor inline: immune to Tailwind CSS var resolution issues.
       */}
       <div
         id="mobile-nav-panel"
@@ -80,35 +71,19 @@ export function MobileMenu({ navigation, whatsapp }: MobileMenuProps) {
         aria-modal="true"
         aria-label="Menu de navegação"
         aria-hidden={!open}
-        className={`fixed top-0 left-0 bottom-0 right-0 sm:right-auto sm:w-80 flex flex-col transition-transform duration-300 ease-out ${
-          open ? "translate-x-0" : "-translate-x-full"
+        className={`fixed left-0 right-0 transition-transform duration-300 ease-out ${
+          open ? "translate-y-0" : "-translate-y-full"
         }`}
         style={{
+          top: 64,
           zIndex: 9999,
           backgroundColor: "#111827",
-          boxShadow: "6px 0 48px rgba(0,0,0,0.8)",
+          boxShadow: "0 8px 32px rgba(0,0,0,0.6)",
+          borderBottom: "1px solid rgba(31,41,55,0.9)",
         }}
       >
-        {/* Panel header */}
-        <div
-          className="flex items-center justify-between px-5 h-16 shrink-0"
-          style={{ borderBottom: "1px solid rgba(31,41,55,0.9)" }}
-        >
-          <a href="#inicio" onClick={() => setOpen(false)} aria-label="SG Automotive">
-            <Logo size="sm" />
-          </a>
-          <button
-            type="button"
-            onClick={() => setOpen(false)}
-            className="flex items-center justify-center w-9 h-9 rounded-lg text-muted hover:text-fg hover:bg-white/5 transition-colors"
-            aria-label="Fechar menu"
-          >
-            <X size={20} aria-hidden="true" />
-          </button>
-        </div>
-
         {/* Nav links */}
-        <nav className="flex-1" aria-label="Menu mobile">
+        <nav aria-label="Menu mobile">
           {navigation.links.map(({ anchor, label }) => (
             <a
               key={anchor}
@@ -122,17 +97,14 @@ export function MobileMenu({ navigation, whatsapp }: MobileMenuProps) {
           ))}
         </nav>
 
-        {/* Footer — WhatsApp CTA only */}
-        <div
-          className="px-5 pb-8 pt-5 shrink-0"
-          style={{ borderTop: "1px solid rgba(31,41,55,0.9)" }}
-        >
+        {/* WhatsApp CTA */}
+        <div className="px-5 py-5">
           <a
             href={whatsapp.consult}
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setOpen(false)}
-            className="flex items-center justify-center gap-2 w-full py-4 rounded-xl font-semibold text-sm transition-all duration-200 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98]"
+            className="flex items-center justify-center gap-2 w-full py-3.5 rounded-xl font-semibold text-sm transition-all duration-200 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98]"
             style={{ backgroundColor: "#c8a96a", color: "#0b0f14" }}
           >
             {navigation.cta}
@@ -144,16 +116,16 @@ export function MobileMenu({ navigation, whatsapp }: MobileMenuProps) {
 
   return (
     <>
-      {/* Hamburger button — stays inside the <header>, correct position */}
+      {/* Hamburger / close button — stays inside the <header>, correct position */}
       <button
         type="button"
-        onClick={() => setOpen(true)}
+        onClick={() => setOpen((v) => !v)}
         className="md:hidden flex items-center justify-center w-9 h-9 rounded-md text-muted hover:text-fg hover:bg-white/5 transition-colors"
-        aria-label="Abrir menu"
+        aria-label={open ? "Fechar menu" : "Abrir menu"}
         aria-expanded={open}
         aria-controls="mobile-nav-panel"
       >
-        <Menu size={20} aria-hidden="true" />
+        {open ? <X size={20} aria-hidden="true" /> : <Menu size={20} aria-hidden="true" />}
       </button>
 
       {/* Portal to document.body — escapes header stacking context entirely */}

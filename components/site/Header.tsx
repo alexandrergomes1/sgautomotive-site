@@ -47,16 +47,6 @@ export function Header({ locale, navigation, whatsapp }: HeaderProps) {
             {/* Language switcher — Globe icon, always visible (mobile + desktop) */}
             <LanguageSwitcher locale={locale} />
 
-            {/* WhatsApp CTA — desktop only */}
-            <a
-              href={whatsapp.consult}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden md:inline-flex text-sm font-semibold px-4 py-2 rounded-md bg-accent text-bg hover:bg-accent-light hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 whitespace-nowrap"
-            >
-              {navigation.cta}
-            </a>
-
             {/* Mobile menu — hamburger + panel (Client Component) */}
             <MobileMenu
               navigation={navigation}

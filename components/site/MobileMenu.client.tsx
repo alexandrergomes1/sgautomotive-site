@@ -59,43 +59,45 @@ export function MobileMenu({ navigation }: MobileMenuProps) {
         style={{ zIndex: 9998, backgroundColor: "rgba(0,0,0,0.55)" }}
       />
 
-      {/* Drop-down panel — full width, content-height, anchored below header.
-          top: 64px = header height (h-16). No bottom constraint → shrinks to content.
-          Animation: slide down from above (-translate-y-full → translate-y-0).
-          backgroundColor inline: immune to Tailwind CSS var resolution issues.
-      */}
+      {/* Clip wrapper — overflow:hidden ensures panel never bleeds into the
+          header zone (y=0→64) when translateY(-100%) leaves the bottom edge
+          at exactly y=64 (z-9999 > header z-40 would otherwise show it).
+          pointer-events:none → backdrop can still receive clicks through. */}
       <div
-        id="mobile-nav-panel"
-        role="dialog"
-        aria-modal="true"
-        aria-label="Menu de navegação"
-        aria-hidden={!open}
-        className={`fixed left-0 right-0 transition-transform duration-300 ease-out ${
-          open ? "translate-y-0 pointer-events-auto" : "-translate-y-full pointer-events-none"
-        }`}
-        style={{
-          top: 64,
-          zIndex: 9999,
-          backgroundColor: "#111827",
-          boxShadow: "0 8px 32px rgba(0,0,0,0.6)",
-          borderBottom: "1px solid rgba(31,41,55,0.9)",
-        }}
+        className="fixed left-0 right-0 bottom-0 overflow-hidden pointer-events-none"
+        style={{ top: 64, zIndex: 9999 }}
       >
-        {/* Nav links */}
-        <nav aria-label="Menu mobile">
-          {navigation.links.map(({ anchor, label }) => (
-            <a
-              key={anchor}
-              href={anchor}
-              onClick={() => setOpen(false)}
-              className="flex items-center w-full px-6 py-4 text-base font-medium text-fg/90 hover:text-accent hover:bg-white/5 transition-colors"
-              style={{ borderBottom: "1px solid rgba(31,41,55,0.6)" }}
-            >
-              {label}
-            </a>
-          ))}
-        </nav>
-
+        {/* Panel — translates within the clip wrapper; never visible above wrapper's top */}
+        <div
+          id="mobile-nav-panel"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Menu de navegação"
+          aria-hidden={!open}
+          className={`transition-transform duration-300 ease-out ${
+            open ? "translate-y-0 pointer-events-auto" : "-translate-y-full pointer-events-none"
+          }`}
+          style={{
+            backgroundColor: "#111827",
+            boxShadow: "0 8px 32px rgba(0,0,0,0.6)",
+            borderBottom: "1px solid rgba(31,41,55,0.9)",
+          }}
+        >
+          {/* Nav links */}
+          <nav aria-label="Menu mobile">
+            {navigation.links.map(({ anchor, label }) => (
+              <a
+                key={anchor}
+                href={anchor}
+                onClick={() => setOpen(false)}
+                className="flex items-center w-full px-6 py-4 text-base font-medium text-fg/90 hover:text-accent hover:bg-white/5 transition-colors"
+                style={{ borderBottom: "1px solid rgba(31,41,55,0.6)" }}
+              >
+                {label}
+              </a>
+            ))}
+          </nav>
+        </div>
       </div>
     </>
   );

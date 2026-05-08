@@ -23,7 +23,9 @@ export function VehicleImageCarousel({
   alt,
 }: VehicleImageCarouselProps) {
   const { images } = car;
-  const id = car.id;
+  // Sanitize: strip any character that is not alphanumeric, underscore, or hyphen.
+  // Radio input ids, names, and CSS class selectors must be valid identifiers.
+  const id = car.id.replace(/[^a-zA-Z0-9_-]/g, "-");
   const n = images.length;
 
   if (n === 0) return null;
@@ -160,7 +162,7 @@ export function VehicleImageCarousel({
             {/* Prev arrow */}
             <label
               htmlFor={`vr-${id}-${prev}`}
-              className="pointer-events-auto flex items-center justify-center w-8 h-8 ml-2 rounded-full bg-bg/70 backdrop-blur-sm border border-border/50 text-fg/80 hover:bg-bg/90 hover:border-accent/40 hover:text-fg cursor-pointer transition-all duration-200"
+              className="pointer-events-auto flex items-center justify-center w-10 h-10 ml-2 rounded-full bg-bg/70 backdrop-blur-sm border border-border/50 text-fg/80 hover:bg-bg/90 hover:border-accent/40 hover:text-fg cursor-pointer transition-all duration-200"
               aria-label={`Foto anterior`}
             >
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -170,7 +172,7 @@ export function VehicleImageCarousel({
             {/* Next arrow */}
             <label
               htmlFor={`vr-${id}-${next}`}
-              className="pointer-events-auto flex items-center justify-center w-8 h-8 mr-2 rounded-full bg-bg/70 backdrop-blur-sm border border-border/50 text-fg/80 hover:bg-bg/90 hover:border-accent/40 hover:text-fg cursor-pointer transition-all duration-200"
+              className="pointer-events-auto flex items-center justify-center w-10 h-10 mr-2 rounded-full bg-bg/70 backdrop-blur-sm border border-border/50 text-fg/80 hover:bg-bg/90 hover:border-accent/40 hover:text-fg cursor-pointer transition-all duration-200"
               aria-label={`Próxima foto`}
             >
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">

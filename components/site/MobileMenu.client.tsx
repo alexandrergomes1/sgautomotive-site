@@ -31,10 +31,9 @@ function useIsClient() {
 
 interface MobileMenuProps {
   navigation: SiteContent["navigation"];
-  whatsapp: SiteContent["whatsapp"];
 }
 
-export function MobileMenu({ navigation, whatsapp }: MobileMenuProps) {
+export function MobileMenu({ navigation }: MobileMenuProps) {
   const [open, setOpen] = useState(false);
   const isClient = useIsClient();
 
@@ -72,7 +71,7 @@ export function MobileMenu({ navigation, whatsapp }: MobileMenuProps) {
         aria-label="Menu de navegação"
         aria-hidden={!open}
         className={`fixed left-0 right-0 transition-transform duration-300 ease-out ${
-          open ? "translate-y-0" : "-translate-y-full"
+          open ? "translate-y-0 pointer-events-auto" : "-translate-y-full pointer-events-none"
         }`}
         style={{
           top: 64,
@@ -97,19 +96,6 @@ export function MobileMenu({ navigation, whatsapp }: MobileMenuProps) {
           ))}
         </nav>
 
-        {/* WhatsApp CTA */}
-        <div className="px-5 py-5">
-          <a
-            href={whatsapp.consult}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => setOpen(false)}
-            className="flex items-center justify-center gap-2 w-full py-3.5 rounded-xl font-semibold text-sm transition-all duration-200 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98]"
-            style={{ backgroundColor: "#c8a96a", color: "#0b0f14" }}
-          >
-            {navigation.cta}
-          </a>
-        </div>
       </div>
     </>
   );

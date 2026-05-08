@@ -21,7 +21,7 @@ export default function PtLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="pt" className={geist.variable}>
       <body className="min-h-screen bg-bg text-fg antialiased">
-        <Header locale="pt" navigation={c.navigation} whatsapp={c.whatsapp} />
+        <Header locale="pt" navigation={c.navigation} />
         <main>{children}</main>
         <Footer footer={c.footer} locale="pt" waGeneral={c.whatsapp.general} />
         <WhatsAppButton

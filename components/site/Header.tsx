@@ -11,10 +11,9 @@ import type { SiteContent, Locale } from "@/data/site-content";
 interface HeaderProps {
   locale: Locale;
   navigation: SiteContent["navigation"];
-  whatsapp: SiteContent["whatsapp"];
 }
 
-export function Header({ locale, navigation, whatsapp }: HeaderProps) {
+export function Header({ locale, navigation }: HeaderProps) {
   return (
     <header className="fixed top-0 left-0 right-0 z-40 bg-bg/92 backdrop-blur-md border-b border-border/60 shadow-sm shadow-black/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -48,10 +47,7 @@ export function Header({ locale, navigation, whatsapp }: HeaderProps) {
             <LanguageSwitcher locale={locale} />
 
             {/* Mobile menu — hamburger + panel (Client Component) */}
-            <MobileMenu
-              navigation={navigation}
-              whatsapp={whatsapp}
-            />
+            <MobileMenu navigation={navigation} />
           </div>
 
         </div>

@@ -21,7 +21,7 @@ export default function EsLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="es" className={geist.variable}>
       <body className="min-h-screen bg-bg text-fg antialiased">
-        <Header locale="es" navigation={c.navigation} whatsapp={c.whatsapp} />
+        <Header locale="es" navigation={c.navigation} />
         <main>{children}</main>
         <Footer footer={c.footer} locale="es" waGeneral={c.whatsapp.general} />
         <WhatsAppButton

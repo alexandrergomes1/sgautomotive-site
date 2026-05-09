@@ -10,9 +10,14 @@ export const metadata: Metadata = {
   },
   description:
     "Empresa online especializada en importación de coches a España, asesoría de compra en Europa y gestión documental. Costa del Sol, Fuengirola, Málaga.",
+  icons: {
+    icon: [{ url: "/icon", type: "image/png", sizes: "64x64" }],
+    apple: [{ url: "/apple-icon", type: "image/png", sizes: "180x180" }],
+  },
 };
 
-// Passthrough — html/body/lang live in app/[locale]/layout.tsx (next-intl pattern)
+// Root layout — passthrough shell.
+// html/body/lang are set in locale layouts: app/es/layout.tsx, app/en/layout.tsx, app/pt/layout.tsx
 export default function RootLayout({
   children,
 }: {

@@ -1,8 +1,9 @@
 // Server Component — renders immediately, zero animation.
 // h1 is the LCP element: no opacity:0, no transform, no delay.
-// Background: single subtle top gold radial-gradient. No lines, no grid.
+// Background: premium automotive image (sg-hero.avif, 23KB) + dark overlay bg-bg/72.
 // No Framer Motion, no reveal classes, no decorative lines.
 
+import Image from "next/image";
 import { ArrowRight, MapPin, Wifi, Languages } from "lucide-react";
 import type { SiteContent } from "@/data/site-content";
 
@@ -20,6 +21,20 @@ export function Hero({ hero, whatsappConsult }: HeroProps) {
       className="relative min-h-svh flex flex-col justify-center overflow-hidden bg-bg"
       style={{ paddingTop: "calc(var(--header-h, 64px) + 1px)" }}
     >
+
+      {/* Hero image — priority (LCP candidate), 23KB AVIF, dark overlay preserves text contrast */}
+      <div className="absolute inset-0 -z-10" aria-hidden="true">
+        <Image
+          src="/images/hero/sg-hero.avif"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          quality={90}
+          className="object-cover object-[center_40%]"
+        />
+        <div className="absolute inset-0 bg-bg/75" />
+      </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
         <div className="max-w-4xl">

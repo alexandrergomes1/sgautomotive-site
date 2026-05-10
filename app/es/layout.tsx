@@ -28,7 +28,7 @@ export default function EsLayout({ children }: { children: ReactNode }) {
           href={c.whatsapp.general}
           ariaLabel="Contactar por WhatsApp"
         />
-        <BackToTop />
+        <BackToTop locale="es" />
         <Analytics />
         <SpeedInsights />
       </body>

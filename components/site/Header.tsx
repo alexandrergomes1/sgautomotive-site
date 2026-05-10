@@ -47,7 +47,7 @@ export function Header({ locale, navigation }: HeaderProps) {
             <LanguageSwitcher locale={locale} />
 
             {/* Mobile menu — hamburger + panel (Client Component) */}
-            <MobileMenu navigation={navigation} />
+            <MobileMenu navigation={navigation} locale={locale} />
           </div>
 
         </div>

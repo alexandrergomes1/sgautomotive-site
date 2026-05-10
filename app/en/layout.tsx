@@ -28,7 +28,7 @@ export default function EnLayout({ children }: { children: ReactNode }) {
           href={c.whatsapp.general}
           ariaLabel="Contact us on WhatsApp"
         />
-        <BackToTop />
+        <BackToTop locale="en" />
         <Analytics />
         <SpeedInsights />
       </body>

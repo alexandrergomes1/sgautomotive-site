@@ -14,6 +14,7 @@ interface VehicleCardProps {
   transmissionLabel: string;
   tagLabels: Record<string, string>;
   tagColors: Record<string, string>;
+  locale: string;
 }
 
 export function VehicleCard({
@@ -24,6 +25,7 @@ export function VehicleCard({
   transmissionLabel,
   tagLabels,
   tagColors,
+  locale,
 }: VehicleCardProps) {
   const alt = `${car.make} ${car.model} ${car.version} ${car.year}`;
 
@@ -34,7 +36,7 @@ export function VehicleCard({
         car={car}
         tagLabels={tagLabels}
         tagColors={tagColors}
-        priceFormatted={formatPrice(car.price)}
+        priceFormatted={formatPrice(car.price, locale)}
         alt={alt}
       />
 
@@ -67,7 +69,7 @@ export function VehicleCard({
           </div>
           <div className="flex items-center gap-1.5 text-xs text-muted">
             <Gauge size={12} className="text-accent/70 shrink-0" aria-hidden="true" />
-            <span>{formatKm(car.km)}</span>
+            <span>{formatKm(car.km, locale)}</span>
           </div>
           <div className="flex items-center gap-1.5 text-xs text-muted">
             <Fuel size={12} className="text-accent/70 shrink-0" aria-hidden="true" />

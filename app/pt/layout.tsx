@@ -28,7 +28,7 @@ export default function PtLayout({ children }: { children: ReactNode }) {
           href={c.whatsapp.general}
           ariaLabel="Contactar pelo WhatsApp"
         />
-        <BackToTop />
+        <BackToTop locale="pt" />
         <Analytics />
         <SpeedInsights />
       </body>

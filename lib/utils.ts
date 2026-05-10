@@ -5,14 +5,14 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export function formatPrice(price: number, currency = "EUR"): string {
-  return new Intl.NumberFormat("es-ES", {
+export function formatPrice(price: number, locale: string, currency = "EUR"): string {
+  return new Intl.NumberFormat(locale, {
     style: "currency",
     currency,
     maximumFractionDigits: 0,
   }).format(price);
 }
 
-export function formatKm(km: number): string {
-  return new Intl.NumberFormat("es-ES").format(km) + " km";
+export function formatKm(km: number, locale: string): string {
+  return new Intl.NumberFormat(locale).format(km) + " km";
 }

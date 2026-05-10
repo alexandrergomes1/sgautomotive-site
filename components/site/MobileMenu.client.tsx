@@ -12,7 +12,7 @@
 import { useState, useEffect, useSyncExternalStore } from "react";
 import { createPortal } from "react-dom";
 import { Menu, X } from "lucide-react";
-import type { SiteContent } from "@/data/site-content";
+import type { SiteContent, Locale } from "@/data/site-content";
 
 // useSyncExternalStore — React team's recommended SSR-safe client detection.
 // Returns false on server, true after hydration. No useEffect, no lint error.
@@ -24,11 +24,18 @@ function useIsClient() {
   return useSyncExternalStore(_emptySubscribe, _clientSnapshot, _serverSnapshot);
 }
 
+const LABELS = {
+  es: { open: "Abrir menú", close: "Cerrar menú", nav: "Menú de navegación", mobile: "Menú móvil" },
+  en: { open: "Open menu",  close: "Close menu",  nav: "Navigation menu",    mobile: "Mobile menu"  },
+  pt: { open: "Abrir menu", close: "Fechar menu", nav: "Menu de navegação",   mobile: "Menu mobile"  },
+} as const;
+
 interface MobileMenuProps {
   navigation: SiteContent["navigation"];
+  locale: Locale;
 }
 
-export function MobileMenu({ navigation }: MobileMenuProps) {
+export function MobileMenu({ navigation, locale }: MobileMenuProps) {
   const [open, setOpen] = useState(false);
   const isClient = useIsClient();
 
@@ -49,7 +56,7 @@ export function MobileMenu({ navigation }: MobileMenuProps) {
         type="button"
         onClick={() => setOpen((v) => !v)}
         className="md:hidden flex items-center justify-center w-9 h-9 rounded-md text-muted hover:text-fg hover:bg-white/5 transition-colors"
-        aria-label={open ? "Fechar menu" : "Abrir menu"}
+        aria-label={open ? LABELS[locale].close : LABELS[locale].open}
         aria-expanded={open}
         aria-controls="mobile-nav-panel"
       >
@@ -74,7 +81,7 @@ export function MobileMenu({ navigation }: MobileMenuProps) {
               id="mobile-nav-panel"
               role="dialog"
               aria-modal="true"
-              aria-label="Menu de navegação"
+              aria-label={LABELS[locale].nav}
               className="fixed left-0 right-0"
               style={{
                 top: 64,
@@ -84,7 +91,7 @@ export function MobileMenu({ navigation }: MobileMenuProps) {
                 borderBottom: "1px solid rgba(31,41,55,0.9)",
               }}
             >
-              <nav aria-label="Menu mobile">
+              <nav aria-label={LABELS[locale].mobile}>
                 {navigation.links.map(({ anchor, label }) => (
                   <a
                     key={anchor}

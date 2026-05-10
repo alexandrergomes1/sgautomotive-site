@@ -43,7 +43,8 @@ export function Vehicles({ locale, vehicles }: VehiclesProps) {
               <VehicleCard
                 key={car.id}
                 car={car}
-                waHref={buildVehicleWaHref(car, formatKm(car.km), locale)}
+                locale={locale}
+                waHref={buildVehicleWaHref(car, formatKm(car.km, locale), locale)}
                 ctaLabel={vehicles.contactVehicle}
                 fuelLabel={vehicles.fuel[car.fuel] ?? car.fuel}
                 transmissionLabel={

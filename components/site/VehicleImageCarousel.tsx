@@ -1,11 +1,14 @@
-// Server Component — CSS-only radio input carousel. Zero client JS.
+// Server Component — CSS-only radio input carousel. Zero client JS on this file.
 // Navigation: <label htmlFor> arrows trigger :checked state on radio inputs.
-// NO "use client". NO href anchors. NO JS. NO scroll-snap scroll side-effects.
-// DOM order: [radios][style][track][overlays][nav-sets]
+// NO "use client". NO href anchors. NO scroll-snap scroll side-effects.
+// DOM order: [radios][style][track][overlays][nav-sets][touch-wrapper][gallery-trigger]
 // CSS: #vr-{id}-{i}:checked ~ .vt-{id} { transform: translateX(-N%) }
+// Client features (swipe + lightbox) are added via thin Client Component wrappers.
 import Image from "next/image";
 import { Camera } from "lucide-react";
 import type { Car } from "@/data/cars";
+import { CarouselTouchWrapper } from "@/components/site/VehicleCarouselTouch.client";
+import { VehicleGalleryTrigger } from "@/components/site/VehicleGalleryTrigger.client";
 
 interface VehicleImageCarouselProps {
   car: Car;
@@ -57,6 +60,8 @@ export function VehicleImageCarousel({
         <div className="absolute bottom-3 right-3 bg-bg/90 backdrop-blur-sm border border-border/60 rounded-lg px-3 py-1.5 z-20 pointer-events-none">
           <span className="text-accent font-bold text-base">{priceFormatted}</span>
         </div>
+        {/* Gallery trigger — click/tap to open lightbox */}
+        <VehicleGalleryTrigger images={images} alt={alt} id={id} count={1} />
       </div>
     );
   }
@@ -78,6 +83,7 @@ export function VehicleImageCarousel({
   const css = `${navIds}{display:none}${perSlide}`;
 
   return (
+    <CarouselTouchWrapper id={id} count={n}>
     <div className="relative aspect-[16/10] overflow-hidden">
 
       {/* ① Radio inputs — MUST be first children so ~ sibling combinator works */}
@@ -183,6 +189,10 @@ export function VehicleImageCarousel({
         );
       })}
 
+      {/* ⑧ Gallery trigger — invisible overlay; click/tap opens lightbox */}
+      <VehicleGalleryTrigger images={images} alt={alt} id={id} count={n} />
+
     </div>
+    </CarouselTouchWrapper>
   );
 }

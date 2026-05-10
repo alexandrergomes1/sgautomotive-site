@@ -18,7 +18,7 @@ export function Hero({ hero, whatsappConsult }: HeroProps) {
   return (
     <section
       id="inicio"
-      className="relative min-h-svh flex flex-col justify-center overflow-hidden bg-bg"
+      className="relative min-h-svh flex flex-col justify-center overflow-hidden"
       style={{ paddingTop: "calc(var(--header-h, 64px) + 1px)" }}
     >
 

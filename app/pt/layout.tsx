@@ -23,7 +23,7 @@ export default function PtLayout({ children }: { children: ReactNode }) {
       <body className="min-h-screen bg-bg text-fg antialiased">
         <Header locale="pt" navigation={c.navigation} />
         <main>{children}</main>
-        <Footer footer={c.footer} locale="pt" waGeneral={c.whatsapp.general} />
+        <Footer footer={c.footer} locale="pt" waGeneral={c.whatsapp.general} emailLabel={c.contact.emailLabel} />
         <WhatsAppButton
           href={c.whatsapp.general}
           ariaLabel="Contactar pelo WhatsApp"

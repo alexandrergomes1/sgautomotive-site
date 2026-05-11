@@ -2,17 +2,17 @@
 import Link from "next/link";
 import { MapPin } from "lucide-react";
 import { Logo } from "@/components/logo";
-import type { SiteContent } from "@/data/site-content";
+import type { SiteContent, Locale } from "@/data/site-content";
 import { EMAIL_ADDRESS, WHATSAPP_DISPLAY } from "@/data/site-content";
-import type { Locale } from "@/data/site-content";
 
 interface FooterProps {
   footer: SiteContent["footer"];
   locale: Locale;
   waGeneral: string;
+  emailLabel: string;
 }
 
-export function Footer({ footer, locale, waGeneral }: FooterProps) {
+export function Footer({ footer, locale, waGeneral, emailLabel }: FooterProps) {
   const year = new Date().getFullYear();
 
   return (
@@ -71,7 +71,7 @@ export function Footer({ footer, locale, waGeneral }: FooterProps) {
                   href={`mailto:${EMAIL_ADDRESS}`}
                   className="text-sm text-muted hover:text-accent transition-colors duration-200"
                 >
-                  {EMAIL_ADDRESS}
+                  {emailLabel}
                 </a>
               </li>
             </ul>

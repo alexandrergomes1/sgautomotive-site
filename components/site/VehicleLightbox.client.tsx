@@ -3,6 +3,7 @@
 // showModal() puts the dialog in the top-layer (above everything, no z-index fights).
 // ESC closes natively. Click backdrop closes. ← → keyboard navigates.
 // Body scroll locked while open (restored on close).
+// Touch swipe: horizontal swipe ≥48px navigates prev/next (same threshold as carousel).
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
@@ -18,14 +19,36 @@ interface VehicleLightboxProps {
 export function VehicleLightbox({ images, alt, initialIndex, onClose }: VehicleLightboxProps) {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const [index, setIndex] = useState(initialIndex);
+  const touchStartXRef = useRef<number>(0);
+  const touchStartYRef = useRef<number>(0);
   const n = images.length;
 
   useEffect(() => {
     const dialog = dialogRef.current;
     if (!dialog) return;
     dialog.showModal();
+
+    // Lock body scroll — also prevent iOS rubber-band scroll behind the lightbox
+    const prev = {
+      overflow: document.body.style.overflow,
+      position: document.body.style.position,
+      width: document.body.style.width,
+      top: document.body.style.top,
+    };
+    const scrollY = window.scrollY;
     document.body.style.overflow = "hidden";
-    return () => { document.body.style.overflow = ""; };
+    document.body.style.position = "fixed";
+    document.body.style.width = "100%";
+    document.body.style.top = `-${scrollY}px`;
+
+    return () => {
+      document.body.style.overflow = prev.overflow;
+      document.body.style.position = prev.position;
+      document.body.style.width = prev.width;
+      document.body.style.top = prev.top;
+      // Restore scroll position after body unfixes
+      window.scrollTo(0, scrollY);
+    };
   }, []);
 
   const prev = () => setIndex((i) => (i - 1 + n) % n);
@@ -36,6 +59,20 @@ export function VehicleLightbox({ images, alt, initialIndex, onClose }: VehicleL
     if (e.key === "ArrowRight") { e.preventDefault(); next(); }
   };
 
+  // Touch swipe handlers
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartXRef.current = e.touches[0].clientX;
+    touchStartYRef.current = e.touches[0].clientY;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    const deltaX = touchStartXRef.current - e.changedTouches[0].clientX;
+    const deltaY = Math.abs(touchStartYRef.current - e.changedTouches[0].clientY);
+    // Only trigger if horizontal swipe dominates (avoids conflict with vertical scroll intent)
+    if (Math.abs(deltaX) < 48 || deltaY > Math.abs(deltaX)) return;
+    if (deltaX > 0) next(); else prev();
+  };
+
   return (
     <dialog
       ref={dialogRef}
@@ -43,18 +80,28 @@ export function VehicleLightbox({ images, alt, initialIndex, onClose }: VehicleL
       onKeyDown={handleKeyDown}
       style={{
         position: "fixed", inset: 0, margin: 0, padding: 0,
-        width: "100svw", height: "100svh",
+        width: "100dvw", height: "100dvh",
         maxWidth: "none", maxHeight: "none",
         border: "none", background: "transparent", outline: "none",
       }}
       aria-modal="true"
       aria-label={`${alt} — galeria de fotos`}
     >
-      {/* Backdrop click area — clicking here closes the dialog */}
+      {/* Backdrop — position:fixed so it always covers the full visual viewport on mobile */}
       <div
         onClick={onClose}
-        className="w-full h-full flex items-center justify-center"
-        style={{ background: "rgba(0,0,0,0.92)" }}
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
+        style={{
+          position: "fixed",
+          inset: 0,
+          background: "rgba(0,0,0,0.95)",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          touchAction: "none",          // prevents site scroll behind lightbox on mobile
+          overscrollBehavior: "contain",
+        }}
       >
         {/* Close button */}
         <button
@@ -77,7 +124,7 @@ export function VehicleLightbox({ images, alt, initialIndex, onClose }: VehicleL
         <div
           onClick={(e) => e.stopPropagation()}
           className="relative w-full max-w-5xl"
-          style={{ maxHeight: "85svh", aspectRatio: "16 / 10" }}
+          style={{ maxHeight: "85dvh", aspectRatio: "16 / 10" }}
         >
           <Image
             src={images[index]}

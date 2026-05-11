@@ -23,7 +23,7 @@ export default function EsLayout({ children }: { children: ReactNode }) {
       <body className="min-h-screen bg-bg text-fg antialiased">
         <Header locale="es" navigation={c.navigation} />
         <main>{children}</main>
-        <Footer footer={c.footer} locale="es" waGeneral={c.whatsapp.general} />
+        <Footer footer={c.footer} locale="es" waGeneral={c.whatsapp.general} emailLabel={c.contact.emailLabel} />
         <WhatsAppButton
           href={c.whatsapp.general}
           ariaLabel="Contactar por WhatsApp"

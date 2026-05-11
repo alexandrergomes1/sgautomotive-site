@@ -69,9 +69,14 @@ body {
   background: #4b5563;
 }
 
-/* Anchor offset for sticky header */
+/* Anchor offset for sticky header — matches h-16 (64px) + 8px breathing room on mobile */
 [id] {
-  scroll-margin-top: 100px;
+  scroll-margin-top: 72px;
+}
+@media (min-width: 768px) {
+  [id] {
+    scroll-margin-top: 88px;
+  }
 }
 
 /* Focus styles */

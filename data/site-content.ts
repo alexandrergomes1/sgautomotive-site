@@ -6,8 +6,8 @@
 
 export const SITE_URL = "https://sgautomotive.com";
 export const SITE_NAME = "SG Automotive";
-export const WHATSAPP_NUMBER = "34662625953";
-export const WHATSAPP_DISPLAY = "+34 662 62 59 53";
+export const WHATSAPP_NUMBER = "34665407176";
+export const WHATSAPP_DISPLAY = "+34 665 40 71 76";
 export const EMAIL_ADDRESS = "sgautomotive.es@gmail.com";
 
 export type Locale = "es" | "en" | "pt";
@@ -1232,7 +1232,7 @@ const pt: SiteContent = {
     title: "Contacte-nos",
     subtitle: "Conte-nos o que precisa. A primeira consulta é gratuita.",
     whatsappLabel: "Escreva-nos pelo WhatsApp",
-    emailLabel: "Envie-nos um email",
+    emailLabel: "Enviar e-mail",
     location: "Fuengirola, Málaga, Espanha",
     responseTime: "Tempo de resposta: menos de 24 horas",
   },

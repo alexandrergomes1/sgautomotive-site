@@ -1,5 +1,6 @@
 // Server Component — WhatsApp + email only. No form, no zod, no react-hook-form.
-import { Mail, MapPin, Clock } from "lucide-react";
+// Clock icon and responseTime removed — location only shown in meta info.
+import { Mail, MapPin } from "lucide-react";
 import type { SiteContent } from "@/data/site-content";
 import { EMAIL_ADDRESS } from "@/data/site-content";
 
@@ -49,16 +50,10 @@ export function ContactCTA({ contact, waConsult }: ContactCTAProps) {
           </a>
         </div>
 
-        {/* Meta info — no dividers, no lines */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-8 text-sm text-muted">
-          <span className="flex items-center gap-2">
-            <MapPin size={14} className="text-accent/70 shrink-0" aria-hidden="true" />
-            {contact.location}
-          </span>
-          <span className="flex items-center gap-2">
-            <Clock size={14} className="text-accent/70 shrink-0" aria-hidden="true" />
-            {contact.responseTime}
-          </span>
+        {/* Location only — response time removed */}
+        <div className="flex items-center justify-center gap-2 text-sm text-muted">
+          <MapPin size={14} className="text-accent/70 shrink-0" aria-hidden="true" />
+          {contact.location}
         </div>
       </div>
     </section>

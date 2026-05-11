@@ -100,7 +100,6 @@ export interface SiteContent {
     whatsappLabel: string;
     emailLabel: string;
     location: string;
-    responseTime: string;
   };
   footer: {
     tagline: string;
@@ -471,7 +470,6 @@ const es: SiteContent = {
     whatsappLabel: "Escríbenos por WhatsApp",
     emailLabel: "Envíanos un correo",
     location: "Fuengirola, Málaga, España",
-    responseTime: "Tiempo de respuesta: menos de 24h",
   },
   footer: {
     tagline: "Compra y importación de vehículos en Europa con gestión profesional.",
@@ -851,7 +849,6 @@ const en: SiteContent = {
     whatsappLabel: "Write to us on WhatsApp",
     emailLabel: "Send us an email",
     location: "Fuengirola, Málaga, Spain",
-    responseTime: "Response time: under 24 hours",
   },
   footer: {
     tagline: "Buy and import vehicles in Europe with professional management.",
@@ -1234,7 +1231,6 @@ const pt: SiteContent = {
     whatsappLabel: "Escreva-nos pelo WhatsApp",
     emailLabel: "Enviar e-mail",
     location: "Fuengirola, Málaga, Espanha",
-    responseTime: "Tempo de resposta: menos de 24 horas",
   },
   footer: {
     tagline: "Compra e importação de veículos na Europa com gestão profissional.",

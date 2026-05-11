@@ -1,6 +1,7 @@
 // Server Component — no animations, no Framer Motion.
+// Lucide icons (Phone, Mail, MapPin) are SVG-only — zero extra bundle weight.
 import Link from "next/link";
-import { MapPin } from "lucide-react";
+import { MapPin, Phone, Mail } from "lucide-react";
 import { Logo } from "@/components/logo";
 import type { SiteContent, Locale } from "@/data/site-content";
 import { EMAIL_ADDRESS, WHATSAPP_DISPLAY } from "@/data/site-content";
@@ -55,22 +56,28 @@ export function Footer({ footer, locale, waGeneral, emailLabel }: FooterProps) {
             <p className="text-xs font-semibold uppercase tracking-widest text-muted-2 mb-4">
               Contacto
             </p>
-            <ul className="flex flex-col gap-2.5">
+            <ul className="flex flex-col gap-3">
               <li>
                 <a
                   href={waGeneral}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-muted hover:text-accent transition-colors duration-200"
+                  className="flex items-center gap-2 text-sm text-muted hover:text-accent transition-colors duration-200 group"
                 >
+                  <span className="flex items-center justify-center w-6 h-6 rounded-md bg-accent/8 border border-accent/15 group-hover:bg-accent/15 group-hover:border-accent/30 transition-colors shrink-0">
+                    <Phone size={11} className="text-accent/70 group-hover:text-accent transition-colors" aria-hidden="true" />
+                  </span>
                   {WHATSAPP_DISPLAY}
                 </a>
               </li>
               <li>
                 <a
                   href={`mailto:${EMAIL_ADDRESS}`}
-                  className="text-sm text-muted hover:text-accent transition-colors duration-200"
+                  className="flex items-center gap-2 text-sm text-muted hover:text-accent transition-colors duration-200 group"
                 >
+                  <span className="flex items-center justify-center w-6 h-6 rounded-md bg-accent/8 border border-accent/15 group-hover:bg-accent/15 group-hover:border-accent/30 transition-colors shrink-0">
+                    <Mail size={11} className="text-accent/70 group-hover:text-accent transition-colors" aria-hidden="true" />
+                  </span>
                   {emailLabel}
                 </a>
               </li>

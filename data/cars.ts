@@ -25,8 +25,8 @@ export interface Car {
   images: string[];      // first item = primary image
   tags: CarTag[];
   available: boolean;    // false = vendido / ocultar
-  description?: string;  // texto breve — uma linha
-  highlights?: string[]; // equipamento e estado — lista expandível
+  description?: string;  // párrafo de apertura — texto del anuncio
+  highlights?: string[]; // equipamiento y estado — lista expandible en card
 }
 
 export const cars: Car[] = [
@@ -59,17 +59,19 @@ export const cars: Car[] = [
     ],
     tags: ["iva-recuperable"],
     available: true,
-    description: "Diésel económico y práctico, revisado y listo para entrega.",
+    description:
+      "Opel Corsa diésel, manual, 5 puertas — muy económico y práctico. Ideal para uso diario, carretera y clientes que valoran el bajo consumo. Unidad con historial de mantenimiento documentado y kilometraje coherente.",
     highlights: [
-      "Motor 1.5 Diésel 100/102CV — bajo consumo",
-      "ITV vigente hasta 2027 · 2 Llaves",
-      "Vehículo nacional · Etiqueta medioambiental C",
-      "Apple CarPlay / Android Auto · Bluetooth / USB",
-      "Control y limitador de velocidad de crucero",
-      "Aire acondicionado · Elevalunas eléctricos",
-      "Neumáticos en muy buen estado en las 4 ruedas",
-      "Interior limpio y cuidado · Revisado y listo para entrega",
-      "IVA deducible para empresa o autónomo",
+      "Motor 1.5 Diésel 100/102CV · Cambio manual · 5 puertas / 5 plazas",
+      "Color blanco · Etiqueta medioambiental C",
+      "ITV vigente hasta 2027 · Vehículo nacional, no importado · 2 Llaves",
+      "Revisado y listo para entrega · Neumáticos en muy buen estado (4 ruedas)",
+      "Interior limpio y cuidado · Mecánica funcionando correctamente",
+      "Pantalla multimedia · Apple CarPlay / Android Auto · Bluetooth / USB",
+      "Control y limitador de velocidad · Volante multifunción",
+      "Aire acondicionado · Elevalunas eléctricos · Cierre centralizado",
+      "Isofix · Luces diurnas LED",
+      "Precio con IVA incluido · IVA deducible para empresa o autónomo",
     ],
   },
   {
@@ -101,17 +103,20 @@ export const cars: Car[] = [
     ],
     tags: ["pronto-entrega"],
     available: true,
-    description: "Gasolina ágil y económico, ideal para ciudad y carretera.",
+    description:
+      "Vehículo nacional, gasolina, manual, 5 puertas y 5 plazas. Unidad muy equilibrada para ciudad, uso diario y trayectos en carretera. Motor 1.2 PureTech 83CV: cómodo, ágil y de bajo consumo.",
     highlights: [
-      "Motor 1.2 PureTech 83CV — ágil y económico",
-      "ITV vigente hasta 2027 · 2 Llaves",
-      "Vehículo nacional · Etiqueta medioambiental C",
-      "Neumáticos Goodyear 7mm en las 4 ruedas — muy buen estado",
-      "Climatizador automático · Control de velocidad",
-      "Apple CarPlay / Android Auto · GPS/Navegador · Bluetooth",
-      "Sensores de aparcamiento traseros",
-      "Volante de cuero · Llantas de aluminio",
-      "IVA deducible para empresa o autónomo",
+      "Motor 1.2 PureTech gasolina 83CV · Cambio manual 5v · 5 puertas / 5 plazas",
+      "Color blanco · Etiqueta medioambiental C",
+      "ITV vigente hasta 2027 · Vehículo nacional, no importado · 2 Llaves",
+      "Revisado y listo para entrega · Neumáticos Goodyear 7mm en las 4 ruedas",
+      "Interior limpio y cuidado · Mecánica funcionando correctamente",
+      "Pantalla multimedia grande · Navegador / GPS · Bluetooth / USB",
+      "Apple CarPlay / Android Auto · Climatizador automático",
+      "Control / regulador de velocidad · Volante multifunción · Volante de cuero",
+      "Sensores de aparcamiento traseros · Elevalunas eléctricos delanteros",
+      "Llantas de aluminio · Isofix",
+      "Precio con IVA incluido · IVA deducible para empresa o autónomo",
     ],
   },
   {
@@ -143,18 +148,22 @@ export const cars: Car[] = [
     ],
     tags: ["iva-recuperable"],
     available: true,
-    description: "SUV diésel compacto, cómodo y bien equipado. Listo para usar.",
+    description:
+      "SUV compacto diésel, cómodo, económico y con buen equipamiento. Motor 1.5 BlueHDi 110CV — ideal para quien busca un coche amplio, moderno y eficiente para uso diario o carretera.",
     highlights: [
-      "Motor 1.5 BlueHDi 110CV — diésel eficiente",
-      "ITV vigente hasta 09/05/2027 · 2 Llaves",
-      "Acabado Allure Pack · Historial de mantenimiento disponible",
-      "Vehículo nacional · Etiqueta medioambiental C",
-      "Apple CarPlay / Android Auto · Pantalla multimedia",
-      "Control de crucero · Sensores de aparcamiento",
-      "Llantas de aleación · Aire acondicionado",
-      "Cambio de aceite y filtro realizados recientemente",
-      "Neumáticos en excelente estado — 7mm en las 4 ruedas",
-      "IVA deducible para empresa o autónomo",
+      "Motor 1.5 BlueHDi diésel 110CV · Cambio manual 6v · SUV 5 puertas / 5 plazas",
+      "Color blanco · Etiqueta medioambiental C",
+      "ITV vigente hasta 09/05/2027 · Vehículo nacional, no importado · 2 Llaves",
+      "Historial de mantenimiento disponible",
+      "Revisado y listo para entrega · Neumáticos en muy buen estado (7mm · 4 ruedas)",
+      "Interior limpio e higienizado · Mecánica funcionando perfectamente",
+      "Cambio de aceite y filtro del motor realizados recientemente",
+      "Acabado Allure Pack · Pantalla multimedia",
+      "Apple CarPlay / Android Auto · Bluetooth / USB",
+      "Control de crucero · Volante multifunción",
+      "Aire acondicionado / climatización · Sensores de aparcamiento",
+      "Llantas de aleación · Cierre centralizado · Isofix",
+      "Precio con IVA incluido · IVA deducible para empresa o autónomo",
     ],
   },
 ];

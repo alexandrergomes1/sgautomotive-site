@@ -1,4 +1,4 @@
-export const SITE_URL = "https://sgautomotive.com";
+export const SITE_URL = "https://sgautomotive.es";
 export const SITE_NAME = "SG Automotive";
 export const SITE_PHONE = "+34 665 40 71 76";
 export const SITE_EMAIL = "sgautomotive.es@gmail.com";

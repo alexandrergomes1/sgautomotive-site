@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Privacy Policy — SG Automotive",
-  description: "Information about the processing of personal data on sgautomotive.com in accordance with the GDPR.",
+  description: "Information about the processing of personal data on sgautomotive.es in accordance with the GDPR.",
   robots: { index: true, follow: true },
 };
 

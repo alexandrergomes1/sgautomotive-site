@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Términos de Uso — SG Automotive",
-  description: "Condiciones de uso del sitio web sgautomotive.com.",
+  description: "Condiciones de uso del sitio web sgautomotive.es.",
   robots: { index: true, follow: true },
 };
 
@@ -17,15 +17,14 @@ export default function TerminosPage() {
 
           <h2>1. Objeto</h2>
           <p>
-            Los presentes términos regulan el acceso y uso del sitio web <strong>sgautomotive.com</strong>,
+            Los presentes términos regulan el acceso y uso del sitio web <strong>sgautomotive.es</strong>,
             operado por SG Automotive (Fuengirola, Málaga, España). El acceso al sitio implica la aceptación
             íntegra de estos términos.
           </p>
 
           <h2>2. Servicios ofrecidos</h2>
           <p>
-            SG Automotive ofrece servicios de asesoría de compra de vehículos, importación y gestión
-            documental en el ámbito europeo. La información publicada en este sitio tiene carácter
+            SG Automotive ofrece servicios de compra, venta, importación y asesoría de vehículos. La información publicada en este sitio tiene carácter
             informativo y no constituye una oferta vinculante. Los precios de los vehículos son orientativos
             y pueden estar sujetos a variaciones.
           </p>

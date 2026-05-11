@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const SITE_URL = "https://sgautomotive.com";
+const SITE_URL = "https://sgautomotive.es";
 const LOCALES = ["es", "en", "pt"] as const;
 type Locale = (typeof LOCALES)[number];
 

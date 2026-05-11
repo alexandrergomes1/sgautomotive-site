@@ -4,7 +4,7 @@
 // Each locale is a plain TypeScript object — tree-shaken at build time.
 // ─────────────────────────────────────────────────────────────────────────────
 
-export const SITE_URL = "https://sgautomotive.com";
+export const SITE_URL = "https://sgautomotive.es";
 export const SITE_NAME = "SG Automotive";
 export const WHATSAPP_NUMBER = "34665407176";
 export const WHATSAPP_DISPLAY = "+34 665 40 71 76";
@@ -474,7 +474,7 @@ const es: SiteContent = {
     location: "Fuengirola, Málaga, España",
   },
   footer: {
-    tagline: "Compra y importación de vehículos en Europa con gestión profesional.",
+    tagline: "Compra, venta e importación de vehículos con gestión profesional.",
     location: "Fuengirola, Costa del Sol, Málaga, España",
     navTitle: "Navegación",
     navLinks: [
@@ -854,7 +854,7 @@ const en: SiteContent = {
     location: "Fuengirola, Málaga, Spain",
   },
   footer: {
-    tagline: "Buy and import vehicles in Europe with professional management.",
+    tagline: "Buy, sell and import vehicles with professional management.",
     location: "Fuengirola, Costa del Sol, Málaga, Spain",
     navTitle: "Navigation",
     navLinks: [
@@ -1237,7 +1237,7 @@ const pt: SiteContent = {
     location: "Fuengirola, Málaga, Espanha",
   },
   footer: {
-    tagline: "Compra e importação de veículos na Europa com gestão profissional.",
+    tagline: "Compra, venda e importação de veículos com gestão profissional.",
     location: "Fuengirola, Costa del Sol, Málaga, Espanha",
     navTitle: "Navegação",
     navLinks: [

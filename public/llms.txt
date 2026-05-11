@@ -4,9 +4,9 @@
 
 ## About
 
-SG Automotive operates 100% online and remotely, offering professional automotive services to clients across Spain and Europe. The company focuses on transparency, technical analysis and buyer-side representation. Own stock vehicles are available for immediate delivery; importation services cover any EU country and beyond.
+SG Automotive operates 100% online and remotely, offering professional automotive services to clients across Spain and Europe. The company focuses on transparency, technical analysis and buyer-side representation. Own-stock vehicles are available for immediate delivery; importation services cover any EU country and beyond.
 
-- **Website**: https://sgautomotive.com
+- **Website**: https://sgautomotive.es
 - **Location**: Fuengirola, Costa del Sol, Málaga, Spain (29640)
 - **Languages**: Spanish (primary), English, Portuguese
 - **Operation**: 100% remote and online
@@ -16,7 +16,7 @@ SG Automotive operates 100% online and remotely, offering professional automotiv
 ## Services
 
 ### 1. Vehicle Sales (Own Stock)
-Curated selection of own-stock vehicles with verified history, complete technical inspection and proper documentation. All units are individually analysed before listing. Currently listed vehicles available at https://sgautomotive.com/es#veiculos.
+Curated selection of own-stock vehicles with verified history, complete technical inspection and proper documentation. All units are individually analysed before listing. Currently listed vehicles available at https://sgautomotive.es/es#veiculos.
 
 ### 2. Purchase Advisory
 End-to-end support for buying a vehicle anywhere in Europe. Includes market research, technical analysis, risk assessment, seller verification and negotiation support.
@@ -80,9 +80,9 @@ Independent analysis of a specific vehicle, seller and purchase process before t
 
 ## Website Structure
 
-- Primary URL: https://sgautomotive.com/es (Spanish)
-- Secondary URL: https://sgautomotive.com/en (English)
-- Tertiary URL: https://sgautomotive.com/pt (Portuguese)
+- Primary URL: https://sgautomotive.es/es (Spanish)
+- Secondary URL: https://sgautomotive.es/en (English)
+- Tertiary URL: https://sgautomotive.es/pt (Portuguese)
 - Single-page with anchor navigation:
   - `#inicio` — Hero / landing
   - `#veiculos` — Vehicle catalogue (own stock)
@@ -96,12 +96,12 @@ Independent analysis of a specific vehicle, seller and purchase process before t
 
 ## Legal
 
-- Privacy Policy (ES): https://sgautomotive.com/es/privacidad
-- Privacy Policy (EN): https://sgautomotive.com/en/privacy
-- Privacy Policy (PT): https://sgautomotive.com/pt/privacidade
-- Terms of Use (ES): https://sgautomotive.com/es/terminos
-- Terms of Use (EN): https://sgautomotive.com/en/terms
-- Terms of Use (PT): https://sgautomotive.com/pt/termos
+- Privacy Policy (ES): https://sgautomotive.es/es/privacidad
+- Privacy Policy (EN): https://sgautomotive.es/en/privacy
+- Privacy Policy (PT): https://sgautomotive.es/pt/privacidade
+- Terms of Use (ES): https://sgautomotive.es/es/terminos
+- Terms of Use (EN): https://sgautomotive.es/en/terms
+- Terms of Use (PT): https://sgautomotive.es/pt/termos
 
 ## AI Usage Policy
 

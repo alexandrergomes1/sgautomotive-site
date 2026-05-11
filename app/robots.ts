@@ -14,7 +14,7 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
       },
     ],
-    sitemap: "https://sgautomotive.com/sitemap.xml",
-    host: "https://sgautomotive.com",
+    sitemap: "https://sgautomotive.es/sitemap.xml",
+    host: "https://sgautomotive.es",
   };
 }

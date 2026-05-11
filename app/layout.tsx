@@ -3,13 +3,13 @@ import "./globals.css";
 import { buildOrganizationSchema } from "@/lib/schema-org";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://sgautomotive.com"),
+  metadataBase: new URL("https://sgautomotive.es"),
   title: {
-    default: "SG Automotive — Importación y compra de vehículos en Europa",
+    default: "SG Automotive — Compra, venta e importación de vehículos",
     template: "%s | SG Automotive",
   },
   description:
-    "Empresa online especializada en importación de coches a España, asesoría de compra en Europa y gestión documental. Costa del Sol, Fuengirola, Málaga.",
+    "Empresa online especializada en compra, venta e importación de vehículos. Stock propio, búsqueda en Europa y gestión documental. Costa del Sol, Fuengirola, Málaga.",
   icons: {
     icon: [{ url: "/icon", type: "image/png", sizes: "64x64" }],
     apple: [{ url: "/apple-icon", type: "image/png", sizes: "180x180" }],

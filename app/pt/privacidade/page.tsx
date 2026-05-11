@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Política de Privacidade — SG Automotive",
-  description: "Informação sobre o tratamento de dados pessoais em sgautomotive.com em conformidade com o RGPD.",
+  description: "Informação sobre o tratamento de dados pessoais em sgautomotive.es em conformidade com o RGPD.",
   robots: { index: true, follow: true },
 };
 

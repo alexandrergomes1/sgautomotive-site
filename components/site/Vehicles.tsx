@@ -50,6 +50,7 @@ export function Vehicles({ locale, vehicles }: VehiclesProps) {
                 transmissionLabel={
                   vehicles.transmission[car.transmission] ?? car.transmission
                 }
+                highlightsLabel={vehicles.highlightsLabel}
                 tagLabels={vehicles.tagLabels}
                 tagColors={vehicles.tagColors}
               />

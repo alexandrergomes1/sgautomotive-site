@@ -39,6 +39,7 @@ export interface SiteContent {
     subtitle: string;
     empty: string;
     contactVehicle: string;
+    highlightsLabel: string;
     fuel: Record<string, string>;
     transmission: Record<string, string>;
     tagLabels: Record<string, string>;
@@ -138,7 +139,7 @@ const TAG_COLORS: Record<string, string> = {
 const es: SiteContent = {
   brand: {
     name: "SG Automotive",
-    tagline: "Compra y importación de vehículos en Europa con gestión profesional.",
+    tagline: "Compra, venta e importación de vehículos con gestión profesional.",
   },
   navigation: {
     links: [
@@ -153,9 +154,9 @@ const es: SiteContent = {
   },
   hero: {
     badge: "Costa del Sol · Fuengirola · Málaga",
-    title: "Compra y importación de vehículos en Europa con gestión profesional.",
+    title: "Compra, venta e importación de vehículos con gestión profesional.",
     subtitle:
-      "Vehículos seleccionados, análisis técnico y gestión completa o parcial del proceso de compra, importación y regularización en España.",
+      "Vehículos propios en stock, búsqueda en Europa y gestión completa o parcial del proceso de compra, importación y regularización en España.",
     ctaVehicles: "Ver vehículos disponibles",
     ctaConsult: "Solicitar consulta",
     trust: [
@@ -165,10 +166,11 @@ const es: SiteContent = {
     ],
   },
   vehicles: {
-    title: "Vehículos disponibles",
+    title: "Vehículos en stock propio",
     subtitle: "Unidades verificadas, con historial comprobado y documentación en regla.",
     empty: "Próximamente nuevos vehículos disponibles. Contáctanos para más información.",
     contactVehicle: "Consultar por WhatsApp",
+    highlightsLabel: "Ver equipamiento",
     fuel: {
       diesel: "Diésel",
       gasoline: "Gasolina",
@@ -496,15 +498,15 @@ const es: SiteContent = {
     ),
   },
   seo: {
-    title: "SG Automotive — Importación y compra de vehículos en Europa",
+    title: "SG Automotive — Compra, venta e importación de vehículos",
     description:
-      "Empresa online especializada en importación de coches a España, asesoría de compra en Europa y gestión documental. Costa del Sol, Fuengirola, Málaga.",
+      "Empresa online especializada en compra, venta e importación de vehículos. Stock propio, asesoría de compra en Europa y gestión documental completa. Costa del Sol, Fuengirola, Málaga.",
     keywords: [
+      "comprar coche segunda mano España",
       "importación de coches a España",
-      "comprar coche en Europa",
-      "asesoría importación vehículos España",
-      "vehículos seleccionados Costa del Sol",
-      "importación coches Fuengirola",
+      "venta coches Costa del Sol",
+      "asesoría importación vehículos Europa",
+      "vehículos seleccionados Fuengirola",
       "gestión automotiva España",
     ],
     ogLocale: "es_ES",
@@ -518,7 +520,7 @@ const es: SiteContent = {
 const en: SiteContent = {
   brand: {
     name: "SG Automotive",
-    tagline: "Buy and import vehicles in Europe with professional management.",
+    tagline: "Buy, sell and import vehicles with professional management.",
   },
   navigation: {
     links: [
@@ -533,9 +535,9 @@ const en: SiteContent = {
   },
   hero: {
     badge: "Costa del Sol · Fuengirola · Málaga",
-    title: "Buy and import vehicles in Europe with professional management.",
+    title: "Buy, sell and import vehicles with professional management.",
     subtitle:
-      "Selected vehicles, technical analysis and complete or partial management of the purchase, import and registration process in Spain.",
+      "Own stock vehicles, European market search and complete or partial management of the purchase, import and registration process in Spain.",
     ctaVehicles: "View available vehicles",
     ctaConsult: "Request consultation",
     trust: [
@@ -545,10 +547,11 @@ const en: SiteContent = {
     ],
   },
   vehicles: {
-    title: "Available vehicles",
+    title: "Vehicles from own stock",
     subtitle: "Verified units with confirmed history and documentation in order.",
     empty: "New vehicles coming soon. Contact us for more information.",
     contactVehicle: "Enquire on WhatsApp",
+    highlightsLabel: "View features",
     fuel: {
       diesel: "Diesel",
       gasoline: "Petrol",
@@ -875,15 +878,15 @@ const en: SiteContent = {
     ),
   },
   seo: {
-    title: "SG Automotive — Vehicle import and purchase in Europe",
+    title: "SG Automotive — Buy, sell and import vehicles",
     description:
-      "Online company specialised in vehicle importation to Spain, purchase advisory in Europe and document management. Costa del Sol, Fuengirola, Málaga.",
+      "Online company specialised in vehicle sales, purchase advisory and importation to Spain. Own stock, European market search and complete document management. Costa del Sol, Fuengirola, Málaga.",
     keywords: [
+      "buy used car Spain",
       "import car to Spain",
       "buy car in Europe",
       "vehicle import advisory Spain",
       "selected vehicles Costa del Sol",
-      "car import from Germany to Spain",
       "vehicle management Spain",
     ],
     ogLocale: "en_GB",
@@ -897,7 +900,7 @@ const en: SiteContent = {
 const pt: SiteContent = {
   brand: {
     name: "SG Automotive",
-    tagline: "Compra e importação de veículos na Europa com gestão profissional.",
+    tagline: "Compra, venda e importação de veículos com gestão profissional.",
   },
   navigation: {
     links: [
@@ -912,9 +915,9 @@ const pt: SiteContent = {
   },
   hero: {
     badge: "Costa del Sol · Fuengirola · Málaga",
-    title: "Compra e importação de veículos na Europa com gestão profissional.",
+    title: "Compra, venda e importação de veículos com gestão profissional.",
     subtitle:
-      "Veículos selecionados, análise técnica e gestão completa ou parcial do processo de compra, importação e regularização em Espanha.",
+      "Veículos em stock próprio, pesquisa na Europa e gestão completa ou parcial do processo de compra, importação e regularização em Espanha.",
     ctaVehicles: "Ver veículos disponíveis",
     ctaConsult: "Solicitar consulta",
     trust: [
@@ -924,11 +927,12 @@ const pt: SiteContent = {
     ],
   },
   vehicles: {
-    title: "Veículos disponíveis",
+    title: "Veículos em stock próprio",
     subtitle: "Unidades verificadas, com historial comprovado e documentação em ordem.",
     empty:
       "Brevemente novos veículos disponíveis. Contacte-nos para mais informações.",
     contactVehicle: "Consultar pelo WhatsApp",
+    highlightsLabel: "Ver equipamento",
     fuel: {
       diesel: "Diesel",
       gasoline: "Gasolina",
@@ -1257,15 +1261,15 @@ const pt: SiteContent = {
     ),
   },
   seo: {
-    title: "SG Automotive — Importação e compra de veículos na Europa",
+    title: "SG Automotive — Compra, venda e importação de veículos",
     description:
-      "Empresa online especializada em importação de carros para Espanha, consultoria de compra na Europa e gestão documental. Costa del Sol, Fuengirola, Málaga.",
+      "Empresa online especializada em compra, venda e importação de veículos. Stock próprio, pesquisa na Europa e gestão documental completa. Costa del Sol, Fuengirola, Málaga.",
     keywords: [
+      "comprar carro usado Espanha",
       "importação de carros para Espanha",
-      "comprar carro na Europa",
-      "consultoria importação veículos Espanha",
-      "veículos selecionados Costa del Sol",
-      "importação carros Fuengirola",
+      "venda carros Costa del Sol",
+      "consultoria importação veículos Europa",
+      "veículos selecionados Fuengirola",
       "gestão automóvel Espanha",
     ],
     ogLocale: "pt_PT",

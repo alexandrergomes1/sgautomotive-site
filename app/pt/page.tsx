@@ -16,7 +16,6 @@ import { Hero } from "@/components/site/Hero";
 import { Vehicles } from "@/components/site/Vehicles";
 import { Services } from "@/components/site/Services";
 import { ImportSection } from "@/components/site/ImportSection";
-import { Plans } from "@/components/site/Plans";
 import { HowItWorks } from "@/components/site/HowItWorks";
 import { Differentials } from "@/components/site/Differentials";
 import { About } from "@/components/site/About";
@@ -69,7 +68,6 @@ export default function PtPage() {
       <Vehicles locale="pt" vehicles={c.vehicles} />
       <Services services={c.services} />
       <ImportSection importSection={c.importSection} waImport={c.whatsapp.import} />
-      <Plans plans={c.plans} waConsult={c.whatsapp.consult} />
       <HowItWorks howItWorks={c.howItWorks} />
       <Differentials differentials={c.differentials} />
       <About about={c.about} />

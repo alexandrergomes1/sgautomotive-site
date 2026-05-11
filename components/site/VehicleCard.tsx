@@ -1,7 +1,7 @@
 // Server Component — CSS-only carousel (VehicleImageCarousel), no client JS.
 // Receives pre-built waHref so no locale logic lives here.
 
-import { Calendar, Fuel, Gauge, Zap } from "lucide-react";
+import { Calendar, Fuel, Gauge, Zap, ChevronRight } from "lucide-react";
 import type { Car } from "@/data/cars";
 import { formatKm, formatPrice } from "@/lib/utils";
 import { VehicleImageCarousel } from "@/components/site/VehicleImageCarousel";
@@ -12,6 +12,7 @@ interface VehicleCardProps {
   ctaLabel: string;
   fuelLabel: string;
   transmissionLabel: string;
+  highlightsLabel: string;
   tagLabels: Record<string, string>;
   tagColors: Record<string, string>;
   locale: string;
@@ -23,6 +24,7 @@ export function VehicleCard({
   ctaLabel,
   fuelLabel,
   transmissionLabel,
+  highlightsLabel,
   tagLabels,
   tagColors,
   locale,
@@ -82,6 +84,21 @@ export function VehicleCard({
             </span>
           </div>
         </div>
+
+        {/* Expandable highlights — native <details>, CSS-only, zero JS */}
+        {car.highlights && car.highlights.length > 0 && (
+          <details className="vehicle-highlights mb-4">
+            <summary>
+              <ChevronRight size={13} className="chevron" aria-hidden="true" />
+              {highlightsLabel}
+            </summary>
+            <ul>
+              {car.highlights.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </details>
+        )}
 
         <div className="mt-auto">
           {/* Primary CTA */}

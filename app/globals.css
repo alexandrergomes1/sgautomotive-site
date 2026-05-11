@@ -173,3 +173,45 @@ details > summary::-webkit-details-marker {
 .prose-legal a:hover {
   color: var(--color-accent-light);
 }
+
+/* Vehicle card — expandable highlights (<details>/<summary>, CSS-only, zero JS) */
+.vehicle-highlights summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  user-select: none;
+}
+.vehicle-highlights summary::-webkit-details-marker { display: none; }
+.vehicle-highlights summary .chevron {
+  transition: transform 160ms ease;
+  flex-shrink: 0;
+}
+.vehicle-highlights[open] summary .chevron {
+  transform: rotate(90deg);
+}
+.vehicle-highlights ul {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding-left: 0.25rem;
+}
+.vehicle-highlights li {
+  position: relative;
+  padding-left: 0.875rem;
+  font-size: 0.6875rem;
+  color: var(--color-muted-2);
+  line-height: 1.6;
+}
+.vehicle-highlights li::before {
+  content: "·";
+  position: absolute;
+  left: 0;
+  color: var(--color-accent);
+  font-weight: 700;
+}

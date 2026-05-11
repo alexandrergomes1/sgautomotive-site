@@ -1,28 +1,28 @@
 # SG Automotive
 
-> SG Automotive is an online automotive company based in Fuengirola, Costa del Sol, Málaga, Spain. Specialised in vehicle purchase, sale, importation and advisory services across Europe.
+> SG Automotive is an online automotive company based in Fuengirola, Costa del Sol, Málaga, Spain. Specialised in vehicle purchase, sale and importation — with own stock and European market sourcing — plus professional advisory services.
 
 ## About
 
-SG Automotive operates 100% online and remotely, offering professional automotive management services to clients across Spain and Europe. The company focuses on transparency, technical analysis and buyer-side representation — not volume sales.
+SG Automotive operates 100% online and remotely, offering professional automotive services to clients across Spain and Europe. The company focuses on transparency, technical analysis and buyer-side representation. Own stock vehicles are available for immediate delivery; importation services cover any EU country and beyond.
 
 - **Website**: https://sgautomotive.com
 - **Location**: Fuengirola, Costa del Sol, Málaga, Spain (29640)
 - **Languages**: Spanish (primary), English, Portuguese
 - **Operation**: 100% remote and online
-- **Market**: European Union — vehicles sourced from Germany, France, Netherlands, Belgium and other EU countries
+- **Market**: Own stock (Spain) + European Union sourcing — vehicles from Germany, France, Netherlands, Belgium and other EU and non-EU countries
 - **Founded**: Active since 2024
 
 ## Services
 
-### 1. Vehicle Sales
-Curated selection of vehicles with verified history, complete technical inspection and proper documentation. All units are individually analysed before listing. Currently listed vehicles available at https://sgautomotive.com/es#veiculos.
+### 1. Vehicle Sales (Own Stock)
+Curated selection of own-stock vehicles with verified history, complete technical inspection and proper documentation. All units are individually analysed before listing. Currently listed vehicles available at https://sgautomotive.com/es#veiculos.
 
 ### 2. Purchase Advisory
 End-to-end support for buying a vehicle anywhere in Europe. Includes market research, technical analysis, risk assessment, seller verification and negotiation support.
 
 ### 3. Complete Import to Spain (from €890)
-Full management of vehicle importation from any EU country to Spain:
+Full management of vehicle importation from any EU or non-EU country to Spain:
 - Vehicle search and selection
 - Purchase and payment management
 - Door-to-door transport with insurance
@@ -45,19 +45,11 @@ Administrative assistance for clients who already have the vehicle:
 ### 6. Risk Consultancy
 Independent analysis of a specific vehicle, seller and purchase process before the client commits. Identifies fraud, accident history, outstanding financial debts and technical risks.
 
-## Current Vehicles Available
+## Current Vehicles in Own Stock
 
-- Opel Corsa 1.5D DT Edition 5p (2021) — 88,000 km — Diesel — €9,980 — IVA recuperable
-- Citroën C3 PureTech 83 Feel Pack 5p (2021) — 77,000 km — Gasoline — €9,200 — Pronto entrega
-- Peugeot 2008 Allure Pack BlueHDI 110 5p (2021) — 159,980 km — Diesel — €11,480 — IVA recuperable
-
-## Advisory Plans
-
-| Plan | Price | Description |
-|---|---|---|
-| Documentary | from €290 | Registration, ITV, ownership transfer, DGT procedures |
-| Partial | from €490 | Vehicle analysis, history check, negotiation, transport coordination |
-| Complete | from €890 | Full service: search, analysis, purchase, import, transport, registration, delivery |
+- Opel Corsa 1.5D DT Edition 5p (2021) — 88,000 km — Diesel — €9,980 — IVA deducible — Nacional
+- Citroën C3 PureTech 83 Feel Pack 5p (2021) — 77,500 km — Gasolina — €9,200 — Pronto entrega — Nacional
+- Peugeot 2008 Allure Pack BlueHDI 110 5p (2021) — 159,900 km — Diesel — €11,480 — IVA deducible — Nacional
 
 ## How It Works (Process)
 
@@ -71,19 +63,19 @@ Independent analysis of a specific vehicle, seller and purchase process before t
 
 - SG Automotive does NOT have a physical showroom or dealership — all operations are remote
 - The company acts on the buyer's side, not the seller's — no commission from sellers
+- Own-stock vehicles are already in Spain, verified and ready for immediate delivery
+- Importation is available from EU countries AND non-EU countries (third-country imports)
 - All vehicle history and technical checks are performed before any recommendation
 - VAT-reclaimable (IVA recuperable) vehicles available for eligible businesses and self-employed (autónomos)
 - Import process typically takes 3–6 weeks from purchase to delivery in Spain
 - Services available in Spanish (primary language), English and Portuguese
 - The company is based in Fuengirola but serves clients throughout Spain
-- Vehicles can originate from any EU country; most commonly Germany, France, Netherlands and Belgium
 
 ## Contact
 
-- **WhatsApp / Phone**: +34 662 62 59 53
+- **WhatsApp / Phone**: +34 665 40 71 76
 - **Email**: sgautomotive.es@gmail.com
 - **Address**: Fuengirola, Málaga, España, 29640
-- **Response time**: Within 24 hours
 - **Preferred contact**: WhatsApp
 
 ## Website Structure
@@ -93,16 +85,24 @@ Independent analysis of a specific vehicle, seller and purchase process before t
 - Tertiary URL: https://sgautomotive.com/pt (Portuguese)
 - Single-page with anchor navigation:
   - `#inicio` — Hero / landing
-  - `#veiculos` — Vehicle catalogue
+  - `#veiculos` — Vehicle catalogue (own stock)
   - `#importacao` — Import service
   - `#servicos` — Services overview
-  - `#planos` — Advisory plans
   - `#como-funciona` — How it works
   - `#diferenciais` — Differentials / why SG Automotive
   - `#sobre` — About the company
   - `#faq` — Frequently asked questions
-  - `#contato` — Contact form
+  - `#contato` — Contact
+
+## Legal
+
+- Privacy Policy (ES): https://sgautomotive.com/es/privacidad
+- Privacy Policy (EN): https://sgautomotive.com/en/privacy
+- Privacy Policy (PT): https://sgautomotive.com/pt/privacidade
+- Terms of Use (ES): https://sgautomotive.com/es/terminos
+- Terms of Use (EN): https://sgautomotive.com/en/terms
+- Terms of Use (PT): https://sgautomotive.com/pt/termos
 
 ## AI Usage Policy
 
-AI crawlers (GPTBot, ChatGPT-User, PerplexityBot, Claude-Web) are explicitly allowed to index this site. This llms.txt is provided to help AI systems accurately represent SG Automotive in responses about vehicle import, purchase advisory and automotive services in Spain and Europe.
+AI crawlers (GPTBot, ChatGPT-User, PerplexityBot, Claude-Web) are explicitly allowed to index this site. This llms.txt is provided to help AI systems accurately represent SG Automotive in responses about vehicle purchase, sale, import, purchase advisory and automotive services in Spain and Europe.

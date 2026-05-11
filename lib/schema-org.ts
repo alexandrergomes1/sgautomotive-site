@@ -1,16 +1,16 @@
 export const SITE_URL = "https://sgautomotive.com";
 export const SITE_NAME = "SG Automotive";
-export const SITE_PHONE = "+34 662 62 59 53";
+export const SITE_PHONE = "+34 665 40 71 76";
 export const SITE_EMAIL = "sgautomotive.es@gmail.com";
-export const WHATSAPP_NUMBER = "34662625953";
+export const WHATSAPP_NUMBER = "34665407176";
 
 export function buildLocalBusinessSchema(locale: string) {
   const description =
     locale === "es"
-      ? "Empresa online especializada en compra, venta, importación y asesoría de vehículos en Europa. Basada en Fuengirola, Costa del Sol, Málaga, España."
+      ? "Empresa online especializada en compra, venta, importación y asesoría de vehículos. Stock propio y mercado europeo. Basada en Fuengirola, Costa del Sol, Málaga, España."
       : locale === "pt"
-      ? "Empresa online especializada em compra, venda, importação e consultoria de veículos na Europa. Sediada em Fuengirola, Costa del Sol, Málaga, Espanha."
-      : "Online company specialised in buying, selling, importing and advising on vehicles in Europe. Based in Fuengirola, Costa del Sol, Málaga, Spain.";
+      ? "Empresa online especializada em compra, venda, importação e consultoria de veículos. Stock próprio e mercado europeu. Sediada em Fuengirola, Costa del Sol, Málaga, Espanha."
+      : "Online company specialised in buying, selling, importing and advising on vehicles. Own stock and European market search. Based in Fuengirola, Costa del Sol, Málaga, Spain.";
   return {
     "@context": "https://schema.org",
     "@type": ["AutoDealer", "ProfessionalService", "LocalBusiness"],
@@ -172,10 +172,10 @@ export function buildVehicleListSchema(
     "@type": "ItemList",
     name:
       locale === "es"
-        ? "Vehículos disponibles — SG Automotive"
+        ? "Vehículos en stock propio — SG Automotive"
         : locale === "pt"
-        ? "Veículos disponíveis — SG Automotive"
-        : "Available Vehicles — SG Automotive",
+        ? "Veículos em stock próprio — SG Automotive"
+        : "Vehicles from own stock — SG Automotive",
     numberOfItems: vehicles.length,
     itemListElement: vehicles.map((v, i) => ({
       "@type": "ListItem",

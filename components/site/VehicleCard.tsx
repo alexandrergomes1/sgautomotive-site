@@ -1,7 +1,7 @@
 // Server Component — CSS-only carousel (VehicleImageCarousel), no client JS.
 // Receives pre-built waHref so no locale logic lives here.
 
-import { Calendar, Fuel, Gauge, Zap, ChevronRight } from "lucide-react";
+import { Calendar, Fuel, Gauge, Zap, ChevronDown } from "lucide-react";
 import type { Car } from "@/data/cars";
 import { formatKm, formatPrice } from "@/lib/utils";
 import { VehicleImageCarousel } from "@/components/site/VehicleImageCarousel";
@@ -44,26 +44,20 @@ export function VehicleCard({
 
       {/* Body */}
       <div className="p-5 flex flex-col flex-1">
-        <div className="mb-3">
-          <div className="flex items-start justify-between gap-2">
-            <div>
-              <h3 className="font-semibold text-fg text-base leading-tight">
-                {car.make} {car.model}
-              </h3>
-              <p className="text-muted text-sm mt-0.5">{car.version}</p>
-            </div>
-            <span className="text-xs text-muted bg-surface-2 border border-border px-2 py-1 rounded-md shrink-0">
-              {car.origin}
-            </span>
+        {/* Title row */}
+        <div className="flex items-start justify-between gap-2 mb-4">
+          <div>
+            <h3 className="font-semibold text-fg text-base leading-tight">
+              {car.make} {car.model}
+            </h3>
+            <p className="text-muted text-sm mt-0.5">{car.version}</p>
           </div>
+          <span className="text-xs text-muted bg-surface-2 border border-border px-2 py-1 rounded-md shrink-0">
+            {car.origin}
+          </span>
         </div>
 
-        {car.description && (
-          <p className="text-muted text-xs leading-relaxed mb-3">
-            {car.description}
-          </p>
-        )}
-
+        {/* Specs grid */}
         <div className="grid grid-cols-2 gap-2 mb-4">
           <div className="flex items-center gap-1.5 text-xs text-muted">
             <Calendar size={12} className="text-accent/70 shrink-0" aria-hidden="true" />
@@ -89,19 +83,21 @@ export function VehicleCard({
         {car.highlights && car.highlights.length > 0 && (
           <details className="vehicle-highlights mb-4">
             <summary>
-              <ChevronRight size={13} className="chevron" aria-hidden="true" />
+              <ChevronDown size={13} className="chevron" aria-hidden="true" />
               {highlightsLabel}
             </summary>
-            <ul>
+            <div className="highlights-grid">
               {car.highlights.map((item) => (
-                <li key={item}>{item}</li>
+                <span key={item} className="highlight-chip">
+                  {item}
+                </span>
               ))}
-            </ul>
+            </div>
           </details>
         )}
 
+        {/* CTA */}
         <div className="mt-auto">
-          {/* Primary CTA */}
           <a
             href={waHref}
             target="_blank"

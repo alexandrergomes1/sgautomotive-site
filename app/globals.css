@@ -114,3 +114,62 @@ details > summary::-webkit-details-marker {
     scroll-behavior: auto !important;
   }
 }
+
+/* Lightbox backdrop fade-in — CSS-only, no JS needed */
+.lightbox-backdrop {
+  animation: lightbox-in 160ms ease-out both;
+}
+
+@keyframes lightbox-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Car image loading background — dark shimmer shown while WebP loads */
+.car-img-slot {
+  background-color: var(--color-surface-2);
+}
+
+/* Legal pages (Privacy Policy, Terms of Use) — scoped prose styles */
+.prose-legal h2 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-fg);
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--color-border);
+}
+.prose-legal h3 {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--color-fg);
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+.prose-legal p {
+  color: var(--color-muted);
+  font-size: 0.9375rem;
+  line-height: 1.75;
+  margin-bottom: 1rem;
+}
+.prose-legal ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+.prose-legal li {
+  color: var(--color-muted);
+  font-size: 0.9375rem;
+  line-height: 1.75;
+  margin-bottom: 0.5rem;
+}
+.prose-legal a {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 200ms;
+}
+.prose-legal a:hover {
+  color: var(--color-accent-light);
+}

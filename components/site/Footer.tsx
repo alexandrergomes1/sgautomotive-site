@@ -6,6 +6,12 @@ import { Logo } from "@/components/logo";
 import type { SiteContent, Locale } from "@/data/site-content";
 import { EMAIL_ADDRESS, WHATSAPP_DISPLAY } from "@/data/site-content";
 
+const LEGAL_ROUTES: Record<Locale, { privacy: string; terms: string }> = {
+  es: { privacy: "/es/privacidad", terms: "/es/terminos" },
+  en: { privacy: "/en/privacy",    terms: "/en/terms" },
+  pt: { privacy: "/pt/privacidade", terms: "/pt/termos" },
+};
+
 interface FooterProps {
   footer: SiteContent["footer"];
   locale: Locale;
@@ -86,10 +92,25 @@ export function Footer({ footer, locale, waGeneral, emailLabel }: FooterProps) {
         </div>
 
         {/* Bottom bar */}
-        <div className="border-t border-border pt-8">
-          <p className="text-xs text-muted-2 text-center sm:text-left">
+        <div className="border-t border-border pt-8 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <p className="text-xs text-muted-2">
             © {year} {footer.copyright}
           </p>
+          <nav className="flex items-center gap-4" aria-label="Legal">
+            <Link
+              href={LEGAL_ROUTES[locale].privacy}
+              className="text-xs text-muted-2 hover:text-accent transition-colors duration-200"
+            >
+              {footer.privacy}
+            </Link>
+            <span className="text-muted-2/40 text-xs" aria-hidden="true">·</span>
+            <Link
+              href={LEGAL_ROUTES[locale].terms}
+              className="text-xs text-muted-2 hover:text-accent transition-colors duration-200"
+            >
+              {footer.terms}
+            </Link>
+          </nav>
         </div>
       </div>
     </footer>

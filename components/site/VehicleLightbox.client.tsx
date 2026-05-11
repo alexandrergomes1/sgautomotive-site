@@ -92,6 +92,7 @@ export function VehicleLightbox({ images, alt, initialIndex, onClose }: VehicleL
         onClick={onClose}
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
+        className="lightbox-backdrop"
         style={{
           position: "fixed",
           inset: 0,

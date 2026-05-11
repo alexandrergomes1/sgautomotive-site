@@ -84,7 +84,7 @@ export function VehicleImageCarousel({
 
   return (
     <CarouselTouchWrapper id={id} count={n}>
-    <div className="relative aspect-[16/10] overflow-hidden">
+    <div className="relative aspect-[16/10] overflow-hidden car-img-slot">
 
       {/* ① Radio inputs — MUST be first children so ~ sibling combinator works */}
       {images.map((_, i) => (
@@ -114,7 +114,7 @@ export function VehicleImageCarousel({
         {images.map((src, i) => (
           <div
             key={src}
-            className="relative h-full flex-none"
+            className="relative h-full flex-none car-img-slot"
             style={{ width: `${100 / n}%` }}
           >
             <Image
